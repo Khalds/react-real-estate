@@ -1,0 +1,21 @@
+.main {
+    height: 90vh;
+    width: 90%;
+    margin: auto;
+    background-color: #F4EBE4;
+    border-radius: 15px;
+}
+
+.text_container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.img_container {
+    width: 50%
+}
