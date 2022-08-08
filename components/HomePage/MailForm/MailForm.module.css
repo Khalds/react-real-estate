@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+.main {
+  height: 90vh;
+  width: 90%;
+  display: flex;
+  position: relative;
+  margin: 8% auto;
+  padding: 25% 0%;
+  border-radius: 30px;
+  background-color: #f4ebe4;
+}
+
+.empty_container {
+  width: 50%;
+}
+
+.mail_form_container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  padding: 5% 5%;
+  line-height: 3em;
+  border-radius: 0.5em;
+  background-color: #ffff;
+}
+
+.mail_form_container h2 {
+  font-family: "Merriweather", Sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #181c23;
+}
+
+.mail_form_container input {
+  width: 100%;
+  padding: 2% 1%;
+  border-radius: 1em;
+  outline: none;
+  border: #eeee 2px solid;
+  background-color: transparent;
+  color: black;
+}
+
+.message_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.message_container > textarea {
+  height: 15vh;
+  width: 100%;
+  border-radius: 1em;
+  border: #eeee 2px solid;
+  background-color: transparent;
+  color: black;
+}
+
+.mail_form_container button {
+  width: 100%;
+  font-size: 1.1em;
+  margin-top: 10%;
+  padding: 3% 0%;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #452820;
+  color: white;
+}
+
+.text_container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0% 10%;
+}
+
+.text_container p {
+  color: #ab978a;
+}
+
+.text_container h1 {
+  margin: 0%;
+  font-family: "Merriweather", serif;
+  font-size: 2.4em;
+  font-weight: 590;
+  color: #181c23;
+}
+
+.text_container > h1 + p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6em;
+  color: #696969;
+}
+
+.text_container button {
+  padding: 5% 10%;
+  font-size: 1.1em;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #452820;
+}
