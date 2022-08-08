@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header p {
+  color: #ab978a;
+  font-weight: 500;
+}
+
+.header h2 {
+  color: #181c23;
+  font-family: "merriweather", Sans-serif;
+  font-size: 2.3em;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+
+.agents_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+.card {
+  width: 30%;
+  padding: 3%;
+  border-radius: 1em;
+  box-shadow: 0 10px 31px 0 rgba(136, 129, 129, 0.09);
+  background-color: white;
+}
+
+.card_header {
+  display: flex;
+}
+
+.card_header > div {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   flex-direction: column;
+   margin-left: 7%;
+}
+
+.card_header img {
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+}
+
+.agent_name {
+    font-size: 1.1em;
+    font-weight: 900;
+    color:black
+}
+
+.agent_email {
+    font-size: 0.9em;
+    color:#6f6f6f
+}
+
+
+
+.description {
+    margin-top: 10%;
+}
+
+.star {
+    font-size: 1.8em;
+}
