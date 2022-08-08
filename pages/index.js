@@ -21,4 +21,5 @@ export default function Home() {
       <MailForm />
     </>
   );
+
 }
