@@ -1,0 +1,43 @@
+.title_block {
+  width: 100%;
+  margin: 1.875em 0 2.1875em;
+}
+.title_and_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title_and_price .title {
+  font-size: 2.375em;
+  margin: 0;
+}
+
+.title_and_price .price {
+  font-size: 1.875em;
+}
+.adress_and_favorite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adress_and_favorite .adress {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: 0.875em;
+}
+.adress_and_favorite .favorite {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.875em;
+  font-weight: 700;
+  color: #222222;
+  background-color: white;
+  padding: 0.4375em 0.875em;
+  border-radius: 1em;
+  box-shadow: 0px 5px 70px 0px rgb(38 42 76 / 10%);
+  cursor: pointer;
+}

@@ -1,0 +1,46 @@
+.address_content {
+  width: 100%;
+  background-color: white;
+  padding: 1.875em;
+  margin: 0 0 1.875em;
+  border-radius: 0.625em;
+  box-shadow: 0px 5px 70px 0px rgb(38 42 76 / 10%);
+}
+
+.header {
+  cursor: pointer;
+}
+.title_click {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  color: #222222;
+  font-size: 1em;
+  margin: 0 0 0;
+}
+.open_close_click {
+  color: #222222;
+  font-size: 1em;
+  margin: 0 0 0;
+}
+
+.content_text {
+  display: flex;
+  gap: 6em;
+  margin-top: 0.9375em;
+}
+.content_text p {
+  font-size: 0.875em;
+}
+.google_maps {
+  width: fit-content;
+  font-size: 0.875em;
+  margin-top: 0.625em;
+  color: white;
+  background-color: #452820;
+  padding: 0.4375em 0.875em;
+  border-radius: 1em;
+  text-align: center;
+  cursor: pointer;
+}
