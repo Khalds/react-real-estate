@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com");
-@import url("https://fonts.gstatic.com");
-@import url("https://fonts.googleapis.com/css2?family=Uchen&display=swap");
-
 .Header {
   display: flex;
   justify-content: space-between;
@@ -20,38 +16,34 @@
 }
 
 .active_link {
-  font-family: "Uchen", serif;
   font-size: 1em;
   font-weight: 600;
   color: #452820;
   border-bottom: 2px solid #452820;
-
 }
 
 .disactive_link {
-  font-family: "Uchen", serif;
   font-size: 1em;
   font-weight: 600;
   color: #181c23;
 }
 
 .acc_container {
-    width: 20%;
-    display: flex;
-   justify-content: space-between;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.phone_icon{
-    color: #452820;
-    font-size: 1.3em;
+.phone_icon {
+  color: #452820;
+  font-size: 1.3em;
 }
 
 .phone_number {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 
 .acc_icon {
-    color: #452820;
-    font-size: 1.3em;
+  color: #452820;
+  font-size: 1.3em;
 }
-

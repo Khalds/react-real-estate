@@ -1,0 +1,66 @@
+.main {
+  height: 90vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  background-color: #f4ebe4;
+  border-radius: 30px;
+  position: relative;
+}
+
+.text_container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: start;
+  padding-left: 10%;
+}
+
+.text_container h1 {
+  font-size: 3.2em;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+.img_container {
+  width: 50%;
+  background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2022/03/house_png_2-e1646989822282.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+
+.search_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: -5%;
+  right: 5%;
+  padding: 1% 1%;
+  z-index: 9;
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  box-shadow: 0px 5px 70px 0px rgb(38 42 76 / 10%);
+  border-radius: 15px;
+  line-height: 2px;
+  opacity: .97;
+}
+
+.search_container > div > input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  color: black
+}
+
+.search_container > button {
+ padding: 1.4% 5%;
+ box-sizing: border-box;
+ background: #452820;
+ border-radius: 1em;
+ cursor:pointer
+}
