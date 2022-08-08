@@ -9,14 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.12.1",
+    "@reduxjs/toolkit": "^1.8.3",
+    "aos": "^2.3.4",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.9.3",
+    "@reduxjs/toolkit": "^1.8.3",
+    "bcrypt": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-collapsed": "^3.3.2",
+    "react-countup": "^6.3.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
+    "react-star-rating-component": "^1.4.1",
+    "react-visibility-sensor": "^5.1.1",
+    "react-yandex-maps": "^4.6.0"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.10",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3"
   }
