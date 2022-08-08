@@ -1,0 +1,42 @@
+.profile_wrapper {
+  position: relative;
+  display: flex;
+}
+
+.profile_image_wrapper {
+  width: 21.19em;
+  height: 15.6em;
+  cursor: pointer;
+}
+
+.profile_image {
+  width: 100%;
+  border-radius: 0.8em;
+}
+
+.profile_contact_wrapper {
+  margin-left: 3em;
+}
+
+.agent_position {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.1em;
+  margin-bottom: 0.8em;
+  line-height: 1.65em;
+  color: #000000;
+}
+
+.numerical_rating {
+  text-decoration: underline;
+  color: #452820;
+  font-weight: 600;
+}
+
+.profile_contact_wrapper h3 {
+  font-size: 1.8em;
+  line-height: 1.3em;
+  margin: 0;
+  margin-bottom: 0.4em;
+}

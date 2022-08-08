@@ -1,0 +1,113 @@
+.personal_data_wrapper {
+    margin: 0;
+    padding: 0 1.9em 1.9em 0;
+    line-height: 1em;
+    font-size: 0.9em;
+  }
+  
+  .personal_data_wrapper h4 {
+    color: #181c23;
+    font-size: 1.2em;
+    line-height: 1.3em;
+    margin-bottom: 0.9em;
+    font-weight: 700;
+  }
+  
+  .personal_contact_wrapper {
+    display: flex;
+    gap: 0.8em;
+    color: #6f6f6f;
+  }
+  
+  .personal_contact_wrapper input {
+    border-radius: 0.7em;
+    font-size: 0.94em;
+    padding: 0.7em 0 0.7em 0.7em;
+    color: #8593a9;
+    border: 1px solid #eee;
+    width: 100%;
+    height: 3.1em;
+    margin-bottom: 1em;
+    outline: none;
+  }
+  
+  .personal_contact_wrapper input:focus {
+    box-shadow: 0px 0px 4px 1px rgba(26, 46, 61, 0.1);
+  }
+  
+  .agent_comment {
+    color: #6f6f6f !important;
+    height: auto;
+    font-size: 1em;
+    border-radius: 0.8em;
+    width: 100%;
+    line-height: 1.5;
+    border: 1px solid #eee;
+    margin-bottom: 1em;
+    padding: 1em;
+    outline: none;
+    resize: vertical;
+  }
+  
+  .agent_comment:focus {
+    box-shadow: 0px 0px 4px 1px rgba(26, 46, 61, 0.1);
+  }
+  
+  .consent_wrapper {
+    margin-bottom: 0.8em;
+    display: block;
+    color: #6f6f6f;
+    font-size: 0.9em;
+  }
+  
+  .consent_wrapper input {
+    font: inherit;
+    height: 1.4em;
+    width: 0.9em;
+    margin-right: 1em;
+    margin-top: 0;
+    cursor: pointer;
+  }
+  
+  .label {
+    line-height: 1.3em;
+    vertical-align: top;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  
+  .agent_submit {
+    cursor: pointer;
+    border-radius: 0.7em;
+    border: 0.8px solid;
+    z-index: 1;
+    background-color: #452820;
+    position: relative;
+    font-weight: 700;
+    font-size: 1.04em;
+    transition: all 250ms;
+    overflow: hidden;
+    color: #fff;
+    padding: 1em 2.9em;
+  }
+  
+  .agent_submit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 0.63em;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 250ms;
+  }
+  
+  .agent_submit:hover {
+    color: #452820;
+  }
+  
+  .agent_submit:hover::before {
+    width: 100%;
+  }
