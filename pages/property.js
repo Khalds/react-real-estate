@@ -4,11 +4,13 @@ import Description from "../components/Property/Description";
 import Address from "../components/Property/Address";
 import Calculator from "../components/Property/Calculator";
 import Showing from "../components/Property/Showing";
-import PhotoGallery from "../components/Property/PhotoGallery";
+import PhotoGallery from "../components/Property/PhotoGallery/PhotoGallery";
 
 import styles from "../components/Property/Property.module.css";
 
+
 const property = () => {
+
   return (
     <div className={styles.wrapper}>
       <PhotoGallery />
