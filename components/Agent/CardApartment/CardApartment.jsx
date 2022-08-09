@@ -2,103 +2,125 @@ import styles from "./cardApartment.module.css";
 import { BsGeoAltFill } from "react-icons/bs";
 import { BsCameraVideoFill } from "react-icons/bs";
 import { BsCameraFill } from "react-icons/bs";
+import { useSelector, useDispatch } from "react-redux";
+import { MdOutlineBedroomParent } from "react-icons/md";
 import { BiBath } from "react-icons/bi";
-import { BsArrowsFullscreen } from "react-icons/bs";
-import { AiOutlineShareAlt } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiOutlinePlus } from "react-icons/ai";
-
+import { TbLayoutBoard } from "react-icons/tb";
+import { BsFillShareFill } from "react-icons/bs";
+import { BsSuitHeart } from "react-icons/bs";
+import { FiPlus } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { getApartments } from "../../../features/apartmentSlice";
+import Link from "next/link";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const CardApartment = () => {
+  const dispatch = useDispatch();
+  const apartments = useSelector((state) => state.apartmentReducer.apartments);
+
+  const [limit, setLimit] = useState(4);
+
+  const handleShow = () => {
+    setLimit((limit += 2));
+  };
+
+  const handleHide = () => {
+    if (limit > 0) {
+      setLimit(4);
+    }
+  };
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
+  useEffect(() => {
+    dispatch(getApartments());
+  }, [dispatch]);
+
   return (
-    <div className={styles.listing_wrapper}>
-      <div className={styles.wrapper}>
+    <>
+      <div className={styles.main}>
+        {apartments.map((apartment, index) => {
+          if (index + 1 <= limit) {
+            return (
+              <>
+                <div className={styles.card} data-aos="fade-left">
+                  <div className={styles.tag_wrapper}>
+                    <div className={styles.featured_wrapper}>Featured</div>
+                    <div className={styles.rentals}>Rentals</div>
+                  </div>
 
-        
-        <div className={styles.image_wrapper}>
-          <div className={styles.tag_wrapper}>
-            <div className={styles.featured_wrapper}>Featured</div>
-            <div className={styles.rentals}>Rentals</div>
-          </div>
+                  <Link href={`/property/${apartment._id}`}>
+                    <div className={styles.img_container}>
+                      <img src={apartment.image} alt="apartment photo" />
+                    </div>
+                  </Link>
 
-          <div className={styles.photo}>
-            <img
-              className={styles.photo_img}
-              src="https://lasvegas.wpresidence.net/wp-content/uploads/2021/09/interior-4-525x328.jpg"
-              alt=""
-            />
-          </div>
-          
-          <div className={styles.icon_details_wrapper}>
-            <div className={styles.details_wrapper}>
-              <BsGeoAltFill className={styles.goLocation}/>
-              <b>Winchester</b>
-              <b>Las Vegas</b>
-            </div>
-            <div className={styles.icon_details}>
-            <BsCameraVideoFill className={styles.cameraVideo} />
-              <BsCameraFill className={styles.cameraFill} />
-              <span className={styles.number}>5</span>
-            </div>
-          </div>
-        </div>
+                  <div className={styles.icon_details_wrapper}>
+                    <div className={styles.details_wrapper}>
+                      <BsGeoAltFill className={styles.goLocation} />
+                      <Link href={`/map`}><b>Winchester,</b></Link>
+                      <Link href={`/map`}><b>Las Vegas</b></Link>
+                    </div>
+                    <div className={styles.icon_details}>
+                      <BsCameraVideoFill className={styles.cameraVideo} />
+                      <BsCameraFill className={styles.cameraFill} />
+                      <span className={styles.number}>5</span>
+                    </div>
+                  </div>
 
-
-
-
-        <div className={styles.main_content_wrapper}>
-          <h4>Townhouse for Rent</h4>
-          <div className={styles.listing_unit_price_wrapper}>
-            100 $ <span className={styles.price_label}>/ sq. ft.</span>
-          </div>
-          <div className={styles.listing_details}>
-            Mineral Reserves: 2008 core drilling and testing (on just 60 of the
-            1,100 acres) proved 30...
-          </div>
-          <div className={styles.static_icons}>
-            <div className={styles.bed_outline}>
-              <ion-icon name="bed-outline"></ion-icon>
-              <span>2</span>
-            </div>
-            <div className={styles.bath}>
-              <BiBath />
-              <span>5</span>
-            </div>
-            <div className={styles.arrows}>
-              <BsArrowsFullscreen />
-              <span>
-                29,000 ft<sup>2</sup>
-              </span>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div className={styles.photo_icon_wrapper}>
-                <img
-                  className={styles.photo_icon}
-                  src={
-                    "https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person7-21-500x328.png"
-                  }
-                  alt=""
-                />
-              </div>
-              <h5> Michaela Finney</h5>
-            </div>
-            <div>
-              <div>
-                <AiOutlineShareAlt />
-              </div>
-              <div>
-              <AiOutlineHeart />
-              </div>
-              <div>
-              <AiOutlinePlus />
-              </div>
-            </div>
-          </div>
-        </div>
+                  <div className={styles.info_container}>
+                    <h3>{apartment.location} </h3>
+                    <h4>{apartment.price} $</h4>
+                    <p>{apartment.description.slice(0, 130) + "..."}</p>
+                    <div className={styles.icons}>
+                      <span>
+                        <MdOutlineBedroomParent /> {apartment.bedroom}
+                      </span>
+                      <span>
+                        <BiBath /> {apartment.bathroom}
+                      </span>
+                      <span>
+                        <TbLayoutBoard /> {apartment.size} ft<sup>2</sup>
+                      </span>
+                    </div>
+                  </div>
+                  <div className={styles.agentInfo_canteiner}>
+                    <div className={styles.agent_photo_name}>
+                      <img
+                        src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-120x120.jpg')"
+                        alt="agent_photo"
+                      />
+                      <span>Michelle Upsetovna</span>
+                    </div>
+                    <div className={styles.agent_icons}>
+                      <span>
+                        <BsFillShareFill />
+                      </span>
+                      <span>
+                        <BsSuitHeart />
+                      </span>
+                      <span>
+                        <FiPlus />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          }
+        })}
       </div>
-    </div>
+      <div className={styles.button_container}>
+        {limit >= apartments.length ? (
+          <button onClick={handleHide}>Hide listings</button>
+        ) : (
+          <button onClick={handleShow}>Load more listings</button>
+        )}
+      </div>
+    </>
   );
 };
 

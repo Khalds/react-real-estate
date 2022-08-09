@@ -28,9 +28,6 @@ const Realtor = () => {
         </div>
         <div className={styles.cards_wrapper}>
           <CardApartment />
-          <CardApartment />
-          <CardApartment />
-          <CardApartment />
         </div>
         <Reviews />
       </div>

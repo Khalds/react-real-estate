@@ -1,6 +1,7 @@
 .wrapper {
   background: #f7f7f7;
   padding-top: 2em;
+  margin-top: 5.5em;
 }
 
 .main_wrapper {
@@ -35,7 +36,7 @@
   border-radius: 0.8em;
   background-color: #fff;
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
-  margin-bottom: 5em;
+  margin-bottom: 3.5em;
 }
 
 .term_bar_item_active {

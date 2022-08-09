@@ -38,7 +38,7 @@
   .agent_comment {
     color: #6f6f6f !important;
     height: auto;
-    font-size: 1em;
+    font-size: 1.3em;
     border-radius: 0.8em;
     width: 100%;
     line-height: 1.5;
@@ -62,7 +62,7 @@
   
   .consent_wrapper input {
     font: inherit;
-    height: 1.4em;
+    height: 1.3em;
     width: 0.9em;
     margin-right: 1em;
     margin-top: 0;
