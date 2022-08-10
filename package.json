@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.10.0",
+    "@pbe/react-yandex-maps": "^1.1.8",
     "@react-google-maps/api": "^2.12.1",
     "aos": "^2.3.4",
     "@emotion/react": "^11.10.0",

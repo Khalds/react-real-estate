@@ -35,6 +35,10 @@
   border-radius: 1em;
 }
 
+.gif {
+  background-color: black;
+}
+
 .img_container img {
   width: 100%;
   height: 100%;
