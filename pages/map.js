@@ -1,4 +1,5 @@
-import  SearchMap  from "../../team-project-client-1/components/Map/SearchMap"
+import SearchMap from "../components/Map/SearchMap"
+
 const map = () => {
   return (
     <>

@@ -1,0 +1,130 @@
+.button_email {
+  padding: 0.64em 2.2em 0.44em;
+  cursor: pointer;
+  line-height: 2;
+  border-radius: 0.63em;
+  border: 0.09em solid;
+  z-index: 1;
+  background-color: #452820;
+  position: relative;
+  font-weight: 700;
+  font-size: 0.93em;
+  transition: all 250ms;
+  overflow: hidden;
+  margin: 0 0.93em 0.93em 0;
+  color: #fff;
+}
+
+.button_email::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 0.63em;
+  background-color: #fff;
+  z-index: -1;
+  transition: all 250ms;
+}
+
+.button_email:hover {
+  color: #452820;
+}
+
+.button_email:hover::before {
+  width: 100%;
+}
+
+.button_call {
+  padding: 0.5em 2.2em;
+  cursor: pointer;
+  line-height: 2;
+  border-radius: 0.63em;
+  border: 0.09em solid;
+  z-index: 1;
+  background: transparent;
+  position: relative;
+  font-weight: 700;
+  font-size: 0.93em;
+  transition: all 250ms;
+  overflow: hidden;
+  margin: 0 0.93em 0.93em 0;
+  color: #452820;
+}
+
+.button_call::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 0.63em;
+  background-color: #452820;
+  z-index: -1;
+  transition: all 250ms;
+}
+
+.button_call:hover {
+  color: #fff;
+}
+
+.button_call:hover::before {
+  width: 100%;
+}
+
+.call_icon {
+    display: flex;
+    align-items: center;
+}
+.call {
+    margin-left: .2em;
+}
+
+.button_whatsApp {
+  padding: 0.5em 2.2em;
+  cursor: pointer;
+  line-height: 2;
+  border-radius: 0.63em;
+  border: 0.09em solid;
+  z-index: 1;
+  background: transparent;
+  position: relative;
+  font-weight: 700;
+  font-size: 0.93em;
+  transition: all 250ms;
+  overflow: hidden;
+  margin: 0 0.93em 0.93em 0;
+  color: #452820;
+}
+
+.button_whatsApp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 0.63em;
+  background-color: #452820;
+  z-index: -1;
+  transition: all 250ms;
+}
+
+.button_whatsApp:hover {
+  color: #fff;
+}
+
+.button_whatsApp:hover::before {
+  width: 100%;
+}
+
+.whatsApp_icon {
+  display: flex;
+  align-items: center;
+}
+
+.whatsApp_icon a {
+    margin-left: .2em;
+}
