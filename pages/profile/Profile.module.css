@@ -1,0 +1,9 @@
+.Profile {
+  display: flex;
+}
+
+.main {
+  padding: 40px;
+  border-left: 1px solid #808191;
+  flex: 1;
+}

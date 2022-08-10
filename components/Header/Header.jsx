@@ -1,12 +1,11 @@
-import styles from "./Header.module.css";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { BsFillTelephoneFill } from "react-icons/bs";
+import styles from "./Header.module.css"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { BsFillTelephoneFill } from "react-icons/bs"
 import { BsPersonCircle } from "react-icons/bs"
 
-
 const Header = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <div className={styles.Header}>
@@ -73,12 +72,14 @@ const Header = () => {
           <BsFillTelephoneFill />
         </span>
         <span className={styles.phone_number}>8-800-555-35-35</span>
-        <span className={styles.acc_icon}>
-          <BsPersonCircle />
-        </span>
+        <Link href="/profile">
+          <span className={styles.acc_icon}>
+            <BsPersonCircle />
+          </span>
+        </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
