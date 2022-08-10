@@ -24,7 +24,7 @@ export const realtorSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getRealtors.fulfilled, (state, action) => {
-      state.apartments = action.payload;
+      state.realtors = action.payload;
     });
   },
 });
