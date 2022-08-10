@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com");
-@import url("https://fonts.gstatic.com");
-@import url("https://fonts.googleapis.com/css2?family=Uchen&display=swap");
-
 .Header {
+  width: 100%;
+  background: #fff;
+  padding: 15px 0;
+  z-index: 100;
+  position: fixed;
+  position: fixed;
+  background-color: #f7f7f7;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2% 10%;
 }
 
 .list_container {
@@ -20,7 +20,6 @@
 }
 
 .active_link {
-  font-family: "Uchen", serif;
   font-size: 1em;
   font-weight: 600;
   color: #452820;
@@ -28,7 +27,6 @@
 }
 
 .disactive_link {
-  font-family: "Uchen", serif;
   font-size: 1em;
   font-weight: 600;
   color: #181c23;

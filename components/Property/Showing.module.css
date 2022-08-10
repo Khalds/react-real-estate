@@ -1,0 +1,119 @@
+.showing_block {
+  width: 100%;
+  background-color: white;
+  padding: 1.875em;
+  margin: 0 0 1.875em;
+  border-radius: 0.625em;
+  box-shadow: 0px 5px 70px 0px rgb(38 42 76 / 10%);
+}
+.agent {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+}
+.agent .agent_photo {
+  width: 4.375em;
+  height: 4.375em;
+  background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-500x328.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.625em;
+}
+.agent .agent_info {
+  width: fit-content;
+}
+.agent_info .agent_name {
+  font-size: 1.125em;
+  color: #181c23;
+  margin: 0;
+}
+.agent_info .agent_position {
+  font-size: 0.875em;
+  color: #452820;
+}
+.schedule_showing {
+  width: 100%;
+  margin-top: 1.5625em;
+}
+.header {
+  font-size: 0.8125em;
+  cursor: pointer;
+  color: white;
+  background-color: #452820;
+  padding: 0.4375em 0.875em;
+  border-radius: 1em;
+}
+
+.input_select_wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.9375em;
+}
+.input_select_wrapper .input_day,
+.select_hour {
+  font-size: 0.8125em;
+  line-height: 1.428571429;
+  color: #6f6f6f;
+  padding: 0.5625em 0 0.5625em 0.5625em;
+  margin: 0 0 0.9375em;
+  border: 1px solid #eee;
+  border-radius: 0.625em;
+  outline: none;
+}
+.input_day:focus {
+  box-shadow: inset 0 0px 1px rgb(0 0 0 / 8%), 0 0 8px #45282020;
+}
+.select_hour:focus {
+  box-shadow: inset 0 0px 1px rgb(0 0 0 / 8%), 0 0 8px #45282020;
+}
+
+.input_fields {
+  font-family: inherit;
+  font-size: 0.8125em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.2em;
+}
+.input_fields .input_contact {
+  line-height: 1.428571429;
+  color: #6f6f6f;
+  padding: 0.5625em 0 0.5625em 0.5625em;
+  margin: 0 0 0.9375em;
+  border: 1px solid #eee;
+  border-radius: 0.625em;
+  outline: none;
+  resize: vertical;
+}
+.input_contact:focus {
+  box-shadow: inset 0 0px 1px rgb(0 0 0 / 8%), 0 0 8px #45282020;
+}
+
+.contact_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+.email_btn {
+  width: 100%;
+  color: white;
+  background-color: #452820;
+  padding: 0.5em 2.125em;
+  font-size: 0.9375em;
+  line-height: 2;
+  border-radius: 0.625em;
+  margin-bottom: 0.625em;
+  cursor: pointer;
+}
+.btn {
+  width: 48%;
+  color: white;
+  background-color: #452820;
+  font-size: 0.875em;
+  line-height: 2;
+  padding: 0.375em 0.5em;
+  border-radius: 0.625em;
+  cursor: pointer;
+}

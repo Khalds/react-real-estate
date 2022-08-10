@@ -1,0 +1,73 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 5% 0% 5%;
+  background-color: #f4ebe4;
+  margin-top: 5%;
+}
+
+.about_us {
+  height: 100%;
+  width: 33%;
+}
+
+.about_us h4 {
+  font-size: 1.6em;
+}
+
+.about_us p {
+  line-height: 1.6em;
+}
+
+.contact {
+  height: 100%;
+  width: 33%;
+  align-self: center;
+}
+
+.contact h4 {
+  font-size: 1.6em;
+}
+
+.contact ul {
+  list-style-type: none;
+  padding: 0%;
+  line-height: 1.6em;
+  text-align: start;
+}
+
+.contact ul li span {
+  margin-left: 1em;
+}
+
+.social_networks {
+  width: 25%;
+  height: 100%;
+}
+
+.social_networks h4 {
+  font-size: 1.6em;
+}
+
+.social_networks ul {
+  display: flex;
+  gap: 1em;
+  list-style-type: none;
+  padding: 0%;
+}
+
+.social_networks ul li {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  border-radius: 1em;
+  color: #452820;
+}
+
+.social_networks ul li:hover {
+  color: white;
+  background-color: #452820;
+  cursor: pointer;
+}

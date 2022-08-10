@@ -1,0 +1,48 @@
+.informative_about_me_wrapper {
+  color: #6f6f6f;
+  padding: 1.9em 0;
+}
+
+.informative_about_me_wrapper h4 {
+  color: #181c23;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.informative_about_me_wrapper p {
+  margin-bottom: 1em;
+  word-break: break-word;
+  font-size: 1em;
+  line-height: 1.65em;
+  color: #6f6f6f;
+}
+
+.specialties {
+  margin: 0;
+}
+
+.specialties h4 {
+  color: #181c23;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  margin-block-end: 1.33em;
+}
+
+.specialties a {
+  border: 1px solid #452820;
+  color: #452820;
+  margin: 0 0.95em 1.1em 0;
+  padding: 0.5em 1.4em;
+  font-size: 0.8em;
+  border-radius: 1.1em;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.specialties a:hover {
+  background-color: #452820;
+  color: #fff;
+  transition: 250ms;
+}
