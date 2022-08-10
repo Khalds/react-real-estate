@@ -3,10 +3,12 @@
   background-color: #f6f5f8;
   display: flex;
   flex-direction: column;
+
 }
 
 .content {
-  flex: 1 0 auto
+  flex: 1 0 auto;
+  margin-top: 7.146875em;
 }
 
 .footer {

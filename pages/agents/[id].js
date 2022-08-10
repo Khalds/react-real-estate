@@ -1,5 +1,5 @@
 
-import Agent from "../components/Agent/Agent"
+import Agent from "../../components/Agent/Agent"
 
 
 const agents = () => {
