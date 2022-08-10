@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }) {
       </Layout>
     </Provider>
   );
+
 }
 
 export default MyApp;

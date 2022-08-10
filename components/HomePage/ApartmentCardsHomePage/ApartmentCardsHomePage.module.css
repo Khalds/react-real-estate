@@ -78,6 +78,13 @@
   color: #5c727d;
 }
 
+.icons span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-end;
+}
+
 .agentInfo_canteiner {
   display: flex;
   justify-content: space-between;

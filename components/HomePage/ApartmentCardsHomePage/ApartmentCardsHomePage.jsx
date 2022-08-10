@@ -1,7 +1,7 @@
 import styles from "./ApartmentCardsHomePage.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineBedroomParent } from "react-icons/md";
-import { GiBathtub } from "react-icons/gi";
+import { BiBath } from "react-icons/bi";
 import { TbLayoutBoard } from "react-icons/tb";
 import { BsFillShareFill } from "react-icons/bs";
 import { BsSuitHeart } from "react-icons/bs";
@@ -64,7 +64,7 @@ const ApartmentCardsHomePage = () => {
                           <MdOutlineBedroomParent /> {apartment.bedroom}
                         </span>
                         <span>
-                          <GiBathtub /> {apartment.bathroom}
+                          <BiBath /> {apartment.bathroom}
                         </span>
                         <span>
                           <TbLayoutBoard /> {apartment.size} ft<sup>2</sup>
