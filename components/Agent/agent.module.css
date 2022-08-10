@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
+
 .wrapper {
   background: #f7f7f7;
   padding-top: 2em;
-  margin-top: 5.5em;
+  margin-top: 5.6em;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .main_wrapper {
@@ -13,9 +16,7 @@
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
 }
 
-
 /* //////////////////////////// */
-
 
 .main_card_wrapper {
   width: 60%;
@@ -39,31 +40,6 @@
   margin-bottom: 3.5em;
 }
 
-.term_bar_item_active {
-  background-color: #452820;
-  border-radius: 0.8em;
-  color: #fff;
-  font-size: 0.88em;
-  padding: 1em 1.8em 0.9em;
-  cursor: pointer;
-  min-width: 9em;
-  text-align: center;
-  margin-right: 0.1em;
-  font-weight: 700;
-  line-height: 1.5em;
-}
-
-.term_bar_item {
-  color: #452820;
-  font-size: 0.88em;
-  padding: 1em 1.8em 0.9em;
-  cursor: pointer;
-  min-width: 9em;
-  text-align: center;
-  margin-right: 0.1em;
-  font-weight: 700;
-  line-height: 1.5em;
-}
 
 /* ///////////////////////////////////////////////// */
 
@@ -73,4 +49,3 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-

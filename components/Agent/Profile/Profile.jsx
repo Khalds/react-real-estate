@@ -1,6 +1,7 @@
 import styles from "./profile.module.css"
 import NotWorkingIcon from '../NotWorkingIcon/NotWorkingIcon';
 import SocialIcons from '../SocialIcons/SocialIcons';
+import { BsStarFill } from 'react-icons/bs'
 
 const Profile = () => {
     return (
@@ -19,12 +20,13 @@ const Profile = () => {
           </div>
           <div className={styles.profile_contact_wrapper}>
             <h3>
-              <a href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">
+              <a href="/agents">
                 Michaela Finney
               </a>
             </h3>
             <div className={styles.agent_position}>
               realtor overall rating:
+              <BsStarFill className={styles.star}/>
               <div className={styles.numerical_rating}>4.5</div>
             </div>
             <NotWorkingIcon />

@@ -29,9 +29,13 @@
 }
 
 .numerical_rating {
-  text-decoration: underline;
   color: #452820;
   font-weight: 600;
+}
+
+.star {
+  color: rgb(255, 255, 0);
+  margin: .2em .4em 0 .5em;
 }
 
 .profile_contact_wrapper h3 {

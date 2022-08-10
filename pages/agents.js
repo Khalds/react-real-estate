@@ -4,7 +4,7 @@ import Agent from "../components/Agent/Agent"
 
 const agents = () => {
   return (
-    <Agent />
+    <div ><Agent /></div>
   );
 };
 

@@ -6,8 +6,20 @@ import InformativeMe from "./InformativeMe/InformativeMe";
 import PersonalData from "./PersonalData/PersonalData";
 import Profile from "./Profile/Profile";
 import Reviews from "./Reviews/Reviews";
+import Listings from "./Listings/Listings"
+import { useState } from "react";
+
 
 const Realtor = () => {
+  const realtors = useSelector((state) => state.realtor)
+  const [categoryId, setCategoryId] = useState(0);
+  // const dispatch = useDispatch();
+  // const apartments = useSelector((state) => state.apartmentReducer.apartments);
+
+  // useEffect(() => {
+  //   dispatch(getApartments())
+  // },[dispatch])
+  
   return (
     <div className={styles.wrapper}>
       <div className={styles.main_wrapper}>
@@ -20,10 +32,7 @@ const Realtor = () => {
         <div className={styles.listings_wrapper}>
           <h3>My Listings</h3>
           <div className={styles.listings}>
-            <div className={styles.term_bar_item_active}>All (4)</div>
-            <div className={styles.term_bar_item}>Duplexes (1)</div>
-            <div className={styles.term_bar_item}>Houses (1)</div>
-            <div className={styles.term_bar_item}>Villas (2)</div>
+            <Listings />
           </div>
         </div>
         <div className={styles.cards_wrapper}>

@@ -8,8 +8,10 @@ const ButtonContact = () => {
       </button>
       <button className={styles.button_call}>
         <div className={styles.call_icon}>
+        <a href="tel:(305) 555-4555">
           <ion-icon name="call-outline"></ion-icon>
           <span className={styles.call}> Call (305) 555-4555</span>
+        </a>
         </div>
       </button>
       <button className={styles.button_whatsApp}>
