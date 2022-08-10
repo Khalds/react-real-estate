@@ -3,8 +3,9 @@
 .main {
   display: flex;
   position: relative;
-  margin-top: 6%;
+  background-color: black;
 }
+
 
 .empty_container {
     width: 50%

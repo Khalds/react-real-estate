@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const Layout = ({ children }) => {
   const router = useRouter();
-  const loading = useSelector(state => state.apartmentReducer.loading)
 
   return (
     <div className={styles.wrapper}>
