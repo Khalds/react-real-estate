@@ -3,6 +3,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 2% 10%;
+  width: 100%;
+  background: #fff;
+  padding: 15px 0;
+  z-index: 100;
+
+  position: fixed;
 }
 
 .list_container {

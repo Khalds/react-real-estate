@@ -14,7 +14,7 @@ import "aos/dist/aos.css";
 
 const ApartmentCardsHomePage = () => {
   const dispatch = useDispatch();
-  const apartments = useSelector((state) => state.reducer.apartments);
+  const apartments = useSelector((state) => state.apartmentReducer.apartments);
 
   const [limit, setLimit] = useState(6);
 

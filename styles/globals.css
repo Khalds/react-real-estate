@@ -17,6 +17,25 @@ a {
   box-sizing: border-box;
 }
 
+.css-187mznn-MuiSlider-root {
+  color: #452820!important;
+  box-shadow: none!important;
+}
+
+.css-187mznn-MuiSlider-root:hover {
+  color: #452820!important;
+  box-shadow: none!important;
+}
+
+.css-eg0mwd-MuiSlider-thumb:hover {
+  color: #452820!important;
+  box-shadow: none!important;
+}
+
+.css-nnid7-MuiSlider-valueLabel {
+  box-shadow: none!important;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

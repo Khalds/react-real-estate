@@ -8,7 +8,7 @@ export const getRealtors = createAsyncThunk(
   "get/realtors",
   async (thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:5000/realtor");
+      const res = await fetch("http://localhost:5000/realtors");
       const data = await res.json();
 
       return data;
@@ -18,7 +18,7 @@ export const getRealtors = createAsyncThunk(
   }
 );
 
-export const apartmentSlice = createSlice({
+export const realtorSlice = createSlice({
   name: "realtors",
   initialState,
   reducers: {},
