@@ -1,13 +1,12 @@
 .Header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2% 10%;
+  background: #fff;
+  padding: 15px 0;
   z-index: 100;
   position: fixed;
+  position: fixed;
   background-color: #f7f7f7;
-  /* background-color: #ffffff; */
+  display: flex;
 }
 
 .list_container {

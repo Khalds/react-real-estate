@@ -1,7 +1,18 @@
 import styles from "./AgentListHomePage.module.css";
 import StarRatingComponent from "react-star-rating-component";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRealtors } from "../../../features/realtor";
 
 const AgentListHomePage = () => {
+ const dispatch = useDispatch()
+
+ const realtors = useSelector((state) => state.realtorReducer.realtors)
+
+useEffect(() => {
+  dispatch(getRealtors())
+}, [dispatch])
+
   const agents = [
     {
       img: "//madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial1.jpeg",

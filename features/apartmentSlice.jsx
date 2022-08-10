@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   apartments: [],
+  loading: false,
 };
 
 export const getApartments = createAsyncThunk(
@@ -23,9 +24,14 @@ export const apartmentSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getApartments.fulfilled, (state, action) => {
-      state.apartments = action.payload;
-    });
+    builder
+      .addCase(getApartments.fulfilled, (state, action) => {
+        state.apartments = action.payload;
+        state.loading = false;
+      })
+      .addCase(getApartments.pending, (state, action) => {
+        state.loading = true;
+      });
   },
 });
 
