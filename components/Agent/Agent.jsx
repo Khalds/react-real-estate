@@ -7,23 +7,21 @@ import PersonalData from "./PersonalData/PersonalData";
 import Profile from "./Profile/Profile";
 import Reviews from "./Reviews/Reviews";
 import Listings from "./Listings/Listings"
-import { useState } from "react";
+// import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
 const Realtor = () => {
-  const realtors = useSelector((state) => state.realtor)
-  const [categoryId, setCategoryId] = useState(0);
-  // const dispatch = useDispatch();
-  // const apartments = useSelector((state) => state.apartmentReducer.apartments);
-
-  // useEffect(() => {
-  //   dispatch(getApartments())
-  // },[dispatch])
+  const realtors = useSelector((state) => state.realtorReducer.realtors)
+  
   
   return (
     <div className={styles.wrapper}>
       <div className={styles.main_wrapper}>
-        <Profile />
+        <Profile 
+        image={realtors.image} 
+        name={realtors.name} 
+        rating={realtors.rating} />
         <Contact />
         <InformativeMe />
         <PersonalData />
