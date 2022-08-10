@@ -1,0 +1,31 @@
+.сontact_wrapper {
+    margin: 2em 0 0 0;
+  }
+  
+  .сontact_text {
+    margin: 1em -1em 0;
+    display: inline-block;
+    width: 100%;
+    font-size: 0.875em;
+    line-height: 1.65em;
+  }
+  
+  .text_block {
+    float: left;
+    margin-bottom: 0.63em;
+    padding-right: 0.94em;
+    padding-left: 0.94em;
+    width: 16.85em;
+    height: 5em;
+  }
+  
+  .custom_label {
+    margin-right: 0.63em;
+    font-weight: 700;
+    width: 100%;
+    float: left;
+  }
+  
+  .custom_value {
+    color: #6f6f6f;
+  }

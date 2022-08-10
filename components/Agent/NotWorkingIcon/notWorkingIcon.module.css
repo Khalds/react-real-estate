@@ -1,0 +1,30 @@
+.detal {
+  display: flex;
+}
+.detal_icon {
+  color: #777;
+  margin-right: 0.7em;
+  font-size: 1.1em;
+  background: #f2f2f2;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+  border-radius: 3.1em;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detal_icon_skype {
+  display: flex;
+  font-size: 0.9em;
+  color: #6f6f6f;
+  padding-top: 0.25em;
+}
+
+.detal a {
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #6f6f6f;
+  padding-top: 0.25em;
+}
