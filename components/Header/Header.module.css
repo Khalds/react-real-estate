@@ -36,6 +36,7 @@
   width: 20%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .phone_icon {
@@ -49,5 +50,6 @@
 
 .acc_icon {
   color: #452820;
-  font-size: 1.3em;
+  font-size: 2.5em;
+  cursor: pointer;
 }

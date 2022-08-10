@@ -1,0 +1,134 @@
+.welcome p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #11142d;
+}
+
+.welcome h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+  letter-spacing: -1px;
+  line-height: 1.3em;
+}
+
+.wrapper {
+  width: 65%;
+}
+
+.cont_info_block {
+  margin: 60px 0;
+  border-radius: 24px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  box-shadow: #80819128 0px 8px 24px, #80819128 0px 16px 56px,
+    #80819128 0px 24px 80px;
+}
+
+.cont_info_block p {
+  margin: 0;
+  font-size: 18px;
+  color: #222;
+  font-weight: 500;
+}
+
+.cont_inputs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.input_item {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.input_item label,
+.first_pass_input label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #808191;
+  line-height: 1.6em;
+  width: 100%;
+}
+
+.input_item input,
+.first_pass_input input {
+  background: #e4e4e4;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #11142d;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  opacity: 0.7;
+  outline: none;
+  width: 100%;
+}
+
+.input_item input:focus {
+  outline: 2px solid #000;
+  background: transparent;
+  opacity: none;
+}
+
+.cont_buttons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.cont_buttons button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  width: 35%;
+  border: 2px solid #452820;
+
+  background: #452820;
+  color: #fff;
+
+  transition: ease-out 0.6s;
+}
+
+.cont_buttons button:hover {
+  box-shadow: inset 400px 0 0 0 rgba(255, 255, 255, 0.274);
+}
+
+.cont_buttons button:active {
+  background: transparent;
+  color: #452820;
+  border: 2px solid #452820;
+  transition: 0.2s;
+}
+
+.first_pass_input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.eye {
+  color: #808191;
+  position: absolute;
+  right: 15px;
+  bottom: 18%;
+  height: 18px;
+  width: 18px;
+}
