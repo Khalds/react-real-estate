@@ -1,4 +1,4 @@
-import styles from "./SearchContent.module.css";
+import styles from "./SearchContent.module.css"
 import { AiOutlineSearch } from "react-icons/ai"
 
 const SearchContent = () => {
@@ -15,22 +15,34 @@ const SearchContent = () => {
       <div className={styles.search_container}>
         <div className={styles.location_container}>
           <h3>Location</h3>
-          <input type="text" placeholder="Enter an address, state, city, area or zip code
-" />
+          <input
+            type="text"
+            placeholder="Enter an address, state, city, area or zip code
+"
+          />
         </div>
-        <div className={styles.type_container}>
+        <div className={styles.container}>
           <h3>Type</h3>
-          <input placeholder="Property type"/>
+          <select>
+            <option value={""}>Property type</option>
+            <option value={""}>Rentals</option>
+            <option value={""}>Sales</option>
+          </select>
         </div>
-        <div className={styles.category_container}>
+        <div className={styles.container}>
           <h3>Category</h3>
-          <input placeholder="Property category"/>
+          <select>
+            <option value={""}>Property category</option>
+            <option value={""}>Apartments</option>
+          </select>
         </div>
 
-        <button><AiOutlineSearch /> Search</button>
+        <button>
+          <AiOutlineSearch className={styles.icon} /> Search
+        </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SearchContent;
+export default SearchContent

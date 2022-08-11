@@ -1,6 +1,5 @@
 .ProfileSidebar {
   width: 20%;
-  height: 100vh;
   padding: 40px 20px;
 }
 
@@ -44,7 +43,7 @@
   border-radius: 12px;
   cursor: pointer;
 
-  background: #fff;
+  background: transparent;
   color: #808191;
 }
 
