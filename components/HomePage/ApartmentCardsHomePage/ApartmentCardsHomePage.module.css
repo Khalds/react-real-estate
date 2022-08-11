@@ -33,6 +33,11 @@
 
 .img_container {
   border-radius: 1em;
+  height: 50%;
+}
+
+.gif {
+  background-color: black;
 }
 
 .img_container img {
@@ -110,7 +115,6 @@
   width: 20%;
   height: 20%;
   object-fit: cover;
-
 }
 
 .agent_icons {
@@ -146,4 +150,13 @@
   font-size: 1em;
   font-weight: 700;
   background-color: #452820;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #452820;
+  transition: 0.5s;
 }

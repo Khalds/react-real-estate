@@ -6,7 +6,7 @@ const initialState = {
   signIn: false,
   signUp: false,
   error: null,
-  // token: localStorage.getItem("token"),
+  token: null,
 }
 
 export const fetchUser = createAsyncThunk("user/fetch", async (_, thunkAPI) => {
@@ -66,9 +66,7 @@ export const auth = createAsyncThunk(
       if (json.error) {
         return thunkAPI.rejectWithValue(json.error)
       } else {
-        // localStorage.setItem("token", json.accessToken)
-
-        console.log(json.accessToken)
+        localStorage.setItem("token", json.accessToken)
 
         return thunkAPI.fulfillWithValue(json)
       }
@@ -77,6 +75,10 @@ export const auth = createAsyncThunk(
     }
   }
 )
+
+export const getToken = createAsyncThunk("getToken", () => {
+  localStorage.getItem("token")
+})
 
 export const removeToken = createAsyncThunk("remove", () => {
   localStorage.removeItem("token")
@@ -90,6 +92,10 @@ export const authSlice = createSlice({
     builder
       .addCase(removeToken.fulfilled, (state) => {
         state.token = null
+        state.signIn = false
+      })
+      .addCase(getToken.fulfilled, (state, action) => {
+        state.token = localStorage.getItem("token")
         state.signIn = false
       })
       .addCase(createUser.fulfilled, (state, action) => {

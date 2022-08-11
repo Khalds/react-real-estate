@@ -1,24 +1,28 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Modal from "@mui/material/Modal"
 import styles from "./Sign.module.css"
-import { auth } from "../../features/authSlice/authSlice"
+import { auth, getToken, removeToken } from "../../features/authSlice/authSlice"
 import { useDispatch, useSelector } from "react-redux"
 
 import Link from "next/link"
 import { BsEyeSlash, BsEye } from "react-icons/bs"
+import { useRouter } from "next/router"
 
 export default function Signin() {
   const dispatch = useDispatch()
+
   const handleClose = () => setOpen(false)
+
+  const router = useRouter()
 
   const [open, setOpen] = useState(true)
   const [login, setLogin] = useState("")
   const [password, setPassword] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
-
   const [seePass, setSeePass] = useState("password")
 
   const error = useSelector((state) => state.auth.error)
+  const token = useSelector((state) => state.auth.token)
 
   const handleChangeLogin = (e) => {
     setLogin(e.target.value)
@@ -39,6 +43,14 @@ export default function Signin() {
       setErrorMessage("Поле ввода не может быть пусты!")
     }
   }
+
+  if (token !== null) {
+    router.push("/")
+  }
+
+  useEffect(() => {
+    dispatch(getToken())
+  }, [dispatch])
 
   return (
     <Modal className={styles.Modal} open={open} onClose={handleClose}>
@@ -75,6 +87,7 @@ export default function Signin() {
                 />
               )}
             </div>
+            {token && <p>Hello</p>}
             <button onClick={handleSubmit}>Login</button>
             <Link href="/signup">Register here!</Link>
           </div>

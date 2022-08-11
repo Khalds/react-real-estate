@@ -8,14 +8,19 @@ import MailForm from "../components/HomePage/MailForm/MailForm";
 import PopularAreas from "../components/HomePage/PopularAreas/PopularAreas";
 import SearchContent from "../components/HomePage/SearchContent/SearchContent";
 import styles from "../styles/Home.module.css";
+import { useSelector } from "react-redux";
+import preloader from "../images/preloader.gif";
 
 
 export default function Home() {
+  const loading = useSelector((state) => state.apartmentReducer.loading);
+console.log(preloader)
   return (
     <>
       <SearchContent />
       <CompanyInfo />
       <PopularAreas />
+         
       <ApartmentCardsHomePage />
       <AgentListHomePage />
       <MailForm />
