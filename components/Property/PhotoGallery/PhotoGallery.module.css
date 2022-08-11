@@ -1,13 +1,13 @@
 .gallery_block {
   width: 100vw;
-  height: 80vh;
+  
   display: flex;
 }
 
 .big_image {
   flex: 0 0 50vw;
   width: 50vw;
-  height: 40vw;
+  height: 42vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/interior35.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@
 .small_image1 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house4-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@
 .small_image2 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house6-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@
 .small_image3 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house8-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@
 .small_image4 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house11-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
