@@ -1,3 +1,4 @@
+
 import { configureStore } from "@reduxjs/toolkit";
 import  apartmentSlice  from "../features/apartmentSlice";
 import  realtorSlice  from "../features/realtor";
