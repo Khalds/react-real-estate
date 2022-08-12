@@ -13,33 +13,20 @@ const SearchContent = () => {
       </div>
       <div className={styles.img_container}></div>
       <div className={styles.search_container}>
-        <div className={styles.location_container}>
-          <h3>Location</h3>
-          <input
-            type="text"
-            placeholder="Enter an address, state, city, area or zip code
-"
-          />
+        <div className={styles.location_type_category_container}>
+          <h3>LOCATION</h3>
+          <input type="text" placeholder="Enter an address, state, city, area or zip code" />
         </div>
-        <div className={styles.container}>
-          <h3>Type</h3>
-          <select>
-            <option value={""}>Property type</option>
-            <option value={""}>Rentals</option>
-            <option value={""}>Sales</option>
-          </select>
+        <div className={styles.location_type_category_container}>
+          <h3>TYPE</h3>
+          <input placeholder="Property type"/>
         </div>
-        <div className={styles.container}>
-          <h3>Category</h3>
-          <select>
-            <option value={""}>Property category</option>
-            <option value={""}>Apartments</option>
-          </select>
+        <div className={styles.location_type_category_container}>
+          <h3>CATEGORY</h3>
+          <input placeholder="Property category"/>
         </div>
 
-        <button>
-          <AiOutlineSearch className={styles.icon} /> Search
-        </button>
+        <button><AiOutlineSearch className={styles.aiOutlineSearch}/> Search</button>
       </div>
     </div>
   )

@@ -1,27 +1,29 @@
 import styles from "./socialIcons.module.css";
+import { GrFacebookOption } from "react-icons/gr";
+import { GrTwitter } from "react-icons/gr";
+import { ImLinkedin } from "react-icons/im";
+import { GrPinterest } from "react-icons/gr";
+import { GrInstagram } from "react-icons/gr";
 
 const SocialIcons = () => {
   return (
     <div className={styles.social_icons}>
       <a className={styles.social} href="#" target="_blank" rel="noopener">
-        <ion-icon name="logo-facebook"></ion-icon>
+        <GrFacebookOption />
       </a>
       <a className={styles.social} href="#" target="_blank" rel="noopener">
-        <ion-icon name="logo-twitter"></ion-icon>
+        <GrTwitter />
       </a>
       <a className={styles.social} href="#" target="_blank" rel="noopener">
-        <ion-icon name="logo-linkedin"></ion-icon>
+        <ImLinkedin />
       </a>
       <a className={styles.social} href="#" target="_blank" rel="noopener">
-        <ion-icon name="logo-pinterest"></ion-icon>
+        <GrPinterest />
       </a>
       <a className={styles.social} href="#" target="_blank" rel="noopener">
-        <ion-icon name="logo-instagram"></ion-icon>
+        <GrInstagram />
       </a>
-      <script
-        nomodule
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-      ></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </div>
   );
 };

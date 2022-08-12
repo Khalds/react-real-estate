@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 .main {
-  height: 90vh;
+  height: 73vh;
   width: 90%;
   margin: auto;
   display: flex;
   background-color: #f4ebe4;
   border-radius: 30px;
   position: relative;
+  margin-top: 7.3em;
 }
 
 .text_container {
-  width: 50%;
+  width: 44%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,14 +29,14 @@
 }
 
 .text_container h1 {
-  font-size: 4.5em;
-
-  font-weight: 600;
-  line-height: 1.1em;
+  font-size: 2.8125em;
+  font-weight: 500;
+  line-height: 1em;
+  font-family: 'Merriweather', serif;
 }
 
 .img_container {
-  width: 50%;
+  width: 56%;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2022/03/house_png_2-e1646989822282.png");
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -44,25 +47,17 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: -5%;
-  right: 5%;
-  padding: 2% 5%;
+  bottom: -10%;
+  right: 10%;
+  padding: 1.5% 1% 2.2%;
   z-index: 9;
   background-color: rgb(255, 255, 255);
-  width: 90%;
+  width: 80%;
   box-shadow: 0px 5px 70px 0px rgb(38 42 76 / 10%);
-  border-radius: 15px;
+  border-radius: 10px;
   line-height: 2px;
-  opacity: 0.97;
-  gap: 20px;
-}
-
-.container {
-  width: 30%;
-}
-
-.location_container {
-  width: 60%;
+  opacity: .97;
+  font-size: 0.8125em;
 }
 
 .search_container select,
@@ -71,34 +66,16 @@
   border: none;
   border-bottom: 1px solid rgba(128, 128, 128, 0.205);
   outline: none;
-  color: #666;
-  padding: 0.8em 0;
-  font-size: 1.2em;
-  width: 100%;
-}
-.search_container option {
-  color: #666;
-  padding: 2px;
+  color: black;
 }
 .search_container > button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 1.5% 5%;
-  box-sizing: border-box;
-  background: #452820;
-  border: 1px solid #452820;
-  border-radius: 1em;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-.icon {
-  height: 20px;
-  width: 20px;
-}
-
-.search_container > button:active {
-  background: transparent;
-  color: #452820;
+ padding: 1.5% 4.8%;
+ box-sizing: border-box;
+ background: #452820;
+ border-radius: 1em;
+ cursor:pointer;
+ color: #fff;
+ display: flex;
+ align-items: center;
+ font-size: 0.9375em;
 }

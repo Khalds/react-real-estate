@@ -17,6 +17,7 @@
   font-size: 1em;
   line-height: 1.65em;
   color: #6f6f6f;
+  text-indent: 1.4em;
 }
 
 .specialties {
@@ -38,7 +39,7 @@
   font-size: 0.8em;
   border-radius: 1.1em;
   font-weight: 700;
-  text-transform: capitalize;
+  cursor: pointer;
 }
 
 .specialties a:hover {
