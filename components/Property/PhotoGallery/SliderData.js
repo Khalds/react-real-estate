@@ -1,0 +1,22 @@
+export const SliderData = [
+  {
+    image:
+      "https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/interior35.jpg",
+  },
+  {
+    image:
+      "https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house4-800x467.jpg",
+  },
+  {
+    image:
+      "https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house6-800x467.jpg",
+  },
+  {
+    image:
+      "https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house8-800x467.jpg",
+  },
+  {
+    image:
+      "https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house11-800x467.jpg",
+  },
+];

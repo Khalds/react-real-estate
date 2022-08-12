@@ -3,8 +3,10 @@
 .wrapper {
   width: 100%;
   font-family: "Nunito Sans", sans-serif;
-  height: 200vh;
+  height: 400vh;
   background-color: #f6f5f8;
+  overflow-x: hidden;
+  margin-top: 7.146875em;
 }
 .container {
   width: 75%;

@@ -1,0 +1,41 @@
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  width: 100%;
+  height: 100%;
+}
+.right_arrow {
+  position: absolute;
+  top: 50%;
+  right: 2em;
+  font-size: 3em;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+.left_arrow {
+  position: absolute;
+  top: 50%;
+  left: 2em;
+  font-size: 3em;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+  
+}
+.slide_active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}

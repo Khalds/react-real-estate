@@ -1,20 +1,25 @@
 .gallery_block {
   width: 100vw;
-  height: 80vh;
+  
   display: flex;
 }
 
 .big_image {
   flex: 0 0 50vw;
   width: 50vw;
-  height: 40vw;
-  background: url("https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/interior35.jpg");
+  height: 42vw;
+  background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/interior35.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
-
+.big_image:hover {
+  filter: brightness(90%);
+}
 .four_images {
+  width: 50vw;
   display: flex;
   flex-wrap: wrap;
 }
@@ -22,36 +27,56 @@
 .small_image1 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house4-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.small_image1:hover {
+  filter: brightness(90%);
 }
 .small_image2 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house6-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.small_image2:hover {
+  filter: brightness(90%);
 }
 .small_image3 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house8-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.small_image3:hover {
+  filter: brightness(90%);
 }
 .small_image4 {
   flex: 0 0 25vw;
   width: 25vw;
-  height: 20vw;
+  height: 21vw;
   background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/house11-800x467.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.small_image4:hover {
+  filter: brightness(90%);
 }
