@@ -51,7 +51,7 @@ const ApartmentCardsHomePage = () => {
                   <div className={styles.card} data-aos="fade-left">
                     <Link href={`/property/${apartment._id}`}>
                       <div className={styles.img_container}>
-                        <img src={apartment.image[0]} alt="apartment photo" />
+                        {/* <img src={apartment.image[0]} alt="apartment photo" /> */}
                       </div>
                     </Link>
                     <div className={styles.info_container}>
