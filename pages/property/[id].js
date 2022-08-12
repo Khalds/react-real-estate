@@ -7,8 +7,12 @@ import Showing from "../../components/Property/Showing";
 import PhotoGallery from "../../components/Property/PhotoGallery";
 
 import styles from "../../components/Property/Property.module.css";
+import { useRouter } from "next/router";
 
 const property = () => {
+
+ const router = useRouter()
+
   return (
     <div className={styles.wrapper}>
       <PhotoGallery />
