@@ -51,8 +51,28 @@ const AboutUs = () => {
         <div className={styles.count}>
           <CountUp
             start={-875.039}
-            end={8500.0}
-            duration={2.75}
+            end={3200.0}
+            duration={21.75}
+            separator=" "
+            decimals={4}
+            decimal=","
+            prefix="$ "
+            suffix=" -D"
+            onEnd={() => console.log("Ended! 👏")}
+            onStart={() => console.log("Started! 💨")}
+          >
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} />
+              </div>
+            )}
+          </CountUp>
+        </div>
+        <div className={styles.count}>
+          <CountUp
+            start={-335.039}
+            end={52000.0}
+            duration={21.75}
             separator=" "
             decimals={4}
             decimal=","
@@ -70,29 +90,9 @@ const AboutUs = () => {
         </div>
         <div className={styles.count}>
           <CountUp
-            start={-875.039}
-            end={12000.0}
-            duration={2.75}
-            separator=" "
-            decimals={4}
-            decimal=","
-            prefix="$ "
-            suffix=" -M"
-            onEnd={() => console.log("Ended! 👏")}
-            onStart={() => console.log("Started! 💨")}
-          >
-            {({ countUpRef }) => (
-              <div>
-                <span ref={countUpRef} />
-              </div>
-            )}
-          </CountUp>
-        </div>
-        <div className={styles.count}>
-          <CountUp
-            start={-875.039}
-            end={64850.0}
-            duration={2.75}
+            start={-8399.039}
+            end={4850.0}
+            duration={21.75}
             separator=" "
             decimals={4}
             decimal=","

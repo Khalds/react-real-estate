@@ -25,6 +25,7 @@
   border-radius: 10px 10px 10px 10px;
 }
 .forSave img {
+  cursor: grab;
   margin-left: 10%;
   width: 80%;
   height: 80%;

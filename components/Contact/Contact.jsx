@@ -4,10 +4,18 @@ import styles from "./Contact.module.css";
 import { BsFacebook } from "react-icons/Bs";
 import { IoLogoWhatsapp } from "react-icons/Io";
 import { AiFillInstagram } from "react-icons/Ai";
-import { AiFillGooglePlusCircle } from "react-icons/Ai";
+import { FaTelegram } from "react-icons/Fa";
 import { FaRedditAlien } from "react-icons/Fa";
+import {
+  FacebookShareButton,
+  TelegramShareButton,
+  RedditShareButton,
+  WhatsappShareButton,
+} from "react-share"; //FacebookIcon,
 
 const Contact = () => {
+  const shareUrl =
+    "Наруто Ураганные Хроники - https://lasvegas.wpresidence.net/";
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -19,18 +27,25 @@ const Contact = () => {
             className={styles.logo}
           />
         </div>
-
         <div className={styles.adress}>
           10845 Griffin Peter Dr, Quahog, NV 89135
         </div>
-        <div className={styles.icons}>
-          <BsFacebook className={styles.social} />
-          <IoLogoWhatsapp className={styles.social} />
-          <AiFillInstagram className={styles.social} />
-          <AiFillGooglePlusCircle className={styles.social} />
+        <TelegramShareButton url={shareUrl}>
+          <FaTelegram className={styles.social} />
+        </TelegramShareButton>
+        <RedditShareButton url={shareUrl}>
           <FaRedditAlien className={styles.social} />
-        </div>
+        </RedditShareButton>
 
+        <WhatsappShareButton url={shareUrl}>
+          <IoLogoWhatsapp className={styles.social} />
+        </WhatsappShareButton>
+        <FacebookShareButton url={shareUrl}>
+          <BsFacebook className={styles.social} />
+
+          <AiFillInstagram className={styles.social} />
+        </FacebookShareButton>
+        <div className={styles.icons}></div>
         <div className={styles.phone}>
           <p>Phone:8-(800)-555-35-35</p>
           <p>Mobie:8-(305)-555-45-55</p>
