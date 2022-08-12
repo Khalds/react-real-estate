@@ -49,3 +49,58 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+
+.main {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+
+
+.button_container {
+  width: 100%;
+  margin: 5% 5.5% 5%;
+}
+
+.button_container button {
+    padding: 0.64em 2.2em 0.44em;
+    cursor: pointer;
+    line-height: 2;
+    border-radius: 0.63em;
+    border: 0.09em solid;
+    z-index: 1;
+    background-color: #452820;
+    position: relative;
+    font-weight: 700;
+    font-size: 0.93em;
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 0 0.93em 0.93em 0;
+    color: #fff;
+  }
+  
+  .button_container button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 0.63em;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 250ms;
+  }
+  
+  .button_container button:hover {
+    color: #452820;
+  }
+  
+  .button_container button:hover::before {
+    width: 100%;
+  }

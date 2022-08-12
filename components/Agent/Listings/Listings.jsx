@@ -3,10 +3,8 @@ import { getApartments } from "../../../features/apartmentSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 
-const Listings = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const categories = ["All", "Duplexes", "Houses", "Villas"];
+const Listings = ( { value, onClickCategory } ) => {
+  const categories = ["All", "Rent", "Sale"];
 
   const dispatch = useDispatch();
   const apartments = useSelector((state) => state.apartmentReducer.apartments);
@@ -21,9 +19,9 @@ const Listings = () => {
         return (
           <div
             key={i}
-            onClick={() => setActiveIndex(i)}
+            onClick={() => onClickCategory(i)}
             className={
-              activeIndex == i
+              value == i
                 ? styles.term_bar_item_active
                 : styles.term_bar_item
             }
