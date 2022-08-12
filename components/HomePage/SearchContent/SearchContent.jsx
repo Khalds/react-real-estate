@@ -1,4 +1,4 @@
-import styles from "./SearchContent.module.css";
+import styles from "./SearchContent.module.css"
 import { AiOutlineSearch } from "react-icons/ai"
 
 const SearchContent = () => {
@@ -29,7 +29,7 @@ const SearchContent = () => {
         <button><AiOutlineSearch className={styles.aiOutlineSearch}/> Search</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SearchContent;
+export default SearchContent

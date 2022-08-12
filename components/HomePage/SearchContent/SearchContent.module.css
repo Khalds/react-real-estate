@@ -20,6 +20,13 @@
   padding-left: 10%;
 }
 
+.text_container span {
+  font-size: 18px;
+  color: #666;
+  font-weight: 600;
+  line-height: 1.6em;
+}
+
 .text_container h1 {
   font-size: 2.8125em;
   font-weight: 500;
@@ -37,7 +44,6 @@
 
 .search_container {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   position: absolute;
   bottom: -10%;
@@ -53,14 +59,14 @@
   font-size: 0.8125em;
 }
 
-.search_container > div > input {
+.search_container select,
+.search_container input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.205);
   outline: none;
   color: black;
 }
-
 .search_container > button {
  padding: 1.5% 4.8%;
  box-sizing: border-box;
