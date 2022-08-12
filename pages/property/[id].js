@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 
 import PhotoGallery from "../../components/Property/PhotoGallery/PhotoGallery"
 
-=
+
 
 const property = () => {
 
