@@ -1,34 +1,38 @@
 import styles from "./notWorkingIcon.module.css";
+import { FaPhone } from "react-icons/fa"
+import { AiOutlineMail } from "react-icons/ai"
+import { FiMonitor } from "react-icons/fi"
+import { FaSkype } from "react-icons/fa"
 
-const NotWorkingIcon = () => {
+const NotWorkingIcon = ({phon, email}) => {
     return (
         <div>
             <div className={styles.detal}>
               <div className={styles.detal_icon}>
-                <ion-icon name="call-outline"></ion-icon>
+                <FaPhone />
               </div>
-              <a href="tel:(305) 555-4555">(305) 555-4555</a>
+              <a href="tel:(305) 555-4555">{phon}</a>
             </div>
             <div className={styles.detal}>
               <div className={styles.detal_icon}>
-                <ion-icon name="mail-outline"></ion-icon>
+                <AiOutlineMail />
               </div>
-              <a href="mailto:michael@website.net">michael@website.net</a>
+              <a href="mailto:michael@website.net">{email}</a>
             </div>
             <div className={styles.detal}>
               <div className={styles.detal_icon}>
-                <ion-icon name="logo-skype"></ion-icon>
+                <FiMonitor />
               </div>
-              <div className={styles.detal_icon_skype}>michaela.roja</div>
+              <a href="http://website.net" target="_blank" rel="noreferrer">
+                  website.net
+                </a>
             </div>
             <div>
               <div className={styles.detal}>
                 <div className={styles.detal_icon}>
-                  <ion-icon name="desktop-outline"></ion-icon>
+                  <FaSkype />
                 </div>
-                <a href="http://website.net" target="_blank" rel="noreferrer">
-                  website.net
-                </a>
+                <div className={styles.detal_icon_skype}>wpr.sky</div>
               </div>
             </div>
         </div>

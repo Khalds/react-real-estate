@@ -1,13 +1,17 @@
-import Title from "../../components/Property/Title";
-import Overview from "../../components/Property/Overview";
-import Description from "../../components/Property/Description";
-import Address from "../../components/Property/Address";
-import Calculator from "../../components/Property/Calculator";
-import Showing from "../../components/Property/Showing";
-import PhotoGallery from "../../components/Property/PhotoGallery";
+import Title from "../../components/Property/Title"
+import Overview from "../../components/Property/Overview"
+import Description from "../../components/Property/Description"
+import Address from "../../components/Property/Address"
+import Calculator from "../../components/Property/Calculator"
+import Showing from "../../components/Property/Showing"
+
 
 import styles from "../../components/Property/Property.module.css";
 import { useRouter } from "next/router";
+
+import PhotoGallery from "../../components/Property/PhotoGallery/PhotoGallery"
+
+=
 
 const property = () => {
 
@@ -31,7 +35,7 @@ const property = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default property;
+export default property

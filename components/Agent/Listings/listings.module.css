@@ -1,0 +1,26 @@
+
+.term_bar_item_active {
+    background-color: #452820;
+    border-radius: 0.8em;
+    color: #fff;
+    font-size: 0.88em;
+    padding: 1em 1.8em 0.9em;
+    cursor: pointer;
+    min-width: 9em;
+    text-align: center;
+    margin-right: 0.1em;
+    font-weight: 700;
+    line-height: 1.5em;
+  }
+  
+  .term_bar_item {
+    color: #452820;
+    font-size: 0.88em;
+    padding: 1em 1.8em 0.9em;
+    cursor: pointer;
+    min-width: 9em;
+    text-align: center;
+    margin-right: 0.1em;
+    font-weight: 700;
+    line-height: 1.5em;
+  }

@@ -1,3 +1,7 @@
+.сontact_wrapper {
+  display: flex;
+}
+
 .button_email {
   padding: 0.64em 2.2em 0.44em;
   cursor: pointer;
