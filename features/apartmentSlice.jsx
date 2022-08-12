@@ -19,6 +19,10 @@ export const getApartments = createAsyncThunk(
   }
 );
 
+
+
+
+
 export const apartmentSlice = createSlice({
   name: "apartments",
   initialState,
