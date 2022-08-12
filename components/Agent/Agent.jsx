@@ -6,28 +6,116 @@ import InformativeMe from "./InformativeMe/InformativeMe";
 import PersonalData from "./PersonalData/PersonalData";
 import Profile from "./Profile/Profile";
 import Reviews from "./Reviews/Reviews";
+import Listings from "./Listings/Listings";
+import { useState } from "react";
+import { getRealtors } from "../../features/realtor";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Aos from "aos";
+import { getApartments } from "../../features/apartmentSlice";
 
 const Realtor = () => {
+  const [limit, setLimit] = useState(4);
+
+  const handleShow = () => {
+    setLimit((limit += 2));
+  };
+
+  const handleHide = () => {
+    if (limit > 0) {
+      setLimit(4);
+    }
+  };
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+  const apartments = useSelector((state) => state.apartmentReducer.apartments);
+  const realtors = useSelector((state) => state.realtorReducer.realtors);
+  const dispatch = useDispatch();
+
+
+
+
+
+  const [categoryId, setCategoryId] = useState('');
+
+const filtered = () => {
+  if (categoryId === 1) {
+    return apartments = apartments.filter(i => i.status === "Rent")
+  } else if (categoryId === 2) {
+    return apartments = apartments.filter(i => i.status === "Sale")
+  } else {
+    apartments
+  }
+  
+}
+
+console.log(filtered())
+
+
+
+const router = useRouter();
+  const { id } = router.query
+
+  
+  useEffect(() => {
+    dispatch(getApartments());
+    dispatch(getRealtors());
+  }, [dispatch]);
+  
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.main_wrapper}>
-        <Profile />
-        <Contact />
-        <InformativeMe />
-        <PersonalData />
+        {realtors.map((item) => {
+          if ( id == item._id) {
+            return <> <Profile image={item.image}
+            name={item.name}
+            rating={item.rating[0]}
+            phon={item.phoneNumber}
+            email={item.email}
+            />
+            <Contact exper={item.experience}
+            officeHours={item.officeHours}
+            officeAdress={item.officeAdress}
+            phone={item.phoneNumber}
+            />
+            <InformativeMe
+            description={item.description}
+            />
+            <PersonalData />
+            </>
+          }
+        })}
+        
       </div>
       <div className={styles.main_card_wrapper}>
         <div className={styles.listings_wrapper}>
           <h3>My Listings</h3>
           <div className={styles.listings}>
-            <div className={styles.term_bar_item_active}>All (4)</div>
-            <div className={styles.term_bar_item}>Duplexes (1)</div>
-            <div className={styles.term_bar_item}>Houses (1)</div>
-            <div className={styles.term_bar_item}>Villas (2)</div>
+            <Listings
+              value={categoryId}
+              onClickCategory={(i) => setCategoryId(i)}
+            />
           </div>
         </div>
         <div className={styles.cards_wrapper}>
-          <CardApartment />
+          <div className={styles.main}>
+            {apartments.map((apartment, index) => {
+              if (index + 1 <= limit) {
+               return <CardApartment apartment={apartment} />;
+              }
+            })}
+          </div>
+          <div className={styles.button_container}>
+            {limit >= apartments.length ? (
+              <button onClick={handleHide}>Hide listings</button>
+            ) : (
+              <button onClick={handleShow}>Load more listings</button>
+            )}
+          </div>
         </div>
         <Reviews />
       </div>

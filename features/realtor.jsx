@@ -14,7 +14,6 @@ export const getRealtors = createAsyncThunk(
     try {
       const res = await fetch("http://localhost:5000/realtors");
       const data = await res.json();
-
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
