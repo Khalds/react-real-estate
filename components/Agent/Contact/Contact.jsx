@@ -1,10 +1,10 @@
 import ButtonContact from "../ButtonContact/ButtonContact";
 import styles from "./contact.module.css"
 
-const Contact = ({ exper, officeHours, officeAdress, phone }) => {
+const Contact = ({ exper, officeHours, officeAdress, phone, scrollToSection, contact }) => {
     return (
         <div className={styles.сontact_wrapper}>
-          <ButtonContact phone={phone} />
+          <ButtonContact contact={contact} scrollToSection={scrollToSection} phone={phone} />
           <div className={styles.сontact_text}>
             <div className={styles.text_block}>
               <span className={styles.custom_label}>Experience </span>

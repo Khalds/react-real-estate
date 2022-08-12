@@ -14,9 +14,22 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Aos from "aos";
 import { getApartments } from "../../features/apartmentSlice";
+import { useRef } from "react";
+import { BsLayoutTextWindowReverse } from "react-icons/bs";
 
 const Realtor = () => {
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(12);
+
+
+  const contact = useRef(null);
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
+
 
   const handleShow = () => {
     setLimit((limit += 2));
@@ -24,7 +37,7 @@ const Realtor = () => {
 
   const handleHide = () => {
     if (limit > 0) {
-      setLimit(4);
+      setLimit(2);
     }
   };
 
@@ -35,61 +48,57 @@ const Realtor = () => {
   const realtors = useSelector((state) => state.realtorReducer.realtors);
   const dispatch = useDispatch();
 
+  const [categoryId, setCategoryId] = useState("");
 
+  const filtered = () => {
+    if (categoryId === 1) {
+      return (apartments = apartments.filter((i) => i.status === "Rent"));
+    } else if (categoryId === 2) {
+      return (apartments = apartments.filter((i) => i.status === "Sale"));
+    } else {
+      apartments;
+    }
+  };
 
+  console.log(filtered());
 
+  const router = useRouter();
+  const { id } = router.query;
 
-  const [categoryId, setCategoryId] = useState('');
-
-const filtered = () => {
-  if (categoryId === 1) {
-    return apartments = apartments.filter(i => i.status === "Rent")
-  } else if (categoryId === 2) {
-    return apartments = apartments.filter(i => i.status === "Sale")
-  } else {
-    apartments
-  }
-  
-}
-
-console.log(filtered())
-
-
-
-const router = useRouter();
-  const { id } = router.query
-
-  
   useEffect(() => {
     dispatch(getApartments());
     dispatch(getRealtors());
   }, [dispatch]);
-  
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.main_wrapper}>
         {realtors.map((item) => {
-          if ( id == item._id) {
-            return <> <Profile image={item.image}
-            name={item.name}
-            rating={item.rating[0]}
-            phon={item.phoneNumber}
-            email={item.email}
-            />
-            <Contact exper={item.experience}
-            officeHours={item.officeHours}
-            officeAdress={item.officeAdress}
-            phone={item.phoneNumber}
-            />
-            <InformativeMe
-            description={item.description}
-            />
-            <PersonalData />
-            </>
+          if (id == item._id) {
+            return (
+              <>
+                {" "}
+                <Profile
+                  image={item.image}
+                  name={item.name}
+                  rating={item.rating[0]}
+                  phon={item.phoneNumber}
+                  email={item.email}
+                />
+                <Contact
+                  exper={item.experience}
+                  officeHours={item.officeHours}
+                  officeAdress={item.officeAdress}
+                  phone={item.phoneNumber}
+                  scrollToSection={scrollToSection}
+                  contact={contact}
+                />
+                <InformativeMe description={item.description} />
+                <PersonalData  ref={contact} />
+              </>
+            );
           }
         })}
-        
       </div>
       <div className={styles.main_card_wrapper}>
         <div className={styles.listings_wrapper}>
@@ -104,8 +113,10 @@ const router = useRouter();
         <div className={styles.cards_wrapper}>
           <div className={styles.main}>
             {apartments.map((apartment, index) => {
-              if (index + 1 <= limit) {
-               return <CardApartment apartment={apartment} />;
+              if (apartment.realtor._id === id) {
+                 {
+                  return <CardApartment apartment={apartment} />;
+                }
               }
             })}
           </div>
