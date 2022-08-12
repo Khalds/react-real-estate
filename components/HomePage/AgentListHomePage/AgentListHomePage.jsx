@@ -80,7 +80,9 @@ useEffect(() => {
             return (
               <div className={styles.card}>
                 <div className={styles.card_header}>
-                  <img src={agent.image} alt="avatar"></img>
+                <Link href={`/agents/${agent._id}`}>
+                    <img src={agent.image} alt="avatar"></img>
+                </Link> 
                   <div>
                 <Link href={`/agents/${agent._id}`}>
                 <span className={styles.agent_name}>{agent.name}</span>

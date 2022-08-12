@@ -12,7 +12,6 @@ import Link from "next/link";
 import "aos/dist/aos.css";
 
 const CardApartment = ({ apartment }) => {
-  
   return (
     <>
       <div className={styles.card} data-aos="fade-left">
@@ -23,7 +22,7 @@ const CardApartment = ({ apartment }) => {
 
         <Link href={`/property/${apartment._id}`}>
           <div className={styles.img_container}>
-            <img src={apartment.image} alt="apartment photo" />
+            <img src={apartment.image[0]} alt="apartment photo" />
           </div>
         </Link>
 
@@ -45,9 +44,9 @@ const CardApartment = ({ apartment }) => {
         </div>
 
         <div className={styles.info_container}>
-          <h3>{apartment.location} </h3>
+          <h3>{apartment.name} </h3>
           <h4>{apartment.price} $</h4>
-          {/* <p>{apartment.description.slice(0, 130) + "..."}</p> */}
+          <p>{apartment.description.slice(0, 130) + "..."}</p>
           <div className={styles.icons}>
             <span>
               <MdOutlineBedroomParent /> {apartment.bedroom}
@@ -63,17 +62,17 @@ const CardApartment = ({ apartment }) => {
         <div className={styles.agentInfo_canteiner}>
           <div className={styles.agent_photo_name}>
             <img
-              src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-120x120.jpg')"
+              src={apartment.realtor.image}
               alt="agent_photo"
             />
-            <span>Michelle Upsetovna</span>
+            <span>{apartment.realtor.name}</span>
           </div>
           <div className={styles.agent_icons}>
             <span>
-              <BsFillShareFill />
+              <BsFillShareFill className={styles.menu_icons} />
             </span>
             <span>
-              <BsSuitHeart />
+              <BsSuitHeart className={styles.active_heart} />
             </span>
             <span>
               <FiPlus />
