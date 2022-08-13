@@ -1,11 +1,16 @@
 import React, { useState } from "react"
 import { BsEye, BsEyeSlash } from "react-icons/bs"
+import { useSelector } from "react-redux"
 import styles from "./ProfilePage.module.css"
 
 function ProfilePage() {
   const [seePassOne, setSeePassOne] = useState("password")
   const [seePassTwo, setSeePassTwo] = useState("password")
   const [seePassThree, setSeePassThree] = useState("password")
+
+  const user = useSelector((state) => state.auth.user)
+
+  console.log(user)
 
   return (
     <div className={styles.ProfilePage}>

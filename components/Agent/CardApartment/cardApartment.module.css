@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 
-.main {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3em;
-}
+
 
 .card {
   width: 42%;
@@ -34,7 +27,7 @@
 }
 
 .img_container img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .info_container {
@@ -46,8 +39,8 @@
 }
 
 .info_container h3 {
-  font-size: 1.4em;
-  font-weight: bold;
+  font-size: 1.25em;
+  font-weight: 700;
 }
 
 .info_container h4 {
@@ -58,6 +51,8 @@
 
 .info_container p {
   line-height: 1.3em;
+  font-size: 0.8125em;
+  color: #6f6f6f;
 }
 
 .icons {
@@ -101,8 +96,8 @@
 
 .agentInfo_canteiner img {
   border-radius: 50%;
-  width: 20%;
-  height: 20%;
+  width: 2.3em;
+  height: 2.1em;
   object-fit: cover;
 }
 
@@ -126,49 +121,19 @@
   font-weight: 900;
 }
 
-.button_container {
-  width: 100%;
-  margin: 5% 5.5% 5%;
+.passive_heart {
+  cursor: pointer;
 }
 
-.button_container button {
-    padding: 0.64em 2.2em 0.44em;
-    cursor: pointer;
-    line-height: 2;
-    border-radius: 0.63em;
-    border: 0.09em solid;
-    z-index: 1;
-    background-color: #452820;
-    position: relative;
-    font-weight: 700;
-    font-size: 0.93em;
-    transition: all 250ms;
-    overflow: hidden;
-    margin: 0 0.93em 0.93em 0;
-    color: #fff;
-  }
-  
-  .button_container button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    border-radius: 0.63em;
-    background-color: #fff;
-    z-index: -1;
-    transition: all 250ms;
-  }
-  
-  .button_container button:hover {
-    color: #452820;
-  }
-  
-  .button_container button:hover::before {
-    width: 100%;
-  }
+.active_heart {
+  cursor: pointer;
+}
 
+.menu_icons {
+  cursor: pointer;
+}
+
+ 
 /* .button_container button {
   padding: 2% 3%;
   border-radius: 1em;

@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
+.about {
+  height: 400vh;
+  overflow-x: hidden;
+  
+}
+.photo {
+  width: 60em;
+  height: 90vh;
+  background: url("https://remindermedia.com/wp-content/uploads/2021/04/building-a-team-main.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.boxes {
+  margin: 20px;
+  margin-top: 150px;
+  background-color: rgb(198, 177, 198);
+  overflow: hidden;
+  height: 200px;
+  max-height: 35vh;
+  box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 10px 10px;
+}
+.forSave img {
+  margin-left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 2%;
+}
+.grids {
+  max-width: 50%;
+  margin: auto;
+}
+.header {
+  margin-top: 8%;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 1.3em;
+  display: flex;
+  justify-content: center;
+}
+.textHeader {
+  margin-left: 30%;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3%;
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+.textInfo {
+  margin-left: 25%;
+  font-size: 0.8em;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+  width: 35%;
+
+  flex-wrap: wrap;
+}
+.firstText {
+  display: flex;
+  justify-content: space-between;
+}
+.secondText {
+  display: flex;
+  justify-content: space-between;
+}
+.textP {
+  margin-right: 30%;
+}
+.textP2 {
+  margin-right: -50%;
+}
+.black {
+  color: black;
+}
+
+.colorBlack {
+  color: black;
+  margin-left: 35%;
+}
+.carlos {
+  margin-top: 3%;
+  border-radius: 1em;
+  width: 30%;
+  height: 50vh;
+  background-color: #ffff;
+  box-shadow: 1px -1px 24px -6px rgba(34, 60, 80, 0.2);
+  margin-left: 1em;
+  font-size: 0.8em;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+
+.logoCarlos {
+  cursor: pointer;
+  border-radius: 1em;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 90%;
+}
+.infoAvatar {
+  cursor: pointer;
+  margin-left: 4%;
+}
+.body {
+  width: 100%;
+  background-color: #f6f5f5;
+  height: 70vh;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+.logoCarlosa {
+  cursor: pointer;
+  border-radius: 1em;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 80%;
+  height: 31vh;
+  object-fit: cover;
+  object-position: 50%;
+}
+.carlosa {
+  margin-top: 3%;
+  border-radius: 1em;
+  width: 30%;
+  height: 50vh;
+  background-color: #ffff;
+  box-shadow: 1px -1px 24px -6px rgba(34, 60, 80, 0.2);
+  margin-left: 1em;
+  font-size: 0.8em;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+.carlosa {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+.carlosa img {
+  transition: 1s;
+  display: block;
+}
+.carlosa img:hover {
+  transform: scale(1.2);
+}
+.carlos {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+.carlos img {
+  transition: 1s;
+  display: block;
+}
+.carlos img:hover {
+  transform: scale(1.2);
+}
+.headTest {
+  display: flex;
+  justify-content: center;
+  color: #181c23;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+.infoTest {
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+.cards {
+  width: 30%;
+  height: 30vh;
+  cursor: pointer;
+  margin-left: 35%;
+}
+.oneCard {
+  width: 20%;
+  height: 25vh;
+  box-shadow: 1px -1px 24px -6px rgba(34, 60, 80, 0.2);
+  border-radius: 1em;
+  font-size: 0.7em;
+}
+.oneCard {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+.oneCard img {
+  transition: 1s;
+  display: block;
+}
+.oneCard img:hover {
+  transform: scale(1.2);
+}
+.comment {
+  border-radius: 100%;
+  width: 15%;
+  margin-left: 7%;
+  margin-top: 5%;
+}
+.namer {
+  font-size: 0.9em;
+  color: #6f6f6f;
+  font-family: "Nunito Sans", Sans-serif;
+  margin-left: 3%;
+}
+.nick {
+  margin-left: 3%;
+}
+.question {
+  margin-top: 5%;
+  width: 100%;
+  height: 70vh;
+}
+.frequently {
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  color: #181c23;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+.infoFre {
+  padding-bottom: 3%;
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+.blockInfo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20%;
+  width: 50%;
+  margin-left: 26%;
+  color: rgb(74, 51, 8);
+  background: #ecf0f1;
+}
+.blocks {
+  background-color: rgb(231, 231, 231);
+  width: 35%;
+  height: 8vh;
+}
+.stats {
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  color: #181c23;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+.despite {
+  padding-bottom: 3%;
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+.counts {
+  display: flex;
+  justify-content: space-evenly;
+  color: #452820;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1em;
+}
+.textCount {
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: normal;
+}
+
+.half {
+  float: left;
+  width: 50%;
+  padding: 0 1em;
+}
+
+.tab {
+  font-family: "Nunito Sans", Sans-serif;
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+.tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.tab label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1em;
+  background: #4d2d05;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+}
+.blue label {
+  background: #4d2d05;
+}
+.tabContent {
+  max-height: 0;
+  overflow: hidden;
+  background: #4d2d05;
+  -webkit-transition: max-height 0.35s;
+  -o-transition: max-height 0.35s;
+  transition: max-height 0.35s;
+}
+.blue .tabContent {
+  background: #4d2d05;
+}
+.tabContent p {
+  margin: 1em;
+}
+
+.tab input:checked ~ .tabContent {
+  max-height: 100vh;
+}
+
+.tab label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.tab input[type="checkbox"] + label::after {
+  content: "+";
+}
+.tab input[type="radio"] + label::after {
+  content: "\25BC";
+}
+.tab input[type="checkbox"]:checked + label::after {
+  transform: rotate(315deg);
+}
+.tab input[type="radio"]:checked + label::after {
+  transform: rotateX(180deg);
+}
+.getInfo {
+  margin-left: 2%;
+  color: #181c23;
+  font-family: "Merriweather", Sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+.our {
+  margin-left: 22%;
+  width: 50%;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+.imgSun {
+  object-fit: cover;
+  object-position: 50%;
+
+  border-radius: 1%;
+  width: 660px;
+  height: 810px;
+}
+.getPlan {
+  display: flex;
+}
+
+.button {
+  margin-top: 5%;
+  border-radius: 1em;
+  width: 25%;
+  font-size: 10pt;
+  background: rgb(50, 21, 5);
+  height: 3em;
+  padding: 1em;
+  border: none;
+}
+
+.sentMail {
+  width: 150%;
+}
+.question {
+  background-color: #f6f5f5;
+}
+.textInput {
+  display: flex;
+  color: rgb(26, 26, 26);
+  font-family: "Merriweather", Sans-serif;
+  font-size: 15px;
+}
+
+.form {
+  display: block;
+
+  width: 100%;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form input {
+  background-color: #ffff;
+  color: black;
+  border-radius: 1em;
+  text-align: center;
+  margin-bottom: 2em;
+
+  width: 50%;
+  height: 45px;
+  border: 1px solid #c2c2c2;
+  outline: none;
+}
+.form input:focus {
+  box-shadow: inset 0 0px 1px rgb(0 0 0 / 8%), 0 0 8px #45282020;
+}
+.form textarea {
+  background-color: #ffff;
+  color: black;
+  border-radius: 0.8em;
+  text-align: start;
+  margin-right: 60%;
+  width: 50%;
+  height: 20em;
+  border: 1px solid #c2c2c2;
+  outline: none;
+}
+.form textarea :focus {
+  box-shadow: inset 0 0px 1px rgb(0 0 0 / 8%), 0 0 8px #45282020;
+}

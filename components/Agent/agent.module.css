@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
+
 .wrapper {
   background: #f7f7f7;
   padding-top: 2em;
-  margin-top: 5.5em;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .main_wrapper {
@@ -13,9 +15,7 @@
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
 }
 
-
 /* //////////////////////////// */
-
 
 .main_card_wrapper {
   width: 60%;
@@ -39,31 +39,6 @@
   margin-bottom: 3.5em;
 }
 
-.term_bar_item_active {
-  background-color: #452820;
-  border-radius: 0.8em;
-  color: #fff;
-  font-size: 0.88em;
-  padding: 1em 1.8em 0.9em;
-  cursor: pointer;
-  min-width: 9em;
-  text-align: center;
-  margin-right: 0.1em;
-  font-weight: 700;
-  line-height: 1.5em;
-}
-
-.term_bar_item {
-  color: #452820;
-  font-size: 0.88em;
-  padding: 1em 1.8em 0.9em;
-  cursor: pointer;
-  min-width: 9em;
-  text-align: center;
-  margin-right: 0.1em;
-  font-weight: 700;
-  line-height: 1.5em;
-}
 
 /* ///////////////////////////////////////////////// */
 
@@ -74,3 +49,57 @@
   justify-content: space-around;
 }
 
+
+.main {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+
+
+.button_container {
+  width: 100%;
+  margin: 5% 5.5% 5%;
+}
+
+.button_container button {
+    padding: 0.64em 2.2em 0.44em;
+    cursor: pointer;
+    line-height: 2;
+    border-radius: 0.63em;
+    border: 0.09em solid;
+    z-index: 1;
+    background-color: #452820;
+    position: relative;
+    font-weight: 700;
+    font-size: 0.93em;
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 0 0.93em 0.93em 0;
+    color: #fff;
+  }
+  
+  .button_container button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 0.63em;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 250ms;
+  }
+  
+  .button_container button:hover {
+    color: #452820;
+  }
+  
+  .button_container button:hover::before {
+    width: 100%;
+  }

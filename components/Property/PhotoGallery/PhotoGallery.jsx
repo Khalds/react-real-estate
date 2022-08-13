@@ -1,7 +1,8 @@
-import React from "react";
-import { useState } from "react";
-import styles from "./PhotoGallery.module.css";
-import Modal from "./Modal";
+import React from "react"
+import { useState } from "react"
+import styles from "./PhotoGallery.module.css"
+import Modal from "./Modal"
+
 
 const PhotoGallery = ({ apartment }) => {
   
@@ -27,8 +28,9 @@ const PhotoGallery = ({ apartment }) => {
         </div>
       </div>
       {openModal && <Modal apartment={apartment}  setOpenModal={setOpenModal} />}
-    </div>
-  );
-};
 
-export default PhotoGallery;
+    </div>
+  )
+}
+
+export default PhotoGallery

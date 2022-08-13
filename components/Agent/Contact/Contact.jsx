@@ -1,27 +1,27 @@
 import ButtonContact from "../ButtonContact/ButtonContact";
 import styles from "./contact.module.css"
 
-const Contact = () => {
+const Contact = ({ exper, officeHours, officeAdress, phone, scrollToSection, contact }) => {
     return (
         <div className={styles.сontact_wrapper}>
-          <ButtonContact />
+          <ButtonContact contact={contact} scrollToSection={scrollToSection} phone={phone} />
           <div className={styles.сontact_text}>
             <div className={styles.text_block}>
               <span className={styles.custom_label}>Experience </span>
               <span className={styles.custom_value}>
-                18 years as Expert Realtor at Madrid Realty{" "}
+                {exper}{" "}
               </span>
             </div>
             <div className={styles.text_block}>
               <span className={styles.custom_label}>Realtor Awards </span>
               <span className={styles.custom_value}>
-                Best Realtor in Madrid from 2000-2018{" "}
+                Best Realtor in Madrid from 2006-2021{" "}
               </span>
             </div>
             <div className={styles.text_block}>
               <span className={styles.custom_label}>Office Hours </span>
               <span className={styles.custom_value}>
-                9 AM - 5 PM, Monday - Saturday{" "}
+                {officeHours}{" "}
               </span>
             </div>
             <div className={styles.text_block}>
@@ -33,13 +33,13 @@ const Contact = () => {
             <div className={styles.text_block}>
               <span className={styles.custom_label}>Languages Spoken </span>
               <span className={styles.custom_value}>
-                French, Spanish, English{" "}
+                Russian, Chechen, English{" "}
               </span>
             </div>
             <div className={styles.text_block}>
               <span className={styles.custom_label}>Office Address </span>
               <span className={styles.custom_value}>
-                Calle de Toledo, 28005 Madrid, Spain{" "}
+                {officeAdress}{" "}
               </span>
             </div>
           </div>
