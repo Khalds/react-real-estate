@@ -1,0 +1,51 @@
+.icon_wrapper {
+    display: flex;
+    justify-content: space-between;
+    bottom: 0.9375em;
+    padding: 0 1.25em;
+    left: 0;
+    width: 100%;
+}
+
+.one_icon_wrapper {
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+}
+
+.two_icon_wrapper {
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+}
+
+.social_wrapper {
+    background-color: #EFEFEF;
+    border-radius: 50%;
+    width: 1.875em;
+    height: 1.875em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .5em;
+}
+
+.social {
+    color: #777;
+    font-size: 1em;
+  }
+  
+  .social:hover {
+    color: #452820;
+  }
+  
+  .social_phone_wrapper {
+    background-color: #EFEFEF;
+    border-radius: 50%;
+    width: 1.875em;
+    height: 1.875em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .9em;
+  }

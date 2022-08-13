@@ -1,0 +1,65 @@
+/* ////////////////!!!!  стили карточки  !!!!!//////////////////// */
+
+.main_card_wrapper {
+  border-radius: 0.625em;
+  margin-bottom: 1.875em;
+  width: 45%;
+  padding: 0 0.9375em;
+}
+
+.internal_card_wrapper {
+  box-shadow: 0px 5px 70px 0px rgb(38 42 76 / 10%);
+  border-radius: 0.625em;
+  width: 100%;
+  border: 1px solid #f1f8ff;
+  overflow: hidden;
+  background-color: #fff;
+  cursor: pointer;
+  padding-bottom: 1.325em;
+}
+
+.agent_img_wrapper {
+  overflow: hidden;
+  margin: 0.4375em;
+  border-radius: 0.125em;
+  cursor: pointer;
+}
+
+.agent_img_wrapper img {
+  border: none;
+  width: 100%;
+  transition: 0.5s;
+  border-radius: 1em;
+}
+
+.agent_img_wrapper img:hover {
+  background-color: #6f6f6f;
+  transform: scale(1.2);
+}
+
+.internal_card_wrapper h4 {
+  padding: 0 1em;
+  margin: 0;
+  margin-top: 1.25em;
+  font-size: 1.25em;
+  word-wrap: break-word;
+  color: #181c23;
+  line-height: 1.3em;
+  font-weight: 700;
+}
+
+.position_agent {
+  padding: 0 1.25em;
+  font-weight: 600;
+  color: #6f6f6f;
+  margin: 0 0 0.625em;
+  line-height: 1.65em;
+  cursor: pointer;
+}
+
+.card_content_wrapper {
+  margin: 0.625em 1.25em 3em;
+  line-height: 1.65em;
+  color: #6f6f6f;
+  cursor: pointer;
+}

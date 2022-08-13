@@ -1,10 +1,10 @@
 
-import Agent from "../components/Agent/Agent"
+import AgentList from "../components/AgentList/AgentList"
 
 
 const agents = () => {
   return (
-    <div ><Agent /></div>
+    <div ><AgentList /></div>
   );
 };
 

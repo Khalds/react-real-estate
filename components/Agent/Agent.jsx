@@ -20,7 +20,6 @@ import { BsLayoutTextWindowReverse } from "react-icons/bs";
 const Realtor = () => {
   const [limit, setLimit] = useState(12);
 
-
   const contact = useRef(null);
   const scrollToSection = (elementRef) => {
     window.scrollTo({
@@ -28,8 +27,6 @@ const Realtor = () => {
       behavior: "smooth",
     });
   };
-
-
 
   const handleShow = () => {
     setLimit((limit += 2));
