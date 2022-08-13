@@ -35,61 +35,54 @@ const Realtor = () => {
   const realtors = useSelector((state) => state.realtorReducer.realtors);
   const dispatch = useDispatch();
 
+  const [categoryId, setCategoryId] = useState("");
 
+  const filtered = () => {
+    if (categoryId === 1) {
+      return (apartments = apartments.filter((i) => i.status === "Rent"));
+    } else if (categoryId === 2) {
+      return (apartments = apartments.filter((i) => i.status === "Sale"));
+    } else {
+      apartments;
+    }
+  };
 
+  const router = useRouter();
+  const { id } = router.query;
 
-
-  const [categoryId, setCategoryId] = useState('');
-
-const filtered = () => {
-  if (categoryId === 1) {
-    return apartments = apartments.filter(i => i.status === "Rent")
-  } else if (categoryId === 2) {
-    return apartments = apartments.filter(i => i.status === "Sale")
-  } else {
-    apartments
-  }
-  
-}
-
-console.log(filtered())
-
-
-
-const router = useRouter();
-  const { id } = router.query
-
-  
   useEffect(() => {
     dispatch(getApartments());
     dispatch(getRealtors());
   }, [dispatch]);
-  
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.main_wrapper}>
         {realtors.map((item) => {
-          if ( id == item._id) {
-            return <> <Profile image={item.image}
-            name={item.name}
-            rating={item.rating[0]}
-            phon={item.phoneNumber}
-            email={item.email}
-            />
-            <Contact exper={item.experience}
-            officeHours={item.officeHours}
-            officeAdress={item.officeAdress}
-            phone={item.phoneNumber}
-            />
-            <InformativeMe
-            description={item.description}
-            />
-            <PersonalData />
-            </>
+          if (id == item._id) {
+            return (
+              <>
+                {" "}
+                <Profile
+                  image={item.image}
+                  name={item.name}
+                  rating={item.rating}
+                  phon={item.phoneNumber}
+                  email={item.email}
+                />
+                <Contact
+                  exper={item.experience}
+                  officeHours={item.officeHours}
+                  officeAdress={item.officeAdress}
+                  phone={item.phoneNumber}
+                />
+                <InformativeMe description={item.description} />
+                <PersonalData />
+                 
+              </>
+            );
           }
         })}
-        
       </div>
       <div className={styles.main_card_wrapper}>
         <div className={styles.listings_wrapper}>
@@ -105,7 +98,7 @@ const router = useRouter();
           <div className={styles.main}>
             {apartments.map((apartment, index) => {
               if (index + 1 <= limit) {
-               return <CardApartment apartment={apartment} />;
+                return <CardApartment apartment={apartment} />;
               }
             })}
           </div>
@@ -117,7 +110,13 @@ const router = useRouter();
             )}
           </div>
         </div>
-        <Reviews />
+     {realtors.map(realtor => {
+    if(realtor._id === id) {
+      return (
+        <Reviews reviews={realtor.reviews} key={realtor._id} />
+      )
+    }
+ })}
       </div>
       <BackToTopButton />
     </div>

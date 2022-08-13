@@ -10,6 +10,7 @@ import styles from "../../components/Property/Property.module.css";
 import { useRouter } from "next/router";
 
 import PhotoGallery from "../../components/Property/PhotoGallery/PhotoGallery"
+import Reviews from "../../components/Property/Reviews"
 
 
 
@@ -33,7 +34,9 @@ const property = () => {
             <Showing />
           </div>
         </div>
+        <Reviews />
       </div>
+
     </div>
   )
 }

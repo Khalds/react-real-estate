@@ -47,7 +47,7 @@ const CardApartment = ({ apartment }) => {
         <div className={styles.info_container}>
           <h3>{apartment.location} </h3>
           <h4>{apartment.price} $</h4>
-          {/* <p>{apartment.description.slice(0, 130) + "..."}</p> */}
+          <p>{apartment.description.slice(0, 130) + "..."}</p>
           <div className={styles.icons}>
             <span>
               <MdOutlineBedroomParent /> {apartment.bedroom}
