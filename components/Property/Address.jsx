@@ -3,7 +3,7 @@ import useCollapse from "react-collapsed";
 
 import styles from "./Address.module.css";
 
-const Address = () => {
+const Address = ({apartment}) => {
   const config = {
     duration: 300,
   };
@@ -40,13 +40,13 @@ const Address = () => {
             </div>
             <div className={styles.content_right}>
               <p>
-                <strong>City: </strong>Las Vegas
+                <strong>City: </strong>{apartment.city}
               </p>
               <p>
-                <strong>State: </strong>Nevada
+                <strong>State: </strong>Chechen Republic
               </p>
               <p>
-                <strong>Country: </strong>United States
+                <strong>Country: </strong>Russia
               </p>
             </div>
           </div>
