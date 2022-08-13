@@ -80,6 +80,8 @@ export const auth = createAsyncThunk(
   }
 )
 
+
+
 export const getToken = createAsyncThunk("getToken", () => {
   console.log(localStorage.getItem("user"))
   localStorage.getItem("token")
