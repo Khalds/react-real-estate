@@ -11,13 +11,13 @@ const NotWorkingIcon = ({phon, email}) => {
               <div className={styles.detal_icon}>
                 <FaPhone />
               </div>
-              <a href="tel:(305) 555-4555">{phon}</a>
+              <a href={`tel:${phon}`}>{phon}</a>
             </div>
             <div className={styles.detal}>
               <div className={styles.detal_icon}>
                 <AiOutlineMail />
               </div>
-              <a href="mailto:michael@website.net">{email}</a>
+              <a href="email">{email}</a>
             </div>
             <div className={styles.detal}>
               <div className={styles.detal_icon}>
@@ -25,7 +25,7 @@ const NotWorkingIcon = ({phon, email}) => {
               </div>
               <a href="http://website.net" target="_blank" rel="noreferrer">
                   website.net
-                </a>
+              </a>
             </div>
             <div>
               <div className={styles.detal}>
