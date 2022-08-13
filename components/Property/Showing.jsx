@@ -2,7 +2,7 @@ import React from "react";
 import useCollapse from "react-collapsed";
 import styles from "./Showing.module.css";
 
-const Showing = () => {
+const Showing = ({apartment}) => {
   const config = {
     duration: 300,
   };
@@ -10,9 +10,11 @@ const Showing = () => {
   return (
     <div className={styles.showing_block}>
       <div className={styles.agent}>
-        <div className={styles.agent_photo}></div>
+        <div className={styles.agent_photo}>
+          <img src={apartment.realtor.image} alt="" />
+        </div>
         <div className={styles.agent_info}>
-          <h4 className={styles.agent_name}>Alessandra Rosales</h4>
+          <h4 className={styles.agent_name}>{apartment.realtor.name}</h4>
           <div className={styles.agent_position}>selling agent</div>
         </div>
       </div>

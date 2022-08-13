@@ -7,7 +7,8 @@
   z-index: 100;
   position: fixed;
   background-color: #f7f7f7;
-  /* background-color: #ffffff; */
+
+  box-shadow: 0px 45px 70px -20px rgba(137, 137, 137, 0.2);
 }
 
 .list_container {
@@ -21,15 +22,15 @@
 }
 
 .active_link {
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 1.4em;
+  font-weight: 700;
   color: #452820;
   border-bottom: 2px solid #452820;
 }
 
 .disactive_link {
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 1.4em;
+  font-weight: 700;
   color: #181c23;
 }
 
@@ -37,18 +38,22 @@
   width: 20%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .phone_icon {
   color: #452820;
-  font-size: 1.3em;
+  font-size: 1.4em;
+  display: flex;
 }
 
 .phone_number {
-  font-size: 1.1em;
+  font-size: 1.4em;
 }
 
 .acc_icon {
   color: #452820;
-  font-size: 1.3em;
+  font-size: 2.5em;
+  cursor: pointer;
+  display: flex;
 }

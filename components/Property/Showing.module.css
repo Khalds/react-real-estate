@@ -11,13 +11,11 @@
   display: flex;
   gap: 1em;
 }
-.agent .agent_photo {
+.agent .agent_photo img {
   width: 4.375em;
   height: 4.375em;
-  background-image: url("https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-500x328.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
   border-radius: 0.625em;
 }
 .agent .agent_info {

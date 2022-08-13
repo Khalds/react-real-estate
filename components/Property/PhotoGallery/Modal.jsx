@@ -3,13 +3,13 @@ import ImageSlider from "./ImageSlider";
 import styles from "./Modal.module.css";
 import GrClose from "react-icons/gr";
 
-const Modal = ({setOpenModal}) => {
+const Modal = ({setOpenModal, apartment}) => {
 
   return (
     <div className={styles.modal_background}>
       <div className={styles.modal_container}>
       <button className={styles.close_btn} onClick={() => setOpenModal(false)}>&times;</button>
-        <ImageSlider />
+        <ImageSlider apartment={apartment} />
       </div>
     </div>
   );

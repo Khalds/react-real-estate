@@ -8,23 +8,46 @@ import PhotoGallery from "../../components/Property/PhotoGallery/PhotoGallery";
 
 import styles from "../../components/Property/Property.module.css";
 
+export const getStaticPaths = async () => {
+  const res = await fetch("http://localhost:5000/apartment");
+  const data = await res.json();
 
-const property = () => {
+  const paths = data.map((apartment) => {
+    return {
+      params: { id: apartment._id.toString() },
+    };
+  });
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+  const res = await fetch(`http://localhost:5000/apartment/${id}`);
+  const data = await res.json();
+  // console.log(data)
+  return {
+    props: { apartment: data },
+  };
+};
+
+const property = ({ apartment }) => {
   return (
     <div className={styles.wrapper}>
-      <PhotoGallery />
+      <PhotoGallery apartment={apartment} />
       <div className={styles.container}>
-        <Title />
+        <Title apartment={apartment} />
         <div className={styles.main_content}>
           <div className={styles.info}>
-            <Overview />
-            <Description />
-            <Address />
+            <Overview apartment={apartment} />
+            <Description apartment={apartment} />
+            <Address apartment={apartment} />
             <Calculator />
           </div>
           <div className={styles.showing}>
-            <Showing />
+            <Showing apartment={apartment} />
           </div>
         </div>
       </div>

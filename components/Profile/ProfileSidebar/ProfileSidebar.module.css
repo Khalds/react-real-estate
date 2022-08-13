@@ -1,0 +1,72 @@
+.ProfileSidebar {
+  width: 20%;
+  padding: 40px 20px;
+}
+
+.sidebar_container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.avatar {
+  text-align: center;
+}
+
+.avatar img {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  box-shadow: 0px 3px 23px #e3e6ec;
+  cursor: pointer;
+}
+
+.avatar p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6em;
+  color: #222;
+}
+
+.sidebar_nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.side_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: transparent;
+  color: #808191;
+}
+
+.side_item:hover {
+  color: #452820;
+  transition: 0.5s;
+}
+
+.side_item_active {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: #452820;
+  color: #fff;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+}
