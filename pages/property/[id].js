@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Title from "../../components/Property/Title"
 import Overview from "../../components/Property/Overview"
 import Description from "../../components/Property/Description"
