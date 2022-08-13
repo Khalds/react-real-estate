@@ -39,8 +39,8 @@
 }
 
 .info_container h3 {
-  font-size: 1.4em;
-  font-weight: bold;
+  font-size: 1.25em;
+  font-weight: 700;
 }
 
 .info_container h4 {
@@ -51,6 +51,8 @@
 
 .info_container p {
   line-height: 1.3em;
+  font-size: 0.8125em;
+  color: #6f6f6f;
 }
 
 .icons {
@@ -94,8 +96,8 @@
 
 .agentInfo_canteiner img {
   border-radius: 50%;
-  width: 20%;
-  height: 20%;
+  width: 2.3em;
+  height: 2.1em;
   object-fit: cover;
 }
 
@@ -119,8 +121,19 @@
   font-weight: 900;
 }
 
+.passive_heart {
+  cursor: pointer;
+}
 
+.active_heart {
+  cursor: pointer;
+}
 
+.menu_icons {
+  cursor: pointer;
+}
+
+ 
 /* .button_container button {
   padding: 2% 3%;
   border-radius: 1em;

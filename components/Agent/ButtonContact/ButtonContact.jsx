@@ -2,10 +2,10 @@ import styles from "./buttonContact.module.css";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 
-const ButtonContact = ({phone}) => {
+const ButtonContact = ({ phone, scrollToSection, contact }) => {
   return (
     <div className={styles.сontact_wrapper}>
-      <button className={styles.button_email}>
+      <button onClick={() => scrollToSection(contact)} className={styles.button_email}>
         <a href="#show_contact">Send Email </a>
       </button>
       <button className={styles.button_call}>

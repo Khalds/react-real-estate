@@ -55,9 +55,9 @@ const ApartmentCardsHomePage = () => {
                       </div>
                     </Link>
                     <div className={styles.info_container}>
-                      <h3>{apartment.location.slice(7, 27)} </h3>
+                      <h3>{apartment.name} </h3>
                       <h4>{apartment.price} $</h4>
-                      <p>{apartment.description.slice(0, 130) + "..."}</p>
+                      <p>{apartment.description.slice(0, 110) + "..."}</p>
                       <div className={styles.icons}>
                         <span>
                           <MdOutlineBedroomParent /> {apartment.bedroom}

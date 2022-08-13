@@ -14,7 +14,6 @@ import preloader from "../images/preloader.gif";
 
 export default function Home() {
   const loading = useSelector((state) => state.apartmentReducer.loading);
-console.log(preloader)
   return (
     <>
       <SearchContent />

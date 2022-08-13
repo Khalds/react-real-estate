@@ -16,7 +16,9 @@ import Aos from "aos";
 import { getApartments } from "../../features/apartmentSlice";
 
 const Realtor = () => {
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(12);
+
+
 
   const handleShow = () => {
     setLimit((limit += 2));
@@ -24,7 +26,7 @@ const Realtor = () => {
 
   const handleHide = () => {
     if (limit > 0) {
-      setLimit(4);
+      setLimit(2);
     }
   };
 
@@ -37,6 +39,7 @@ const Realtor = () => {
 
   const [categoryId, setCategoryId] = useState("");
 
+
   const filtered = () => {
     if (categoryId === 1) {
       return (apartments = apartments.filter((i) => i.status === "Rent"));
@@ -46,6 +49,8 @@ const Realtor = () => {
       apartments;
     }
   };
+
+  console.log(filtered());
 
   const router = useRouter();
   const { id } = router.query;
@@ -67,6 +72,7 @@ const Realtor = () => {
                   image={item.image}
                   name={item.name}
                   rating={item.rating}
+
                   phon={item.phoneNumber}
                   email={item.email}
                 />
@@ -79,6 +85,7 @@ const Realtor = () => {
                 <InformativeMe description={item.description} />
                 <PersonalData />
                  
+
               </>
             );
           }
@@ -97,8 +104,11 @@ const Realtor = () => {
         <div className={styles.cards_wrapper}>
           <div className={styles.main}>
             {apartments.map((apartment, index) => {
-              if (index + 1 <= limit) {
-                return <CardApartment apartment={apartment} />;
+
+              if (apartment.realtor._id === id) {
+                 {
+                  return <CardApartment apartment={apartment} />;
+                }
               }
             })}
           </div>
