@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import CountUp from "react-countup";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
-//about
 
 const AboutUs = () => {
   const settings = {
@@ -50,14 +49,14 @@ const AboutUs = () => {
       <div className={styles.counts}>
         <div className={styles.count}>
           <CountUp
-            start={-875.039}
-            end={3200.0}
+            start={-3635.039}
+            end={52000.0}
             duration={21.75}
             separator=" "
             decimals={4}
             decimal=","
             prefix="$ "
-            suffix=" -D"
+            suffix=" -M"
             onEnd={() => console.log("Ended! 👏")}
             onStart={() => console.log("Started! 💨")}
           >
@@ -70,7 +69,7 @@ const AboutUs = () => {
         </div>
         <div className={styles.count}>
           <CountUp
-            start={-335.039}
+            start={-3835.039}
             end={52000.0}
             duration={21.75}
             separator=" "
@@ -191,15 +190,15 @@ const AboutUs = () => {
         <div className={styles.body}>
           <div className={styles.carlosa}>
             <img
-              className={styles.logoCarlosa}
-              src="https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial3.jpeg"
+              className={styles.logoCarlos}
+              src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person-21-500x328.jpg"
               alt="photo"
             />
             <div className={styles.colorBlack}>Carlos Dobarro</div>
             <p />
             <div className={styles.infoAvatar}>
               Whether it is working with a first time homebuyer, a luxury home
-              listing or a seasoned inv...
+              listing or a seasoned I'm gay...
             </div>
           </div>
           <div className={styles.carlos}>
