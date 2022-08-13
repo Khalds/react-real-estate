@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
 .main {
   height: 73vh;
   width: 90%;
-  margin: auto;
+  margin: .72% auto;
   display: flex;
   background-color: #f4ebe4;
   border-radius: 30px;
@@ -31,7 +31,7 @@
   font-size: 2.8125em;
   font-weight: 500;
   line-height: 1em;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
 }
 
 .img_container {
@@ -42,39 +42,48 @@
   border-radius: 30px;
 }
 
-.search_container {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: -10%;
-  right: 10%;
-  padding: 1.5% 1% 2.2%;
-  z-index: 9;
-  background-color: rgb(255, 255, 255);
-  width: 80%;
-  box-shadow: 0px 5px 70px 0px rgb(38 42 76 / 10%);
-  border-radius: 10px;
-  line-height: 2px;
-  opacity: .97;
-  font-size: 0.8125em;
+.transition_the_cardу {
+  margin: 1.5em 7em 0 0;
 }
 
-.search_container select,
-.search_container input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.205);
-  outline: none;
-  color: black;
+/* From uiverse.io by @alexmaracinaru */
+.button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica, "sans-serif";
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #cab8a9;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin-right: 1.05em;
 }
-.search_container > button {
- padding: 1.5% 4.8%;
- box-sizing: border-box;
- background: #452820;
- border-radius: 1em;
- cursor:pointer;
- color: #fff;
- display: flex;
- align-items: center;
- font-size: 0.9375em;
+
+.button:hover {
+  background: #a67566;
+  color: #fff;
+}
+
+.button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button:hover svg {
+  transform: translateX(10px);
+  border-radius: 5%;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+.button span {
+  color: #666;
+}
+.button span:hover {
+  color: #fff;
 }
