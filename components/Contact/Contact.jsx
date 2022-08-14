@@ -94,6 +94,7 @@ const Contact = () => {
         />
       </div>
       <div className={styles.email}>
+      ///!Изменить
         <h1>Contact Us</h1>
         <div className={styles.center}>
           <form className={styles.form} ref={form} onSubmit={sendEmail}>
@@ -131,6 +132,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
+        ////! До этого
       </div>
       <div className={styles.backgraundMap}>
         <h3>

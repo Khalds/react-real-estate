@@ -1,20 +1,46 @@
+import Link from "next/link";
 import React from "react";
 import useCollapse from "react-collapsed";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Showing.module.css";
+import { useDispatch } from "react-redux";
+import { postBookings } from "../../features/bookingSlice";
 
-const Showing = ({apartment}) => {
+const Showing = ({ apartment }) => {
+  const [selectedDate, setSelectedDate] = useState(null);
+   
+  let user_id
+
+  const dispatch = useDispatch();
+  if (typeof window !== "undefined") {
+
+    user_id = localStorage.getItem("userId")
+    
+    }
+
+  const handleSend = (time, apartment, realtor, user) => {
+    dispatch(postBookings({time, apartment, realtor, user }));
+  };
+
   const config = {
     duration: 300,
   };
+
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(config);
   return (
     <div className={styles.showing_block}>
       <div className={styles.agent}>
-        <div className={styles.agent_photo}>
-          <img src={apartment.realtor.image} alt="" />
-        </div>
+        <Link href={`/agents/${apartment.realtor._id}`}>
+          <div className={styles.agent_photo}>
+            <img src={apartment.realtor.image} alt="" />
+          </div>
+        </Link>
         <div className={styles.agent_info}>
-          <h4 className={styles.agent_name}>{apartment.realtor.name}</h4>
+          <Link href={`/agents/${apartment.realtor._id}`}>
+            <h4 className={styles.agent_name}>{apartment.realtor.name}</h4>
+          </Link>
           <div className={styles.agent_position}>selling agent</div>
         </div>
       </div>
@@ -24,12 +50,17 @@ const Showing = ({apartment}) => {
         </div>
         <div {...getCollapseProps()}>
           <div className={styles.input_select_wrapper}>
-            <input
+            <DatePicker
               className={styles.input_day}
-              name="schedule_day"
-              type="text"
-              placeholder="Day"
+              placeholderText="Day"
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              dateFormat="dd/MM/yyyy h:mm"
+              minDate={new Date()}
+              showTimeInput
+              timeIntervals={15}
             />
+            <button onClick={() => handleSend(selectedDate, apartment._id, apartment.realtor._id, user_id)}>Send Time</button>
             <select className={styles.select_hour} name="schedule_hour">
               <option value="0">Time</option>
               <option value="8:00">8:00</option>

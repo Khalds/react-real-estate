@@ -4,102 +4,128 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addReview, putRate } from "../../../features/realtor";
 import { useRouter } from "next/router";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlineMinusCircle } from "react-icons/ai";
 
-const Reviews = () => {
+const Reviews = ({ reviews }) => {
   const dispatch = useDispatch();
-
-  const user = useSelector((user) => user.realtorReducer.user);
+  const user = useSelector((state) => state.realtorReducer.user);
   const isActiveStar = useSelector((user) => user.realtorReducer.isActiveStar);
   const router = useRouter();
-
-  let token;
-
-  if (typeof window !== "undefined") {
-    token = localStorage.getItem("token");
-  }
 
   const agent_id = router.query.id;
 
   const [rate, setRating] = useState(0);
   const [hover, setHover] = useState(0);
 
-  const [advantages, setAdvantages] = useState(null);
-  const [disadvantages, setDisadvantages] = useState(null);
-  const [review, setReview] = useState(null);
+  const [advantages, setAdvantages] = useState("");
+  const [disadvantages, setDisadvantages] = useState("");
+  const [review, setReview] = useState("");
 
   const handleSet = () => {
-    dispatch(putRate({ rate, user, agent_id }));
+    if (rate !== 0) {
+      dispatch(putRate({ rate, user, agent_id }));
+    }
   };
 
   const handleAddReview = () => {
-    dispatch(addReview({agent_id, review, advantages, disadvantages, user}))
-  }
+    if (advantages !== "" && disadvantages !== "" && review !== "") {
+      dispatch(
+        addReview({ agent_id, review, advantages, disadvantages, user })
+      );
+    }
+  };
 
   return (
-    <div className={styles.agent_rewiews_wrapper}>
-      <h4>Agent Reviews </h4>
-      <div className={styles.raiting}>
-        <div className="star-rating">
-          {[...Array(5)].map((star, index) => {
-            index += 1;
-            return (
-              <button
-                disabled={isActiveStar ? true : false}
-                type="button"
-                key={index}
-                className={index <= (hover || rate) ? styles.on : styles.off}
-                onClick={() => {
-                  setRating(index);
-                }}
-                onMouseEnter={() => setHover(index)}
-                onMouseLeave={() => setHover(rate)}
-              >
-                <span className={styles.star}>★</span>
-              </button>
-            );
-          })}
-          <button onClick={handleSet} disabled={isActiveStar ? true : false}>
-            Set rating
-          </button>
+    <>
+      <div className={styles.agent_rewiews_wrapper}>
+        <h4>Agent Reviews </h4>
+        <div className={styles.raiting}>
+          <div className={styles.star_rating}>
+            {[...Array(5)].map((star, index) => {
+              index += 1;
+              return (
+                <button
+                  disabled={isActiveStar ? true : false}
+                  type="button"
+                  key={index}
+                  className={index <= (hover || rate) ? styles.on : styles.off}
+                  onClick={() => {
+                    setRating(index);
+                  }}
+                  onMouseEnter={() => setHover(index)}
+                  onMouseLeave={() => setHover(rate)}
+                >
+                  <span className={styles.star}>★</span>
+                </button>
+              );
+            })}
+            <button
+              onClick={handleSet}
+              disabled={isActiveStar ? true : false}
+              className={styles.setRating_button}
+            >
+              Set rating
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.input_wrapper}>
+          <input
+            onChange={(e) => setAdvantages(e.target.value)}
+            value={advantages}
+            placeholder={"What did you like?"}
+          ></input>
+          <input
+            onChange={(e) => setDisadvantages(e.target.value)}
+            value={disadvantages}
+            placeholder={                "What was not so great?"
+            }
+          ></input>
+          <input
+            onChange={(e) => setReview(e.target.value)}
+            value={review}
+            placeholder={
+                "Write you review here"
+            }
+          ></input>
+          <div className={styles.button_add_container}>
+            <button onClick={handleAddReview} className={styles.button_add}>
+              Add review
+            </button>
+          </div>
         </div>
       </div>
-      
-      <div className={styles.input_wrapper} >
-        <label>advantages</label>
-        <input
-          // disabled={!token ? true : false}
-          onChange={(e) => setAdvantages(e.target.value)}
-          value={advantages}
-          placeholder={`${
-            !token
-              ? "You need to login in order to post a review"
-              : "What did you like?"
-          }`}
-        ></input>
-        <label>disadvantages</label>
-        <input
-          // disabled={!token ? true : false}
-          onChange={(e) => setDisadvantages(e.target.value)}
-          value={disadvantages}
-          placeholder={`${
-            !token
-              ? "You need to login in order to post a review"
-              : "What was not so great?"
-          }`}
-        ></input>
-        <label>review</label>
-        <input
-        
-          // disabled={!token ? true : false}
-          onChange={(e) => setReview(e.target.value)}
-          value={review}
-          placeholder={
-            !token ? "You need to login in order to post a review": "Write you review here"
-          }
-        ></input>
-        <button onClick={handleAddReview}>Add review</button>
+
+      <div className={styles.reviews_list}>
+        {reviews.map((item) => {
+  console.log(item)
+
+          return (
+            <>
+              <div className={styles.list_item_container}>
+                <h4>{item.user.login}</h4>
+                <div className={styles.advantages_container}>
+                  <span>
+                    <AiOutlinePlusCircle /> Advantages:
+                  </span>
+                  <span>{item.advantages}</span>
+                </div>
+                <div className={styles.disadvantages_container}>
+                  <span>
+                    <AiOutlineMinusCircle /> Disadvantages:
+                  </span>
+                  <span>{item.disadvantages}</span>
+                </div>
+                <div className={styles.review_container}>
+                  <span>{item.review}</span>
+                </div>
+              </div>
+            </>
+          );
+        })}
       </div>
-    </div>
+    </>
   );
 };
 

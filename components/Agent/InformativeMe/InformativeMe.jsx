@@ -13,13 +13,11 @@ const InformativeMe = ( {description} ) => {
     <div className={styles.informative_wrapper}>
       <div className={styles.specialties}>
         <h4>Specialties &amp; Service Areas</h4>
-        <Link href="">
+        <Link href="/agents">
           <a>Сommunity from Russia</a>
         </Link>
-        <Link href="">
           <a>Grozny</a>
-        </Link>
-        <Link href="">
+        <Link href="/map">
           <a>Chechen Republic</a>
         </Link>
         <a>Residential</a>

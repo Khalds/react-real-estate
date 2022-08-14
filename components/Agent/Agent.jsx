@@ -14,22 +14,18 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Aos from "aos";
 import { getApartments } from "../../features/apartmentSlice";
-import { useRef } from "react";
-import { BsLayoutTextWindowReverse } from "react-icons/bs";
 
 const Realtor = () => {
   const [limit, setLimit] = useState(12);
 
 
-  const contact = useRef(null);
-  const scrollToSection = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: "smooth",
-    });
-  };
-
-
+  // const contact = useRef(null);
+  // const scrollToSection = (elementRef) => {
+  //   window.scrollTo({
+  //     top: elementRef.current.offsetTop,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   const handleShow = () => {
     setLimit((limit += 2));
@@ -49,6 +45,7 @@ const Realtor = () => {
   const dispatch = useDispatch();
 
   const [categoryId, setCategoryId] = useState("");
+
 
   const filtered = () => {
     if (categoryId === 1) {
@@ -81,7 +78,8 @@ const Realtor = () => {
                 <Profile
                   image={item.image}
                   name={item.name}
-                  rating={item.rating[0]}
+                  rating={item.rating}
+
                   phon={item.phoneNumber}
                   email={item.email}
                 />
@@ -90,11 +88,10 @@ const Realtor = () => {
                   officeHours={item.officeHours}
                   officeAdress={item.officeAdress}
                   phone={item.phoneNumber}
-                  scrollToSection={scrollToSection}
-                  contact={contact}
                 />
                 <InformativeMe description={item.description} />
-                <PersonalData  ref={contact} />
+                <PersonalData />
+                 
               </>
             );
           }
@@ -113,6 +110,7 @@ const Realtor = () => {
         <div className={styles.cards_wrapper}>
           <div className={styles.main}>
             {apartments.map((apartment, index) => {
+
               if (apartment.realtor._id === id) {
                  {
                   return <CardApartment apartment={apartment} />;
@@ -128,7 +126,13 @@ const Realtor = () => {
             )}
           </div>
         </div>
-        <Reviews />
+     {realtors.map(realtor => {
+    if(realtor._id === id) {
+      return (
+        <Reviews reviews={realtor.reviews} key={realtor._id} />
+      )
+    }
+ })}
       </div>
       <BackToTopButton />
     </div>

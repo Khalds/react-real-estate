@@ -21,7 +21,6 @@
 
 .agent_position {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   font-size: 1.1em;
   margin-bottom: 0.8em;
@@ -35,7 +34,7 @@
 }
 
 .star {
-  color: rgb(255, 255, 0);
+  color: rgb(255, 180, 0);
   margin: .2em .4em 0 .5em;
 }
 

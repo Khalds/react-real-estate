@@ -17,7 +17,7 @@ const NotWorkingIcon = ({phon, email}) => {
               <div className={styles.detal_icon}>
                 <AiOutlineMail />
               </div>
-              <a href="email">{email}</a>
+              <a href="mailto:michael@website.net">{email}</a>
             </div>
             <div className={styles.detal}>
               <div className={styles.detal_icon}>
