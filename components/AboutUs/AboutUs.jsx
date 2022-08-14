@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import CountUp from "react-countup";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 const AboutUs = () => {
   const settings = {
@@ -30,6 +31,7 @@ const AboutUs = () => {
       .then(
         (result) => {
           console.log(result.text);
+          e.target.reset();
         },
         (error) => {
           console.log(error.text);
@@ -40,14 +42,16 @@ const AboutUs = () => {
   return (
     <div className={styles.about}>
       <div data-aos="fade-up" className={styles.photo}></div>
-      <div className={styles.stats}>Our team stats</div>
-      <div className={styles.despite}>
+      <div data-aos="fade-up" className={styles.stats}>
+        Our team stats
+      </div>
+      <div data-aos="fade-up" className={styles.despite}>
         Despite well over $1 billion in combined sales, however, the team
         strives to maintain an air of humility and discretion
       </div>
 
       <div className={styles.counts}>
-        <div className={styles.count}>
+        <div data-aos="fade-right" className={styles.count}>
           <CountUp
             start={-3635.039}
             end={52000.0}
@@ -67,7 +71,7 @@ const AboutUs = () => {
             )}
           </CountUp>
         </div>
-        <div className={styles.count}>
+        <div data-aos="fade-down" className={styles.count}>
           <CountUp
             start={-3835.039}
             end={52000.0}
@@ -87,7 +91,7 @@ const AboutUs = () => {
             )}
           </CountUp>
         </div>
-        <div className={styles.count}>
+        <div data-aos="fade-left" className={styles.count}>
           <CountUp
             start={-8399.039}
             end={4850.0}
@@ -113,7 +117,9 @@ const AboutUs = () => {
         <p>Total Sold 2020 - 2022</p>
         <p>Lifetime Sales Volume</p>
       </div>
-      <div className={styles.header}>About our company</div>
+      <div data-aos="fade-up" className={styles.header}>
+        About our company
+      </div>
       <p />
       <span className={styles.textHeader}>
         Utilizing our exceptional experience and knowledge of the luxury
@@ -123,13 +129,20 @@ const AboutUs = () => {
       <div className={styles.textInfo}>
         <div className={styles.firstText}>
           <div className={styles.textP}>
-            <span className={styles.black}> Our Mission</span> <br />
+            <span data-aos="fade-up" className={styles.black}>
+              {" "}
+              Our Mission
+            </span>{" "}
+            <br />
             With over $2 Billion in sales, Our agency is the industry’s top
             luxury producer with over 27 years of experience in marketing
             Seattles’s most prestigious waterfront properties.
           </div>
           <p className={styles.textP2}>
-            <span className={styles.black}>Our Vision</span> <br />
+            <span data-aos="fade-up" className={styles.black}>
+              Our Vision
+            </span>
+            <br />
             Due to our unparalleled results, expertise and dedication, we rank
             amongst the Top 6 agencies in Seattle and our area. She is also and
             is an elite member to Corcoran’s Presidents Council.
@@ -137,14 +150,20 @@ const AboutUs = () => {
         </div>
         <div className={styles.secondText}>
           <div className={styles.textP}>
-            <span className={styles.black}>Our Values</span> <br />
+            <span data-aos="fade-up" className={styles.black}>
+              Our Values
+            </span>
+            <br />
             With her years of experience, impressive property portfolio,
             celebrity clientele, and unparalleled knowledge of the market and
             pedigree estates, Simone estimable business is sophisticated and
             renowned.
           </div>
           <div className={styles.textP2}>
-            <span className={styles.black}>Our Resources</span> <br />
+            <span data-aos="fade-up" className={styles.black}>
+              Our Resources
+            </span>
+            <br />
             With her years of experience, impressive property portfolio,
             celebrity clientele, and unparalleled knowledge of the market and
             pedigree estates, Simone estimable business is sophisticated and
@@ -156,7 +175,7 @@ const AboutUs = () => {
       <br />
       <div>
         <Slider {...settings}>
-          <div className={styles.forSave}>
+          <div data-aos="fade-up" className={styles.forSave}>
             <img
               src="https://www.vanulaw.com/wp-content/uploads/2017/10/house-03.jpg"
               alt="photo"
@@ -187,60 +206,79 @@ const AboutUs = () => {
             />
           </div>
         </Slider>
+        <p data-aos="fade-up" className={styles.best}>
+          Our best employees
+        </p>
+        <div data-aos="fade-down" className={styles.pBest}>
+          If you want the best care possible for your real estate needs, our
+          certified professionals are here to help
+        </div>
+        <div data-aos="fade-up" className={styles.pBest}>
+          Testimonials and let know whatpossible for your real estate needs, our
+          to help
+        </div>
         <div className={styles.body}>
-          <div className={styles.carlosa}>
-            <img
-              className={styles.logoCarlos}
-              src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person-21-500x328.jpg"
-              alt="photo"
-            />
-            <div className={styles.colorBlack}>Carlos Dobarro</div>
-            <p />
-            <div className={styles.infoAvatar}>
-              Whether it is working with a first time homebuyer, a luxury home
-              listing or a seasoned I'm gay...
-            </div>
-          </div>
-          <div className={styles.carlos}>
-            <img
-              className={styles.logoCarlos}
-              src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-500x328.jpg"
-              alt="photo"
-            />
-            <div className={styles.colorBlack}>Alessandra Rosales</div>
-            <p />
-            <div className={styles.infoAvatar}>
-              Alessandra Tortella’s knowledge, honesty, integrity, and fairness
-              have been evident throug ...
-            </div>
-          </div>
-          <div className={styles.carlos}>
-            <div className={styles.ava}>
+          <Link href="/agents/62f3aa99e67919f596b7b9ec">
+            <div data-aos="fade-right" className={styles.carlos}>
               <img
                 className={styles.logoCarlos}
-                src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person8-1-1-500x328.png"
+                src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person-21-500x328.jpg"
                 alt="photo"
               />
+              <div className={styles.colorBlack}>Carlos Dobarro</div>
+              <p />
+              <div className={styles.infoAvatar}>
+                Whether it is working with a first time homebuyer, a luxury home
+                listing or a seasoned I'm gay...
+              </div>
             </div>
-            <div className={styles.colorBlack}>Elena Pernía</div>
-            <p />
-            <div className={styles.infoAvatar}>
-              As a fourth generation realtor, I was raised in a family where
-              real estate was the primary ...
+          </Link>
+          <Link href="/agents/62f3a975e67919f596b7b9e8">
+            <div data-aos="fade-up" className={styles.carlos}>
+              <img
+                className={styles.logoCarlos}
+                src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-500x328.jpg"
+                alt="photo"
+              />
+              <div className={styles.colorBlack}>Alessandra Rosales</div>
+              <p />
+              <div className={styles.infoAvatar}>
+                Alessandra Tortella’s knowledge, honesty, integrity, and
+                fairness have been evident throug ...
+              </div>
             </div>
-          </div>
+          </Link>
+          <Link href="/agents/62f3a738e67919f596b7b9dc">
+            <div data-aos="fade-left" className={styles.carlos}>
+              <div className={styles.ava}>
+                <img
+                  className={styles.logoCarlos}
+                  src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person8-1-1-500x328.png"
+                  alt="photo"
+                />
+              </div>
+              <div className={styles.colorBlack}>Elena Pernía</div>
+              <p />
+              <div className={styles.infoAvatar}>
+                As a fourth generation realtor, I was raised in a family where
+                real estate was the primary ...
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
       <div className={styles.testimonials}>
-        <h1 className={styles.headTest}>Testimonials</h1>
-        <div className={styles.infoTest}>
+        <h1 data-aos="fade-left" className={styles.headTest}>
+          Testimonials
+        </h1>
+        <div data-aos="fade-right" className={styles.infoTest}>
           Publish the best of your client testimonials and let the world know
           what a great agent or real estate agency you are. Testimonials build
           trust
         </div>
         <p />
 
-        <div className={styles.cards}>
+        <div data-aos="fade-left" className={styles.cards}>
           <Slider {...settings}>
             <div className={styles.oneCard}>
               <img
@@ -319,9 +357,11 @@ const AboutUs = () => {
       </div>
 
       <div className={styles.question}>
-        <div className={styles.frequently}>Frequently Asked Questions</div>
+        <div data-aos="fade-down" className={styles.frequently}>
+          Frequently Asked Questions
+        </div>
         <p />
-        <div className={styles.infoFre}>
+        <div data-aos="fade-right" className={styles.infoFre}>
           You can use this guide to familiarize yourself with rules, laws and
           other important information relating to your property.
         </div>
@@ -330,7 +370,7 @@ const AboutUs = () => {
             <div clasName={styles.half}>
               <div className={styles.tab}>
                 <input id="tab-one" type="checkbox" name="tabs" />
-                <label for="tab-one">
+                <label data-aos="fade-up" for="tab-one">
                   Why is it considered necessary to register for Sale?
                 </label>
                 <div className={styles.tabContent}>
@@ -348,7 +388,7 @@ const AboutUs = () => {
               </div>
               <div className={styles.tab}>
                 <input id="tab-two" type="checkbox" name="tabs" />
-                <label for="tab-two">
+                <label data-aos="fade-up" for="tab-two">
                   What are the documents a buyer would need from me?
                 </label>
                 <div className={styles.tabContent}>
@@ -361,7 +401,7 @@ const AboutUs = () => {
               </div>
               <div className={styles.tab}>
                 <input id="tab-three" type="checkbox" name="tabs" />
-                <label for="tab-three">
+                <label data-aos="fade-up" for="tab-three">
                   How soon would I receive a call from you after writing?
                 </label>
                 <div className={styles.tabContent}>
@@ -379,12 +419,13 @@ const AboutUs = () => {
       <div className={styles.getPlan}>
         <div className={styles.imgDiv}>
           <img
+            data-aos="fade-right"
             className={styles.imgSun}
             src="https://mota.ru/upload/wallpapers/source/2012/07/30/15/00/31887/XIQ4VDvJ5Z.jpg"
             alt="photo"
           />
         </div>
-        <div className={styles.getInfo}>
+        <div data-aos="fade-left" className={styles.getInfo}>
           Get in touch with us to plan your next transaction
           <p className={styles.our}>
             Our experts and developers would love to contribute their expertise
@@ -403,7 +444,9 @@ const AboutUs = () => {
 
                   <label className={styles.textInput}>Message</label>
                   <textarea className={styles.form} name="message" />
-                  <input className={styles.button} type="submit" value="Send" />
+                  <button className={styles.button} type="submit" value="Send">
+                    sent Company
+                  </button>
                 </form>
               </div>
             </div>

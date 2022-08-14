@@ -1,7 +1,7 @@
-import React from "react"
-import NewProperties from "../../components/Profile/NewProperties/NewProperties"
-import ProfileSidebar from "../../components/Profile/ProfileSidebar/ProfileSidebar"
-import styles from "./Profile.module.css"
+import React from "react";
+import NewProperties from "../../components/Profile/NewProperties/NewProperties";
+import ProfileSidebar from "../../components/Profile/ProfileSidebar/ProfileSidebar";
+import styles from "./Profile.module.css";
 
 function Profile() {
   return (
@@ -11,7 +11,7 @@ function Profile() {
         <NewProperties />
       </div>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;
