@@ -57,4 +57,15 @@
   font-size: 2.2em;
   cursor: pointer;
   display: flex;
+  height: 30px;
+  width: 30px;
+}
+
+.acc_icon img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 3px 23px #e3e6ec;
+  cursor: pointer;
+  border: 1px solid #452820;
 }
