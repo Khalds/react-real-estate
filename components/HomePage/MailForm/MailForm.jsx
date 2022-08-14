@@ -1,4 +1,5 @@
 import styles from "./MailForm.module.css";
+import Link from "next/link";
 
 const MailForm = () => {
   return (
@@ -28,7 +29,9 @@ const MailForm = () => {
           and insights and help you today. Contact us to help you plan your next
           transaction, either buying or selling a home.
         </p>
-        <button>Contact us</button>
+        <Link href={"/contact"}>
+          <button>Contact us</button>
+        </Link>
       </div>
     </div>
   );

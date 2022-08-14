@@ -21,7 +21,7 @@ const PopularAreas = () => {
         <div className={styles.areas}>
           <div className={styles.img_container}>
             <img
-              src="http://lasvegas.wpresidence.net/wp-content/uploads/2022/03/city_category3.jpeg"
+              src="https://wikiway.com/upload/iblock/087/Groznyy-Siti-5.jpg"
               alt="photo"
             ></img>
             <h4 className={styles.city}>Grozny</h4>
@@ -29,7 +29,7 @@ const PopularAreas = () => {
           </div>
           <div className={styles.img_container}>
             <img
-              src="http://lasvegas.wpresidence.net/wp-content/uploads/2022/03/city_category3.jpeg"
+              src="http://s3.fotokto.ru/photo/full/595/5951164.jpg"
               alt="photo"
             ></img>
             <h4 className={styles.city}>Argun</h4>
@@ -37,10 +37,11 @@ const PopularAreas = () => {
           </div>
           <div className={styles.img_container}>
             <img
-              src="http://lasvegas.wpresidence.net/wp-content/uploads/2022/03/city_category3.jpeg"
+              src="https://core-pht-proxy.maps.yandex.ru/v1/photos/download?photo_id=PSNpKzmAHNDrU0i6R-VamQ&image_size=XL"
               alt="photo"
+              className={styles.image_gudermes}
             ></img>
-            <h4 className={styles.city}>Bachi-yurt</h4>
+            <h4 className={styles.city}>Gudermes</h4>
             <p className={styles.listing}>2 listings</p>
           </div>
         </div>
