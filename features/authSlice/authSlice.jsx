@@ -11,21 +11,43 @@ const initialState = {
   userId: null,
 }
 
-export const fetchUser = createAsyncThunk("user/fetch", async (_, thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:5000/users")
+export const fetchUser = createAsyncThunk(
+  "users/fetch",
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:5000/users")
 
-    const json = await res.json()
+      const json = await res.json()
 
-    if (json.error) {
-      return thunkAPI.rejectWithValue(json.error)
-    } else {
-      return thunkAPI.fulfillWithValue(json)
+      if (json.error) {
+        return thunkAPI.rejectWithValue(json.error)
+      } else {
+        return thunkAPI.fulfillWithValue(json)
+      }
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e)
     }
-  } catch (e) {
-    return thunkAPI.rejectWithValue(e)
   }
-})
+)
+
+export const fetchUserById = createAsyncThunk(
+  "user/fetch",
+  async (id, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/user/${id}`)
+
+      const json = await res.json()
+
+      if (json.error) {
+        return thunkAPI.rejectWithValue(json.error)
+      } else {
+        return thunkAPI.fulfillWithValue(json)
+      }
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e)
+    }
+  }
+)
 
 export const createUser = createAsyncThunk(
   "registration/post",
@@ -76,6 +98,31 @@ export const auth = createAsyncThunk(
       }
     } catch (e) {
       return thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
+export const addFavorite = createAsyncThunk(
+  "userFavorite/patch",
+  async ({ apartmentId, userId }, thunkAPI) => {
+    const state = thunkAPI.getState()
+    try {
+      const res = await fetch(
+        `http://localhost:4000/users/${userId}/favorite`,
+        {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${state.auth.token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            favorite: apartmentId,
+          }),
+        }
+      )
+      return res.json(res)
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message)
     }
   }
 )
@@ -137,6 +184,22 @@ export const authSlice = createSlice({
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
         state.users = action.payload
+      })
+      .addCase(fetchUserById.fulfilled, (state, action) => {
+        state.user = action.payload
+      })
+      .addCase(addFavorite.fulfilled, (state, action) => {
+        state.users = state.users.map((item) => {
+          console.log(action.payload._id)
+          if (item._id === action.payload._id) {
+            return action.payload
+          }
+          return item
+        })
+      })
+      .addCase(addFavorite.rejected, (state, action) => {
+        state.error = action.payload
+        console.log(action.payload)
       })
   },
 })

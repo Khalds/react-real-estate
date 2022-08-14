@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styles from "./ProfileSidebar.module.css"
 import { FaRegUser } from "react-icons/fa"
 import { CgHome } from "react-icons/cg"
@@ -7,9 +7,26 @@ import { MdOutlineAddBox, MdOutlineFavoriteBorder } from "react-icons/md"
 
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { useDispatch, useSelector } from "react-redux"
+import { getToken, removeToken } from "../../../features/authSlice/authSlice"
 
 function ProfileSidebar() {
   const router = useRouter()
+  const userId = useSelector((state) => state.auth.userId)
+  const dispatch = useDispatch()
+  const token = useSelector((state) => state.auth.token)
+
+  useEffect(() => {
+    dispatch(getToken())
+  }, [dispatch])
+
+  const handleLogout = () => {
+    dispatch(removeToken())
+  }
+
+  if (token === null) {
+    router.push("/")
+  }
 
   return (
     <div className={styles.ProfileSidebar}>
@@ -24,10 +41,10 @@ function ProfileSidebar() {
           <p>Welcome back, Khald!</p>
         </div>
         <div className={styles.sidebar_nav}>
-          <Link href="/profile">
+          <Link href={`/profile/${userId}`}>
             <div
               className={
-                router.pathname == "/profile"
+                router.pathname == `/profile`
                   ? styles.side_item_active
                   : styles.side_item
               }
@@ -36,10 +53,10 @@ function ProfileSidebar() {
               <p>My Profile</p>
             </div>
           </Link>
-          <Link href="/profile/properties">
+          <Link href="/">
             <div
               className={
-                router.pathname == "/profile/properties"
+                router.pathname == "/"
                   ? styles.side_item_active
                   : styles.side_item
               }
@@ -48,10 +65,10 @@ function ProfileSidebar() {
               <p>My Properties List</p>
             </div>
           </Link>
-          <Link href="/">
+          <Link href={`/profile/properties/${userId}`}>
             <div
               className={
-                router.pathname == "/"
+                router.pathname == `/profile/properties/${userId}`
                   ? styles.side_item_active
                   : styles.side_item
               }
@@ -73,7 +90,7 @@ function ProfileSidebar() {
               <p>Favorites</p>
             </div>
           </Link>
-          <div className={styles.side_item}>
+          <div onClick={handleLogout} className={styles.side_item}>
             <TbLogout className={styles.icon} />
             <p>Logout</p>
           </div>

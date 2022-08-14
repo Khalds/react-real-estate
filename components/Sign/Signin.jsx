@@ -87,7 +87,6 @@ export default function Signin() {
                 />
               )}
             </div>
-            {token && <p>Hello</p>}
             <button onClick={handleSubmit}>Login</button>
             <Link href="/signup">Register here!</Link>
           </div>
