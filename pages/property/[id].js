@@ -61,7 +61,7 @@ const property = ({ apartment }) => {
             <Showing apartment={apartment} />
           </div>
         </div>
-        <Reviews />
+        <Reviews apartment= {apartment}/>
       </div>
 
     </div>

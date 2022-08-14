@@ -1,4 +1,4 @@
-.agent_reviews_wrapper {
+.property_reviews_wrapper {
     margin-bottom: 1em;
     background: #fff;
     padding: 1em 2em 2em 2em;
@@ -8,12 +8,25 @@
     box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
   }
   
-  .agent_reviews_wrapper h4 {
+  .property_reviews_wrapper h4 {
     font-size: 1.2em;
     margin: 1em 0.5em;
     font-weight: 700;
     color: #181c23;
   }
+
+  .property_reviews_wrapper input {
+    padding: 1.1em;
+    background-color: #f3f3f3;
+    color: #181c23;
+    font-size: 0.94em;
+    margin-bottom: 1em;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.8em;
+    outline: none;
+  }
+  
 
 .input_wrapper {
     display: flex;
@@ -79,5 +92,18 @@
   
   .review_container span {
    margin-left: 1.2em;
+  }
+
+  .button_add_container {
+    text-align: center;
+  }
+  
+  .button_add {
+    border-radius: 0.5em;
+    border: 1em;
+    padding: 2% 2%;
+    width: 20%;
+    cursor: pointer;
+    margin-top: 2%;
   }
   
