@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import CountUp from "react-countup";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
-//about
 
 const AboutUs = () => {
   const settings = {
@@ -50,9 +49,9 @@ const AboutUs = () => {
       <div className={styles.counts}>
         <div className={styles.count}>
           <CountUp
-            start={-875.039}
-            end={8500.0}
-            duration={2.75}
+            start={-3635.039}
+            end={52000.0}
+            duration={21.75}
             separator=" "
             decimals={4}
             decimal=","
@@ -70,9 +69,9 @@ const AboutUs = () => {
         </div>
         <div className={styles.count}>
           <CountUp
-            start={-875.039}
-            end={12000.0}
-            duration={2.75}
+            start={-3835.039}
+            end={52000.0}
+            duration={21.75}
             separator=" "
             decimals={4}
             decimal=","
@@ -90,9 +89,9 @@ const AboutUs = () => {
         </div>
         <div className={styles.count}>
           <CountUp
-            start={-875.039}
-            end={64850.0}
-            duration={2.75}
+            start={-8399.039}
+            end={4850.0}
+            duration={21.75}
             separator=" "
             decimals={4}
             decimal=","
@@ -191,15 +190,15 @@ const AboutUs = () => {
         <div className={styles.body}>
           <div className={styles.carlosa}>
             <img
-              className={styles.logoCarlosa}
-              src="https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial3.jpeg"
+              className={styles.logoCarlos}
+              src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person-21-500x328.jpg"
               alt="photo"
             />
             <div className={styles.colorBlack}>Carlos Dobarro</div>
             <p />
             <div className={styles.infoAvatar}>
               Whether it is working with a first time homebuyer, a luxury home
-              listing or a seasoned inv...
+              listing or a seasoned I'm gay...
             </div>
           </div>
           <div className={styles.carlos}>
@@ -396,10 +395,10 @@ const AboutUs = () => {
               <div className={styles.center}>
                 <form className={styles.form} ref={form} onSubmit={sendEmail}>
                   <label className={styles.textInput}>Name</label>
-                  <input type="text" name="user_name" />
+                  <input type="text" name="user_name" maxlength="20" />
                   <br />
                   <label className={styles.textInput}>Email</label>
-                  <input type="email" name="user_email" />
+                  <input type="email" name="user_email" maxlength="20" />
                   <br />
 
                   <label className={styles.textInput}>Message</label>
