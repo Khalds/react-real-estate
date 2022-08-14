@@ -1,19 +1,24 @@
 import styles from "./reviews.module.css";
-import StarRatingComponent from "react-star-rating-component";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addReview, putRate } from "../../../features/realtor";
+import { addReview, getRealtorById, putRate } from "../../../features/realtor";
 import { useRouter } from "next/router";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 
-const Reviews = ({ reviews }) => {
+const Reviews = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.realtorReducer.user);
   const isActiveStar = useSelector((user) => user.realtorReducer.isActiveStar);
+  const realtor = useSelector((state) => state.realtorReducer.realtor);
   const router = useRouter();
 
-  const agent_id = router.query.id;
+  useEffect(() => {
+    dispatch(getRealtorById(agent_id));
+  }, [dispatch]);
+
+
+  const agent_id = router.query.id
 
   const [rate, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -21,7 +26,7 @@ const Reviews = ({ reviews }) => {
   const [advantages, setAdvantages] = useState("");
   const [disadvantages, setDisadvantages] = useState("");
   const [review, setReview] = useState("");
-
+  
   const handleSet = () => {
     if (rate !== 0) {
       dispatch(putRate({ rate, user, agent_id }));
@@ -35,6 +40,9 @@ const Reviews = ({ reviews }) => {
       );
     }
   };
+
+  console.log(realtor)
+
 
   return (
     <>
@@ -79,15 +87,12 @@ const Reviews = ({ reviews }) => {
           <input
             onChange={(e) => setDisadvantages(e.target.value)}
             value={disadvantages}
-            placeholder={                "What was not so great?"
-            }
+            placeholder={"What was not so great?"}
           ></input>
           <input
             onChange={(e) => setReview(e.target.value)}
             value={review}
-            placeholder={
-                "Write you review here"
-            }
+            placeholder={"Write you review here"}
           ></input>
           <div className={styles.button_add_container}>
             <button onClick={handleAddReview} className={styles.button_add}>
@@ -96,11 +101,9 @@ const Reviews = ({ reviews }) => {
           </div>
         </div>
       </div>
-
       <div className={styles.reviews_list}>
-        {reviews.map((item) => {
-  console.log(item)
-
+        
+        {realtor && realtor.reviews.map((item) => {
           return (
             <>
               <div className={styles.list_item_container}>

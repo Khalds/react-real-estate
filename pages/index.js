@@ -20,7 +20,6 @@ export default function Home() {
       <SearchContent />
       <CompanyInfo />
       <PopularAreas />
-         
       <ApartmentCardsHomePage />
       <AgentListHomePage />
       <MailForm />
