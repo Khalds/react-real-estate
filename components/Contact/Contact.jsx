@@ -56,6 +56,7 @@ const Contact = () => {
         />
       </div>
       <div className={styles.email}>
+      ///!Изменить
         <h1>Contact Us</h1>
         <div className={styles.center}>
           <form className={styles.form}>
@@ -83,6 +84,7 @@ const Contact = () => {
             <button className={styles.button}>Sent Mail</button>
           </form>
         </div>
+        ////! До этого
       </div>
       <div className={styles.backgraundMap}>
         <h3>

@@ -1,0 +1,37 @@
+.main_wrapper {
+  background-color: #fcfbfd;
+  color: #6f6f6f;
+  padding-top: 1%;
+}
+
+.wrapper {
+  width: 60%;
+  margin: auto;
+}
+
+.entry_title {
+  margin: 0 0 0.7349em 0;
+  color: #181c23;
+  font-size: 2.125em;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+
+.text_wrapper {
+  font-size: 0.875em;
+  line-height: 1.65em;
+  width: 100%;
+  color: #6f6f6f;
+}
+
+.cards_wrapper {
+  margin: 2.5em 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #6f6f6f;
+  font-style: 0.875em;
+  line-height: 1em;
+}
+

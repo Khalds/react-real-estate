@@ -10,6 +10,7 @@ import SearchContent from "../components/HomePage/SearchContent/SearchContent";
 import styles from "../styles/Home.module.css";
 import { useSelector } from "react-redux";
 import preloader from "../images/preloader.gif";
+import BackToTopButton from "../components/Agent/BackToTopButton";
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <ApartmentCardsHomePage />
       <AgentListHomePage />
       <MailForm />
+      <BackToTopButton />
     </>
   );
 

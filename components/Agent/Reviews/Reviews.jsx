@@ -99,6 +99,8 @@ const Reviews = ({ reviews }) => {
 
       <div className={styles.reviews_list}>
         {reviews.map((item) => {
+  console.log(item)
+
           return (
             <>
               <div className={styles.list_item_container}>
