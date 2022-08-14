@@ -6,7 +6,7 @@ const SearchContent = () => {
   return (
     <div className={styles.main}>
       <div className={styles.text_container}>
-        <h1>Find your next Home in Las Vegas</h1>
+        <h1>Find your next Home in Chechnya</h1>
         <span>
           Through our proprietary platform, WpResidence is changing how agents
           and clients navigate the process of finding or selling a home.

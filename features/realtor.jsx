@@ -4,6 +4,8 @@ const initialState = {
   realtors: [],
   user: null,
   isActiveStar: false,
+  error: null,
+  users: []
 };
 
 export const getRealtors = createAsyncThunk(
@@ -24,17 +26,27 @@ export const getRealtors = createAsyncThunk(
 export const putRate = createAsyncThunk(
   "set/rating",
   async ({ rate, user, agent_id }, thunkAPI) => {
+    const token = localStorage.getItem("token");
+    console.log(token);
     try {
+      console.log(token);
       const res = await fetch(
         `http://localhost:5000/realtors/rating/${agent_id}`,
         {
           method: "PATCH",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
           body: JSON.stringify({ rate: rate, user: user }),
         }
       );
 
       const data = await res.json();
+
+      if (data.error) {
+        return thunkAPI.rejectWithValue(data.error);
+      }
 
       return data;
     } catch (error) {
@@ -47,11 +59,16 @@ export const addReview = createAsyncThunk(
   "add/review",
   async ({ agent_id, review, advantages, disadvantages, user }, thunkAPI) => {
     try {
+      const token = localStorage.getItem("token");
+      
       const res = await fetch(
         `http://localhost:5000/realtors/review/${agent_id}`,
         {
           method: "PATCH",
-          headers: { "content-type": "application/json" },
+          headers: {
+            "content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
           body: JSON.stringify({
             review: review,
             advantages: advantages,
@@ -62,12 +79,28 @@ export const addReview = createAsyncThunk(
       );
 
       const data = await res.json();
+
+      if (data.error) {
+        return thunkAPI.rejectWithValue(data.error);
+      }
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
+
+export const getRealtorById = createAsyncThunk("get/realtor", async (realtorId,thunkAPI) => {
+  try {
+    const res = await fetch(`http://localhost:5000/realtors/${realtorId}`)
+  
+    return res.json()
+  } catch (error) {
+    return thunkAPI.rejectWithValue(e.message)
+  }
+  })
+
 export const realtorSlice = createSlice({
   name: "realtors",
   initialState,
@@ -76,11 +109,18 @@ export const realtorSlice = createSlice({
     builder
       .addCase(getRealtors.fulfilled, (state, action) => {
         state.realtors = action.payload;
-        state.user = localStorage.getItem("user");
+        state.user = localStorage.getItem("userId");
       })
       .addCase(putRate.fulfilled, (state, action) => {
         state.isActiveStar = true;
-      });
+      })
+      .addCase(putRate.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(addReview.fulfilled, (state, action) => {
+        state.realtors = action.payload
+      })
+      
   },
 });
 

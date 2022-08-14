@@ -25,7 +25,10 @@ const Profile = ( {image, rating, name, phon, email} ) => {
             <div className={styles.agent_position}>
               realtor overall rating:
               <BsStarFill className={styles.star}/>
-              <div className={styles.numerical_rating}>{rating.rate}</div>
+              <div className={styles.numerical_rating}>{(rating?.reduce((acc, element) => {
+              return acc + element.rate;
+            }, 0) /
+            rating?.length).toFixed(1)}</div>
             </div>
             <NotWorkingIcon phon={phon} email={email}/>
           </div>
