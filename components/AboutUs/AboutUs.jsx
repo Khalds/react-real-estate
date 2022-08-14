@@ -395,10 +395,10 @@ const AboutUs = () => {
               <div className={styles.center}>
                 <form className={styles.form} ref={form} onSubmit={sendEmail}>
                   <label className={styles.textInput}>Name</label>
-                  <input type="text" name="user_name" />
+                  <input type="text" name="user_name" maxlength="20" />
                   <br />
                   <label className={styles.textInput}>Email</label>
-                  <input type="email" name="user_email" />
+                  <input type="email" name="user_email" maxlength="20" />
                   <br />
 
                   <label className={styles.textInput}>Message</label>

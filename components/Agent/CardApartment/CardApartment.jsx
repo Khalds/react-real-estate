@@ -61,10 +61,7 @@ const CardApartment = ({ apartment }) => {
         </div>
         <div className={styles.agentInfo_canteiner}>
           <div className={styles.agent_photo_name}>
-            <img
-              src={apartment.realtor.image}
-              alt="agent_photo"
-            />
+            <img src={apartment.realtor.image} alt="agent_photo" />
             <span>{apartment.realtor.name}</span>
           </div>
           <div className={styles.agent_icons}>

@@ -138,7 +138,7 @@ const Contact = () => {
         </h3>
         <p>8-(800)-555-35-35</p>
         <p>neKidala@mail.com</p>
-        <p>10845 Griffin Peter Dr, Las Vegas, NV 89135</p>
+        <p>10845 Griffin Peter Dr, Chechya, NV 89135</p>
         <p>Opening Hours</p>
         <p>Monday-Friday: 10:00 - 18:00</p>
         <p>Saturday: 10:00 - 14:00</p>
