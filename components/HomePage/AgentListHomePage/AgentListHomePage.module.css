@@ -46,22 +46,22 @@
 
 .card_header img {
   border-radius: 50%;
-  width: 20%;
-  height: 20%;
+  width: 16%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .agent_name {
     font-size: 1.1em;
     font-weight: 900;
-    color:black
+    color:black;
+    cursor: pointer;
 }
 
 .agent_email {
     font-size: 0.9em;
     color:#6f6f6f
 }
-
 
 
 .description {

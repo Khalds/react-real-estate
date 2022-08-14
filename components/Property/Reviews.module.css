@@ -1,0 +1,109 @@
+.property_reviews_wrapper {
+    margin-bottom: 1em;
+    background: #fff;
+    padding: 1em 2em 2em 2em;
+    width: 100%;
+    display: inline-block;
+    border-radius: 0.8em;
+    box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+  }
+  
+  .property_reviews_wrapper h4 {
+    font-size: 1.2em;
+    margin: 1em 0.5em;
+    font-weight: 700;
+    color: #181c23;
+  }
+
+  .property_reviews_wrapper input {
+    padding: 1.1em;
+    background-color: #f3f3f3;
+    color: #181c23;
+    font-size: 0.94em;
+    margin-bottom: 1em;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.8em;
+    outline: none;
+  }
+  
+
+.input_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+  }
+
+  .reviews_list {
+    margin-bottom: 1em;
+    background: transparent;
+    padding: 1em 2em 2em 2em;
+    width: 100%;
+    display: inline-block;
+    border-radius: 0.8em;
+    box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+  }
+  
+  .list_item_container {
+    border-radius: 1em;
+    padding: 2% 5%;
+    background:white;
+    margin-top: 2%;
+  }
+  
+  .list_item_container h4 {
+  font-size: 1.5em;
+  margin: 2% 0%;
+  }
+  
+  .advantages_container {
+    font-size: 1em;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4em;
+    margin-bottom: 1em;
+  }
+  
+  .advantages_container span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 1.2em;
+    color: rgb(170 170 170)
+  }
+  
+  .disadvantages_container {
+    font-size: 1em;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4em;
+    margin-bottom: 1em;
+  }
+  
+  .disadvantages_container span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 1.2em;
+    color: rgb(170 170 170)
+  }
+  
+  .review_container span {
+   margin-left: 1.2em;
+  }
+
+  .button_add_container {
+    text-align: center;
+  }
+  
+  .button_add {
+    border-radius: 0.5em;
+    border: 1em;
+    padding: 2% 2%;
+    width: 20%;
+    cursor: pointer;
+    margin-top: 2%;
+  }
+  

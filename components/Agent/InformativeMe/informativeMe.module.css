@@ -38,7 +38,7 @@
   font-size: 0.8em;
   border-radius: 1.1em;
   font-weight: 700;
-  text-transform: capitalize;
+  cursor: pointer;
 }
 
 .specialties a:hover {

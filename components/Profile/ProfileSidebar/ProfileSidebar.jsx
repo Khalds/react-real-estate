@@ -90,6 +90,18 @@ function ProfileSidebar() {
               <p>Favorites</p>
             </div>
           </Link>
+          <Link href="/profile/bookings">
+            <div
+              className={
+                router.pathname == "/profile/bookings"
+                  ? styles.side_item_active
+                  : styles.side_item
+              }
+            >
+              <CgHome className={styles.icon} />
+              <p>Bookings</p>
+            </div>
+          </Link>
           <div onClick={handleLogout} className={styles.side_item}>
             <TbLogout className={styles.icon} />
             <p>Logout</p>

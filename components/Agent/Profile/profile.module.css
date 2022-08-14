@@ -11,6 +11,7 @@
 
 .profile_image {
   width: 100%;
+  height: 90%;
   border-radius: 0.8em;
 }
 
@@ -20,7 +21,6 @@
 
 .agent_position {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   font-size: 1.1em;
   margin-bottom: 0.8em;
@@ -29,9 +29,13 @@
 }
 
 .numerical_rating {
-  text-decoration: underline;
   color: #452820;
   font-weight: 600;
+}
+
+.star {
+  color: rgb(255, 180, 0);
+  margin: .2em .4em 0 .5em;
 }
 
 .profile_contact_wrapper h3 {

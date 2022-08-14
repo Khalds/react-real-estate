@@ -49,6 +49,10 @@
   margin-right: 2em;
   border-radius: 0.5em;
   object-fit: cover;
+  filter: brightness(90%);
+}
+.areas .image_gudermes {
+  object-position: left;
 }
 
 .city {
