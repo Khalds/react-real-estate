@@ -19,13 +19,13 @@ const Realtor = () => {
   const [limit, setLimit] = useState(12);
 
 
-  const contact = useRef(null);
-  const scrollToSection = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: "smooth",
-    });
-  };
+  // const contact = useRef(null);
+  // const scrollToSection = (elementRef) => {
+  //   window.scrollTo({
+  //     top: elementRef.current.offsetTop,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   const handleShow = () => {
     setLimit((limit += 2));
@@ -92,7 +92,6 @@ const Realtor = () => {
                 <InformativeMe description={item.description} />
                 <PersonalData />
                  
-
               </>
             );
           }

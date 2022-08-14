@@ -16,7 +16,7 @@ const CardAgentList = ({ realtor }) => {
           <h4>{realtor.name}</h4>
           <div className={styles.position_agent}>real estate broker</div>
           <div className={styles.card_content_wrapper}>{description}...</div>
-          <AgentListIcon />
+          <AgentListIcon phon={realtor.phoneNumber} email={realtor.email} />
       </div>
     </div>
   );

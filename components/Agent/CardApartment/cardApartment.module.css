@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 
-
-
 .card {
   width: 42%;
   border-radius: 1em;
@@ -119,21 +117,23 @@
   color: #94979b;
   border: 1px solid #94979b69;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .passive_heart {
   cursor: pointer;
+  color: #c5c5c6;
 }
 
 .active_heart {
   cursor: pointer;
+  color: #452820;
 }
 
 .menu_icons {
   cursor: pointer;
 }
 
- 
 /* .button_container button {
   padding: 2% 3%;
   border-radius: 1em;
@@ -207,9 +207,9 @@
   margin-right: 0.8em;
 }
 .number {
-  font-size: .94em;
+  font-size: 0.94em;
   font-weight: 600;
-  margin-top: .1em;
+  margin-top: 0.1em;
 }
 
 .details_wrapper {
@@ -222,14 +222,44 @@
 
 .details_wrapper b {
   font-size: 1em;
-  margin: .2em 0 0 .2em;
+  margin: 0.2em 0 0 0.2em;
   cursor: pointer;
 }
 
 .details_wrapper b:hover {
-    color: #452820d9;
+  color: #452820d9;
 }
 
 .goLocation {
   font-size: 1em;
+}
+
+.icon_modal_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 2.8em;
+  right: 6.82em;
+  background-color: #452820;
+  border-radius: 0.625em;
+  color: #fff;
+  font-size: 1.12em;
+  width: 1.6em;
+  padding: 0.3125em 0 0.3125em 0.0625em;
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+  line-height: 1.3em;
+  z-index: 100;
+}
+
+.arrowDown{
+  position: absolute;
+  bottom: 1.9em;
+  right: 6.62em;
+  font-size: 1.2em;
+  z-index: 99;
+}
+
+.arrow {
+  color: #452820;
 }
