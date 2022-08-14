@@ -1,4 +1,5 @@
 import styles from "./CompanyInfo.module.css";
+import Link from "next/link";
 const CompanyInfo = () => {
   return (
     <div className={styles.main}>
@@ -13,7 +14,9 @@ const CompanyInfo = () => {
           expertise and dedication, we rank amongst the top 6 agencies in Las
           Vegas. Our agency is the industry’s top luxury producer.
         </p>
-        <button>More about us</button>
+        <Link href={"/about"}>
+          <button>More about us</button>
+        </Link>
       </div>
     </div>
   );

@@ -39,9 +39,11 @@
 }
 
 .text button {
+  color: white;
   background-color: #452820;
   padding: 20px 40px;
   border-radius: 10px;
   font-size: 1.1em;
   cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
 }
