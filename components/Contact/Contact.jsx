@@ -1,13 +1,44 @@
 import Link from "next/link";
+import React, { useEffect, Component, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { useRouter } from "next/router";
 import styles from "./Contact.module.css";
 import { BsFacebook } from "react-icons/Bs";
 import { IoLogoWhatsapp } from "react-icons/Io";
 import { AiFillInstagram } from "react-icons/Ai";
-import { AiFillGooglePlusCircle } from "react-icons/Ai";
+import { FaTelegram } from "react-icons/Fa";
 import { FaRedditAlien } from "react-icons/Fa";
+import {
+  FacebookShareButton,
+  TelegramShareButton,
+  RedditShareButton,
+  WhatsappShareButton,
+} from "react-share";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ltrwn16",
+        "template_uigmfng",
+        form.current,
+        "N9-yjO28VSgymSKue"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+  const shareUrl =
+    "Real Estate Agency Вы можете ознакомится c нашими услугами на сайте. Подробности... https://lasvegas.wpresidence.net/";
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -19,18 +50,25 @@ const Contact = () => {
             className={styles.logo}
           />
         </div>
-
         <div className={styles.adress}>
           10845 Griffin Peter Dr, Quahog, NV 89135
         </div>
-        <div className={styles.icons}>
-          <BsFacebook className={styles.social} />
-          <IoLogoWhatsapp className={styles.social} />
-          <AiFillInstagram className={styles.social} />
-          <AiFillGooglePlusCircle className={styles.social} />
+        <TelegramShareButton url={shareUrl}>
+          <FaTelegram className={styles.social} />
+        </TelegramShareButton>
+        <RedditShareButton url={shareUrl}>
           <FaRedditAlien className={styles.social} />
-        </div>
+        </RedditShareButton>
 
+        <WhatsappShareButton url={shareUrl}>
+          <IoLogoWhatsapp className={styles.social} />
+        </WhatsappShareButton>
+        <FacebookShareButton url={shareUrl}>
+          <BsFacebook className={styles.social} />
+
+          <AiFillInstagram className={styles.social} />
+        </FacebookShareButton>
+        <div className={styles.icons}></div>
         <div className={styles.phone}>
           <p>Phone:8-(800)-555-35-35</p>
           <p>Mobie:8-(305)-555-45-55</p>
@@ -59,21 +97,29 @@ const Contact = () => {
       ///!Изменить
         <h1>Contact Us</h1>
         <div className={styles.center}>
-          <form className={styles.form}>
+          <form className={styles.form} ref={form} onSubmit={sendEmail}>
+            <label className={styles.textInput}>Name</label>
             <input
+              type="text"
+              name="user_name"
               className={styles.inputMail}
               maxlength="20"
               placeholder="Your Name"
             />
             <br />
+            <label className={styles.textInput}>Email</label>
             <input
+              type="email"
+              name="user_email"
               className={styles.inputMail}
               maxlength="20"
               placeholder="Your E-mail"
             />
             <br />
+            <label className={styles.inputText}>Message</label>
 
             <input
+              name="message"
               className={styles.inputText}
               placeholder="Enter Text"
               required
@@ -81,7 +127,9 @@ const Contact = () => {
 
             <br />
 
-            <button className={styles.button}>Sent Mail</button>
+            <button className={styles.button} type="submit" value="Send">
+              Sent Mail
+            </button>
           </form>
         </div>
         ////! До этого
@@ -92,7 +140,7 @@ const Contact = () => {
         </h3>
         <p>8-(800)-555-35-35</p>
         <p>neKidala@mail.com</p>
-        <p>10845 Griffin Peter Dr, Las Vegas, NV 89135</p>
+        <p>10845 Griffin Peter Dr, Chechya, NV 89135</p>
         <p>Opening Hours</p>
         <p>Monday-Friday: 10:00 - 18:00</p>
         <p>Saturday: 10:00 - 14:00</p>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
 
 .about {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .photo {
   width: 60em;
@@ -25,6 +25,7 @@
   border-radius: 10px 10px 10px 10px;
 }
 .forSave img {
+  cursor: grab;
   margin-left: 10%;
   width: 80%;
   height: 80%;
@@ -457,7 +458,6 @@
   background-color: #ffff;
   color: black;
   border-radius: 1em;
-  text-align: center;
   margin-bottom: 2em;
 
   width: 50%;
