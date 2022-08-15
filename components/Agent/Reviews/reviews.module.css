@@ -73,8 +73,6 @@
   margin-top: 2%;
 }
 
-
-
 .reviews_list {
   margin-bottom: 1em;
   background: transparent;
@@ -88,13 +86,13 @@
 .list_item_container {
   border-radius: 1em;
   padding: 2% 5%;
-  background:white;
+  background: white;
   margin-top: 2%;
 }
 
 .list_item_container h4 {
-font-size: 1.5em;
-margin: 2% 0%;
+  font-size: 1.5em;
+  margin: 2% 0%;
 }
 
 .advantages_container {
@@ -111,7 +109,7 @@ margin: 2% 0%;
   align-items: center;
   gap: 0.3em;
   font-size: 1.2em;
-  color: rgb(170 170 170)
+  color: rgb(170 170 170);
 }
 
 .disadvantages_container {
@@ -128,17 +126,9 @@ margin: 2% 0%;
   align-items: center;
   gap: 0.3em;
   font-size: 1.2em;
-  color: rgb(170 170 170)
+  color: rgb(170 170 170);
 }
 
 .review_container span {
- margin-left: 1.2em;
+  margin-left: 1.2em;
 }
-
-
-
-
-
-
-
-

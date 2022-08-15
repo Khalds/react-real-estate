@@ -8,7 +8,7 @@ import Profile from "./Profile/Profile";
 import Reviews from "./Reviews/Reviews";
 import Listings from "./Listings/Listings";
 import { useState } from "react";
-import { getRealtors } from "../../features/realtor";
+import { getRealtorById, getRealtors } from "../../features/realtor";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -57,7 +57,8 @@ const Realtor = () => {
     }
   };
 
-  console.log(filtered());
+  filtered();
+
 
   const router = useRouter();
   const { id } = router.query;
@@ -65,6 +66,7 @@ const Realtor = () => {
   useEffect(() => {
     dispatch(getApartments());
     dispatch(getRealtors());
+    dispatch(getRealtorById(id))
   }, [dispatch]);
 
   return (
@@ -128,7 +130,7 @@ const Realtor = () => {
      {realtors.map(realtor => {
     if(realtor._id === id) {
       return (
-        <Reviews reviews={realtor.reviews} key={realtor._id} />
+        <Reviews reviews={realtor.reviews} agent_id={realtor._id} key={realtor._id} />
       )
     }
  })}

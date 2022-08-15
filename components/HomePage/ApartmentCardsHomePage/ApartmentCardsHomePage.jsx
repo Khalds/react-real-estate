@@ -37,6 +37,10 @@ const ApartmentCardsHomePage = () => {
     }
   };
 
+  const handleFavorite = (apartmentId) => {
+    dispatch(addFavorite({ apartmentId, userId }))
+  }
+
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
 
 .about {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .photo {
   width: 60em;
@@ -25,6 +25,7 @@
   border-radius: 10px 10px 10px 10px;
 }
 .forSave img {
+  cursor: grab;
   margin-left: 10%;
   width: 80%;
   height: 80%;
@@ -91,6 +92,24 @@
 .colorBlack {
   color: black;
   margin-left: 35%;
+}
+.best {
+  color: #181c23;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 1.3em;
+  margin-left: 40%;
+  margin-top: 20%;
+}
+.pBest {
+  display: flex;
+  justify-content: center;
+  color: #7a7a7a;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6em;
 }
 .carlos {
   margin-top: 3%;
@@ -350,13 +369,13 @@
 .tabContent {
   max-height: 0;
   overflow: hidden;
-  background: #4d2d05;
+  background: rgb(50, 21, 5);
   -webkit-transition: max-height 0.35s;
   -o-transition: max-height 0.35s;
   transition: max-height 0.35s;
 }
 .blue .tabContent {
-  background: #4d2d05;
+  background: rgb(50, 21, 5);
 }
 .tabContent p {
   margin: 1em;
@@ -414,20 +433,22 @@
 
   border-radius: 1%;
   width: 660px;
-  height: 810px;
+  height: 822px;
 }
 .getPlan {
   display: flex;
 }
 
 .button {
+  font-family: "Nunito Sans", Sans-serif;
+  cursor: pointer;
   margin-top: 5%;
-  border-radius: 1em;
-  width: 25%;
-  font-size: 10pt;
-  background: rgb(50, 21, 5);
-  height: 3em;
-  padding: 1em;
+  border-radius: 0.3em;
+  width: 50%;
+  font-size: 1em;
+  background-color: #4d2d05;
+  color: white;
+  padding: 0.2em;
   border: none;
 }
 
@@ -457,7 +478,6 @@
   background-color: #ffff;
   color: black;
   border-radius: 1em;
-  text-align: center;
   margin-bottom: 2em;
 
   width: 50%;

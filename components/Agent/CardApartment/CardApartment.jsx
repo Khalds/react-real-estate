@@ -13,9 +13,20 @@ import IconModal from "../IconModal/IconModal";
 import { ImArrowDown } from "react-icons/im";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite } from "../../../features/authSlice/authSlice";
 
 const CardApartment = ({ apartment }) => {
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
+  const [favorite, setFavorite] = useState(false)
+
+  const userId = useSelector(state => state.auth)
+  console.log(userId)
+
+  const makeFavorite = () => {
+      dispatch(addFavorite(userId))
+  }
 
   const  city =  apartment.location.substring(30, 38)
   const  street =  apartment.location.substring(38, 55)
@@ -50,7 +61,7 @@ const CardApartment = ({ apartment }) => {
         <div className={styles.info_container}>
           <h3>{apartment.name} </h3>
           <h4>{apartment.price} $</h4>
-          <p>{apartment.description.slice(0, 130) + "..."}</p>
+          <p>{apartment.description.slice(0, 120) + "..."}</p>
           <div className={styles.icons}>
             <span>
               <MdOutlineBedroomParent /> {apartment.bedroom}
@@ -83,7 +94,7 @@ const CardApartment = ({ apartment }) => {
               <BsFillShareFill className={styles.menu_icons} />
             </span>
             <span>
-              <FaHeart className={styles.passive_heart} />
+              <FaHeart onClick={makeFavorite} className={styles.passive_heart} />
             </span>
             <span>
               <FiPlus />

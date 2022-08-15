@@ -3,9 +3,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   realtors: [],
   user: null,
-  isActiveStar: false,
+  realtor: null,
   error: null,
-  users: []
+  users: [],
+  comments: [],
 };
 
 export const getRealtors = createAsyncThunk(
@@ -60,7 +61,7 @@ export const addReview = createAsyncThunk(
   async ({ agent_id, review, advantages, disadvantages, user }, thunkAPI) => {
     try {
       const token = localStorage.getItem("token");
-      
+
       const res = await fetch(
         `http://localhost:5000/realtors/review/${agent_id}`,
         {
@@ -91,15 +92,18 @@ export const addReview = createAsyncThunk(
   }
 );
 
-export const getRealtorById = createAsyncThunk("get/realtor", async (realtorId,thunkAPI) => {
-  try {
-    const res = await fetch(`http://localhost:5000/realtors/${realtorId}`)
-  
-    return res.json()
-  } catch (error) {
-    return thunkAPI.rejectWithValue(e.message)
+export const getRealtorById = createAsyncThunk(
+  "get/realtorById",
+  async (agent_id, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:5000/realtors/${agent_id}`);
+
+      return res.json();
+    } catch (error) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
   }
-  })
+);
 
 export const realtorSlice = createSlice({
   name: "realtors",
@@ -118,9 +122,11 @@ export const realtorSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(addReview.fulfilled, (state, action) => {
-        state.realtors = action.payload
+        state.realtor = action.payload
       })
-      
+      .addCase(getRealtorById.fulfilled, (state, action) => {
+        state.realtor = action.payload;
+      });
   },
 });
 

@@ -41,14 +41,7 @@
 
 .img_container {
   position: relative;
-  filter: brightness(45%);
-  transition: .5s;
-  cursor: pointer;
-}
-
-.img_container:hover {
-  filter: brightness(100%);
-  transition: .7s;
+  filter: brightness(90%);
 }
 
 .areas img {
@@ -57,6 +50,10 @@
   margin-right: 2em;
   border-radius: 0.5em;
   object-fit: cover;
+  filter: brightness(90%);
+}
+.areas .image_gudermes {
+  object-position: left;
 }
 
 .city {
