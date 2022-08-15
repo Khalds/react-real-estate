@@ -31,6 +31,7 @@ function ProfilePage() {
   useEffect(() => {
     dispatch(getToken())
     dispatch(fetchUser())
+    dispatch(fetchUserById(userId))
   }, [dispatch])
 
   return (
