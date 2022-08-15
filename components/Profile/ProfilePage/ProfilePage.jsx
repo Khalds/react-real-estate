@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import { BsEye, BsEyeSlash } from "react-icons/bs"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchUser, getToken } from "../../../features/authSlice/authSlice"
+import { fetchUser, fetchUserById, getToken } from "../../../features/authSlice/authSlice"
 import styles from "./ProfilePage.module.css"
 
 function ProfilePage() {
@@ -24,6 +24,7 @@ function ProfilePage() {
   useEffect(() => {
     dispatch(getToken())
     dispatch(fetchUser())
+    dispatch(fetchUserById(userId))
   }, [dispatch])
 
   return (
