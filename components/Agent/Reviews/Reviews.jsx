@@ -1,24 +1,29 @@
 import styles from "./reviews.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addReview, getRealtorById, putRate } from "../../../features/realtor";
+import { addReview, getRealtorById, getRealtors, putRate } from "../../../features/realtor";
 import { useRouter } from "next/router";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 
-const Reviews = () => {
+const Reviews = ({reviews}) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.realtorReducer.user);
   const isActiveStar = useSelector((user) => user.realtorReducer.isActiveStar);
   const realtor = useSelector((state) => state.realtorReducer.realtor);
+  const realtors = useSelector((state) => state.realtorReducer.realtors)
   const router = useRouter();
+  
+  const agent_id = router.query.id
+
+  console.log(agent_id)
 
   useEffect(() => {
-    dispatch(getRealtorById(agent_id));
+    dispatch(getRealtorById(agent_id))
+    dispatch(getRealtors())
   }, [dispatch]);
 
 
-  const agent_id = router.query.id
 
   const [rate, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -41,7 +46,6 @@ const Reviews = () => {
     }
   };
 
-  console.log(realtor)
 
 
   return (
@@ -103,7 +107,7 @@ const Reviews = () => {
       </div>
       <div className={styles.reviews_list}>
         
-        {realtor && realtor.reviews.map((item) => {
+        {realtor?.reviews?.map((item) => {
           return (
             <>
               <div className={styles.list_item_container}>

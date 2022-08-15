@@ -20,8 +20,8 @@ const Apartments = ({filteredArr}) => {
                     </div>
                   </Link>
                   <div className={styles.info_container}>
-                    <h3>{apartment.location} </h3>
-                    <h4>{apartment.price} $</h4>
+                    <h3>{apartment.name} </h3>
+                    <h4>{apartment.price} $ {apartment.status === "Rent"? "for month" : ""}</h4>
                     <p>{apartment.description.slice(0, 130) + "..."}</p>
                     <div className={styles.icons}>
                       <span>
@@ -38,10 +38,10 @@ const Apartments = ({filteredArr}) => {
                   <div className={styles.agentInfo_canteiner}>
                     <div className={styles.agent_photo_name}>
                       <img
-                        src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-120x120.jpg')"
+                        src={apartment.realtor.image}
                         alt="agent_photo"
                       />
-                      <span>Michelle Upsetovna</span>
+                      <span>{apartment.realtor.name}</span>
                     </div>
                     <div className={styles.agent_icons}>
                       <span>
