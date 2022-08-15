@@ -1,34 +1,38 @@
-import React, { useEffect } from "react"
-import styles from "./ProfileSidebar.module.css"
-import { FaRegUser } from "react-icons/fa"
-import { CgHome } from "react-icons/cg"
-import { TbLogout } from "react-icons/tb"
-import { MdOutlineAddBox, MdOutlineFavoriteBorder } from "react-icons/md"
+import React, { useEffect } from "react";
+import styles from "./ProfileSidebar.module.css";
+import { FaRegUser } from "react-icons/fa";
+import { CgHome } from "react-icons/cg";
+import { TbLogout } from "react-icons/tb";
+import { MdOutlineAddBox, MdOutlineFavoriteBorder } from "react-icons/md";
 
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchUserById, getToken, removeToken } from "../../../features/authSlice/authSlice"
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchUser,
+  fetchUserById,
+  getToken,
+  removeToken,
+} from "../../../features/authSlice/authSlice";
 
 function ProfileSidebar() {
-  const router = useRouter()
-  const dispatch = useDispatch()
-
-  const userId = useSelector((state) => state.auth.userId)
-  const user = useSelector((state) => state.auth.user)
-  const token = useSelector((state) => state.auth.token)
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const correctUser = useSelector((state) => state.auth.correctUser)
+  const userId = useSelector((state) => state.auth.userId);
+  const user = useSelector((state) => state.auth.user);
+  const token = useSelector((state) => state.auth.token);
 
   useEffect(() => {
-    dispatch(getToken())
-  }, [dispatch])
+    dispatch(getToken());
+    if (!token) {
+      router.push("/");
+    }
+  }, [dispatch]);
 
   const handleLogout = () => {
-    dispatch(removeToken())
-  }
-
-  if (!token) {
-    router.push("/")
-  }
+    dispatch(removeToken());
+  };
 
   return (
     <div className={styles.ProfileSidebar}>
@@ -104,6 +108,20 @@ function ProfileSidebar() {
               <p>Bookings</p>
             </div>
           </Link>
+          {correctUser?.role === "realter" && (
+            <Link href="/profile/myListings">
+              <div
+                className={
+                  router.pathname == "/profile/myListings"
+                    ? styles.side_item_active
+                    : styles.side_item
+                }
+              >
+                <CgHome className={styles.icon} />
+                <p>My listings</p>
+              </div>
+            </Link>
+          )}
           <div onClick={handleLogout} className={styles.side_item}>
             <TbLogout className={styles.icon} />
             <p>Logout</p>
@@ -111,7 +129,7 @@ function ProfileSidebar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ProfileSidebar
+export default ProfileSidebar;

@@ -9,7 +9,8 @@ const initialState = {
   token: null,
   user: null,
   userId: null,
-  role: null
+  role: null,
+  correctUser: null
 }
 
 export const fetchUser = createAsyncThunk(
@@ -35,7 +36,7 @@ export const fetchUserById = createAsyncThunk(
   "user/fetch",
   async (userId, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:4000/user/${userId}`)
+      const res = await fetch(`http://localhost:5000/user/${userId}`)
 
       const json = await res.json()
 
@@ -213,7 +214,7 @@ export const authSlice = createSlice({
         state.users = action.payload
       })
       .addCase(fetchUserById.fulfilled, (state, action) => {
-        state.user = action.payload
+        state.correctUser = action.payload
       })
       .addCase(addFavorite.fulfilled, (state, action) => {
         state.users.map((item) => {
@@ -231,6 +232,7 @@ export const authSlice = createSlice({
           return user
         })
       })
+
   },
 })
 
