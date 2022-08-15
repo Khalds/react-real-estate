@@ -57,6 +57,8 @@ const Realtor = () => {
     }
   };
 
+  filtered();
+
 
   const router = useRouter();
   const { id } = router.query;
@@ -110,7 +112,6 @@ const Realtor = () => {
         <div className={styles.cards_wrapper}>
           <div className={styles.main}>
             {apartments.map((apartment, index) => {
-
               if (apartment.realtor._id === id) {
                  {
                   return <CardApartment apartment={apartment} />;

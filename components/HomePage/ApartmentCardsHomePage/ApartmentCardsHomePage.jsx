@@ -1,50 +1,53 @@
-import styles from "./ApartmentCardsHomePage.module.css"
-import { useSelector, useDispatch } from "react-redux"
-import { MdOutlineBedroomParent } from "react-icons/md"
-import { BiBath } from "react-icons/bi"
-import { TbLayoutBoard } from "react-icons/tb"
-import { BsFillShareFill } from "react-icons/bs"
-import { BsSuitHeart } from "react-icons/bs"
-import { FiPlus } from "react-icons/fi"
-import { useEffect, useState } from "react"
-import { getApartments } from "../../../features/apartmentSlice"
-import Link from "next/link"
-import Aos from "aos"
-import "aos/dist/aos.css"
-import { addFavorite, fetchUser } from "../../../features/authSlice/authSlice"
+import styles from "./ApartmentCardsHomePage.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { MdOutlineBedroomParent } from "react-icons/md";
+import { BiBath } from "react-icons/bi";
+import { TbLayoutBoard } from "react-icons/tb";
+import {
+  BsCameraFill,
+  BsCameraVideoFill,
+  BsFillShareFill,
+  BsGeoAltFill,
+} from "react-icons/bs";
+import { BsSuitHeart } from "react-icons/bs";
+import { FiPlus } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { getApartments } from "../../../features/apartmentSlice";
+import Link from "next/link";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import IconModal from "../../Agent/IconModal/IconModal";
+import { ImArrowDown } from "react-icons/im";
+import { FaHeart } from "react-icons/fa";
+import ModalCompanent from "./ModalCompanent";
 
 const ApartmentCardsHomePage = () => {
-  const dispatch = useDispatch()
-  const apartments = useSelector((state) => state.apartmentReducer.apartments)
-  const userId = useSelector((state) => state.auth.userId)
-  const users = useSelector((state) => state.auth.users)
+  const dispatch = useDispatch();
+  const apartments = useSelector((state) => state.apartmentReducer.apartments);
 
-  console.log(users)
-
-  const [limit, setLimit] = useState(6)
+  const [limit, setLimit] = useState(6);
 
   const handleShow = () => {
-    setLimit((limit += 6))
-  }
+    setLimit((limit += 6));
+  };
 
   const handleHide = () => {
     if (limit > 0) {
-      setLimit(6)
+      setLimit(6);
     }
-  }
+  };
 
   const handleFavorite = (apartmentId) => {
     dispatch(addFavorite({ apartmentId, userId }))
   }
 
   useEffect(() => {
-    Aos.init({ duration: 2000 })
-  }, [])
+    Aos.init({ duration: 2000 });
+  }, []);
 
   useEffect(() => {
-    dispatch(getApartments())
-    dispatch(fetchUser())
-  }, [dispatch])
+    dispatch(getApartments());
+  }, [dispatch]);
 
   return (
     <>
@@ -56,14 +59,36 @@ const ApartmentCardsHomePage = () => {
         <div className={styles.cards_container}>
           {apartments.map((apartment, index) => {
             if (index + 1 <= limit) {
+              const city = apartment.location.substring(30, 38);
+              const street = apartment.location.substring(38, 55);
               return (
                 <>
                   <div className={styles.card} data-aos="fade-left">
+                    <div className={styles.tag_wrapper}>
+                      <div className={styles.featured_wrapper}>Featured</div>
+                      <div className={styles.rentals}>{apartment.status}</div>
+                    </div>
                     <Link href={`/property/${apartment._id}`}>
                       <div className={styles.img_container}>
                         <img src={apartment.image[0]} alt="apartment photo" />
                       </div>
                     </Link>
+                    <div className={styles.icon_details_wrapper}>
+                      <div className={styles.details_wrapper}>
+                        <BsGeoAltFill className={styles.goLocation} />
+                        <Link href={`/map`}>
+                          <b>{city}</b>
+                        </Link>
+                        <Link href={`/map`}>
+                          <b>{street}</b>
+                        </Link>
+                      </div>
+                      <div className={styles.icon_details}>
+                        <BsCameraVideoFill className={styles.cameraVideo} />
+                        <BsCameraFill className={styles.cameraFill} />
+                        <span className={styles.number}>5</span>
+                      </div>
+                    </div>
                     <div className={styles.info_container}>
                       <h3>{apartment.name} </h3>
                       <h4>{apartment.price} $</h4>
@@ -82,32 +107,22 @@ const ApartmentCardsHomePage = () => {
                     </div>
                     <div className={styles.agentInfo_canteiner}>
                       <div className={styles.agent_photo_name}>
-                        <img
-                          src="https://lasvegas.wpresidence.net/wp-content/uploads/2014/05/person3-27-120x120.jpg')"
-                          alt="agent_photo"
-                        />
-                        <span>Michelle Upsetovna</span>
+                        <img src={apartment.realtor.image} alt="agent_photo" />
+                        <span>{apartment.realtor.name}</span>
                       </div>
                       <div className={styles.agent_icons}>
-                        <span className={styles.icon}>
-                          <BsFillShareFill />
+                        <ModalCompanent />
+                        <span>
+                          <FaHeart className={styles.passive_heart} />
                         </span>
-                        {/* {news.like.find((like) => like === userId) === userId} */}
-                        <span
-                          onClick={(e) => handleFavorite(apartment._id)}
-                          className={styles.icon}
-                        >
-                          <BsSuitHeart />
-                        </span>
-
-                        <span className={styles.icon}>
+                        <span>
                           <FiPlus />
                         </span>
                       </div>
                     </div>
                   </div>
                 </>
-              )
+              );
             }
           })}
         </div>
@@ -120,7 +135,7 @@ const ApartmentCardsHomePage = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ApartmentCardsHomePage
+export default ApartmentCardsHomePage;

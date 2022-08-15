@@ -11,11 +11,11 @@
 }
 
 .search {
-  width: 50%;
+  width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2% 2%;
+  padding: 2% 0% 2% 5%;
   gap: 2em;
 }
 
@@ -53,22 +53,31 @@
 }
 
 .card {
-  width: 45%;
+  width: 50%;
+  height: 33em;
   border-radius: 1em;
   box-shadow: 0 10px 31px 0 rgba(136, 129, 129, 0.09);
   background-color: white;
 }
 
 .img_container {
-  border-radius: 1em;
+  border-radius: 1em 1em 0 0;
+  overflow: hidden;
+  height: 14.740625em;
 }
 
 .img_container img {
   width: 100%;
-  height: 100%;
+  height: 14.740625em;
   object-fit: cover;
   border-radius: 1em 1em 0em 0em;
   cursor: pointer;
+  filter: brightness(75%);
+  transition: 0.5s;
+}
+
+.img_container img:hover {
+  transform: scale(1.2);
 }
 
 .info_container {
@@ -82,16 +91,21 @@
 .info_container h3 {
   font-size: 1.4em;
   font-weight: bold;
+  line-height: 1.2em;
+  margin: 1em 0 0;
 }
 
 .info_container h4 {
   color: #452820;
   font-weight: bold;
   font-size: 1.2em;
+  margin: 0.5em 0;
 }
 
 .info_container p {
-  line-height: 1.3em;
+  line-height: 1.2em;
+  font-size: 0.9125em;
+  color: #6f6f6f;
 }
 
 .icons {
@@ -107,15 +121,15 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
+  height: 3em;
   margin: 0 auto;
-  padding: 5% 0%;
+  padding: 0;
 }
 
 .agent_photo_name {
-  width: 40%;
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: 100%;
 }
 
@@ -128,8 +142,8 @@
 
 .agentInfo_canteiner img {
   border-radius: 50%;
-  width: 20%;
-  height: 20%;
+  width: 18%;
+  height: 70%;
   object-fit: cover;
 }
 
