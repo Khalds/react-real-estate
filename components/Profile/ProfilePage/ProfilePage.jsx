@@ -2,12 +2,17 @@ import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import { BsEye, BsEyeSlash } from "react-icons/bs"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchUser, fetchUserById, getToken } from "../../../features/authSlice/authSlice"
+import {
+  fetchUser,
+  getToken,
+  patchFirstName,
+} from "../../../features/authSlice/authSlice"
 import styles from "./ProfilePage.module.css"
 
 function ProfilePage() {
+  const dispatch = useDispatch()
+
   const userId = useSelector((state) => state.auth.userId)
-  const users = useSelector((state) => state.auth.users)
 
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
@@ -19,7 +24,9 @@ function ProfilePage() {
   const [seePassTwo, setSeePassTwo] = useState("password")
   const [seePassThree, setSeePassThree] = useState("password")
 
-  const dispatch = useDispatch()
+  const changeFirstName = () => {
+    dispatch(patchFirstName({ firstName, userId }))
+  }
 
   useEffect(() => {
     dispatch(getToken())
@@ -71,7 +78,7 @@ function ProfilePage() {
             </div>
           </div>
           <div className={styles.cont_buttons}>
-            <button>Update Profile</button>
+            <button onClick={changeFirstName}> Update Profile</button>
             <button>Delete Profile</button>
           </div>
         </div>

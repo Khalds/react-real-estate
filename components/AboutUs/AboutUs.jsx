@@ -30,11 +30,9 @@ const AboutUs = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           e.target.reset();
         },
         (error) => {
-          console.log(error.text);
         }
       );
   };

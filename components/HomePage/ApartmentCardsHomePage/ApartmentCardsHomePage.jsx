@@ -11,12 +11,15 @@ import { getApartments } from "../../../features/apartmentSlice"
 import Link from "next/link"
 import Aos from "aos"
 import "aos/dist/aos.css"
-import { addFavorite } from "../../../features/authSlice/authSlice"
+import { addFavorite, fetchUser } from "../../../features/authSlice/authSlice"
 
 const ApartmentCardsHomePage = () => {
   const dispatch = useDispatch()
   const apartments = useSelector((state) => state.apartmentReducer.apartments)
   const userId = useSelector((state) => state.auth.userId)
+  const users = useSelector((state) => state.auth.users)
+
+  console.log(users)
 
   const [limit, setLimit] = useState(6)
 
@@ -40,6 +43,7 @@ const ApartmentCardsHomePage = () => {
 
   useEffect(() => {
     dispatch(getApartments())
+    dispatch(fetchUser())
   }, [dispatch])
 
   return (
@@ -88,12 +92,14 @@ const ApartmentCardsHomePage = () => {
                         <span className={styles.icon}>
                           <BsFillShareFill />
                         </span>
+                        {/* {news.like.find((like) => like === userId) === userId} */}
                         <span
                           onClick={(e) => handleFavorite(apartment._id)}
                           className={styles.icon}
                         >
                           <BsSuitHeart />
                         </span>
+
                         <span className={styles.icon}>
                           <FiPlus />
                         </span>

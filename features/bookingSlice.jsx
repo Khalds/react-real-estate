@@ -22,7 +22,6 @@ export const getBookings = createAsyncThunk(
 export const postBookings = createAsyncThunk(
   "post/bookings",
   async ({ time, apartment, realtor, user }, thunkAPI) => {
-    console.log(time, apartment, realtor, user);
     try {
       const res = await fetch("http://localhost:5000/bookings", {
         method: "POST",
