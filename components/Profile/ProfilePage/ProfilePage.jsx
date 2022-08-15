@@ -4,6 +4,7 @@ import { BsEye, BsEyeSlash } from "react-icons/bs"
 import { useDispatch, useSelector } from "react-redux"
 import {
   fetchUser,
+  fetchUserById,
   getToken,
   patchFirstName,
 } from "../../../features/authSlice/authSlice"
@@ -12,7 +13,9 @@ import styles from "./ProfilePage.module.css"
 function ProfilePage() {
   const dispatch = useDispatch()
 
-  const userId = useSelector((state) => state.auth.userId)
+  const router = useRouter()
+
+ 
 
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")

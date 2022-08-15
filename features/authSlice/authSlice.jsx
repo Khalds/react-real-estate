@@ -9,6 +9,8 @@ const initialState = {
   token: null,
   user: null,
   userId: null,
+  role: null,
+  correctUser: null
 }
 
 export const fetchUser = createAsyncThunk(
@@ -32,9 +34,10 @@ export const fetchUser = createAsyncThunk(
 
 export const fetchUserById = createAsyncThunk(
   "user/fetch",
-  async (id, thunkAPI) => {
+  async (userId, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:5000/user/${id}`)
+
+      const res = await fetch(`http://localhost:5000/user/${userId}`)
 
       const json = await res.json()
 
@@ -78,6 +81,7 @@ export const auth = createAsyncThunk(
   "login/post",
   async ({ login, password }, thunkAPI) => {
     try {
+      
       const res = await fetch("http://localhost:5000/login", {
         method: "POST",
         headers: {
@@ -93,7 +97,7 @@ export const auth = createAsyncThunk(
         localStorage.setItem("token", json.accessToken)
         localStorage.setItem("user", json.user.login)
         localStorage.setItem("userId", json.user.id)
-
+        localStorage.setItem("role", json.user.role);
         return thunkAPI.fulfillWithValue(json)
       }
     } catch (e) {
@@ -197,6 +201,7 @@ export const authSlice = createSlice({
         state.token = action.payload.token
         state.userId = action.payload.userId
         state.login = action.payload.login
+        state.login = localStorage.getItem("role")
       })
       .addCase(auth.pending, (state, action) => {
         state.signIn = false
@@ -210,7 +215,7 @@ export const authSlice = createSlice({
         state.users = action.payload
       })
       .addCase(fetchUserById.fulfilled, (state, action) => {
-        state.user = action.payload
+        state.correctUser = action.payload
       })
       .addCase(addFavorite.fulfilled, (state, action) => {
         state.users.map((item) => {
@@ -228,6 +233,7 @@ export const authSlice = createSlice({
           return user
         })
       })
+
   },
 })
 

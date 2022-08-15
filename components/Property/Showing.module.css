@@ -126,3 +126,7 @@
   border-radius: 0.625em;
   cursor: pointer;
 }
+
+.error {
+  color: red
+}
