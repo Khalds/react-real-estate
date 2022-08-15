@@ -9,23 +9,46 @@ const initialState = {
   token: null,
   user: null,
   userId: null,
+  role: null
 }
 
-export const fetchUser = createAsyncThunk("user/fetch", async (_, thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:5000/users")
+export const fetchUser = createAsyncThunk(
+  "users/fetch",
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:5000/users")
 
-    const json = await res.json()
+      const json = await res.json()
 
-    if (json.error) {
-      return thunkAPI.rejectWithValue(json.error)
-    } else {
-      return thunkAPI.fulfillWithValue(json)
+      if (json.error) {
+        return thunkAPI.rejectWithValue(json.error)
+      } else {
+        return thunkAPI.fulfillWithValue(json)
+      }
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e)
     }
-  } catch (e) {
-    return thunkAPI.rejectWithValue(e)
   }
-})
+)
+
+export const fetchUserById = createAsyncThunk(
+  "user/fetch",
+  async (userId, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/user/${userId}`)
+
+      const json = await res.json()
+
+      if (json.error) {
+        return thunkAPI.rejectWithValue(json.error)
+      } else {
+        return thunkAPI.fulfillWithValue(json)
+      }
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e)
+    }
+  }
+)
 
 export const createUser = createAsyncThunk(
   "registration/post",
@@ -56,6 +79,7 @@ export const auth = createAsyncThunk(
   "login/post",
   async ({ login, password }, thunkAPI) => {
     try {
+      
       const res = await fetch("http://localhost:5000/login", {
         method: "POST",
         headers: {
@@ -71,7 +95,7 @@ export const auth = createAsyncThunk(
         localStorage.setItem("token", json.accessToken)
         localStorage.setItem("user", json.user.login)
         localStorage.setItem("userId", json.user.id)
-
+        localStorage.setItem("role", json.user.role);
         return thunkAPI.fulfillWithValue(json)
       }
     } catch (e) {
@@ -80,10 +104,57 @@ export const auth = createAsyncThunk(
   }
 )
 
+export const addFavorite = createAsyncThunk(
+  "userFavorite/patch",
+  async ({ apartmentId, userId }, thunkAPI) => {
+    const state = thunkAPI.getState()
+    try {
+      const res = await fetch(
+        `http://localhost:5000/users/${userId}/favorite`,
+        {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${state.auth.token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            favorite: apartmentId,
+          }),
+        }
+      )
+      return res.json(res)
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message)
+    }
+  }
+)
 
+export const patchFirstName = createAsyncThunk(
+  "firstName/patch",
+  async ({ firstname, userId }, thunkAPI) => {
+    const state = thunkAPI.getState()
+    try {
+      const res = await fetch(
+        `http://localhost:5000/users/${userId}/firstname`,
+        {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${state.auth.token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firtsname: firstname,
+          }),
+        }
+      )
+      return res.json(res)
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message)
+    }
+  }
+)
 
 export const getToken = createAsyncThunk("getToken", () => {
-  console.log(localStorage.getItem("user"))
   localStorage.getItem("token")
   localStorage.getItem("user")
   localStorage.getItem("userId")
@@ -128,6 +199,7 @@ export const authSlice = createSlice({
         state.token = action.payload.token
         state.userId = action.payload.userId
         state.login = action.payload.login
+        state.login = localStorage.getItem("role")
       })
       .addCase(auth.pending, (state, action) => {
         state.signIn = false
@@ -139,6 +211,25 @@ export const authSlice = createSlice({
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
         state.users = action.payload
+      })
+      .addCase(fetchUserById.fulfilled, (state, action) => {
+        state.user = action.payload
+      })
+      .addCase(addFavorite.fulfilled, (state, action) => {
+        state.users.map((item) => {
+          if (item._id === action.payload._id) {
+            return action.payload
+          }
+          return item
+        })
+      })
+      .addCase(patchFirstName.fulfilled, (state, action) => {
+        state.users.map((user) => {
+          if (user._id === action.payload._id) {
+            return action.payload
+          }
+          return user
+        })
       })
   },
 })

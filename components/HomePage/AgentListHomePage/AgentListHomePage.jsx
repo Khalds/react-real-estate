@@ -19,7 +19,6 @@ const AgentListHomePage = () => {
       return acc + element.rate;
     }, 0) / realtors?.rating?.length;
 
-  console.log(movieRating, realtors.rating);
 
   return (
     <div className={styles.main}>

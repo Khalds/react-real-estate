@@ -3,14 +3,14 @@ import {
     Placemark,
   } from "react-yandex-maps";
 
-const PlacemarkComp = ({price, geolocation, location, id}) => {
+const PlacemarkComp = ({price, geolocation, location, id, description, status}) => {
     return (
         <Placemark
         geometry={geolocation}
         properties={{
           item: id,
-          balloonContentHeader: `${price}$`,
-          balloonContentBody: "Тело элемента",
+          balloonContentHeader: `${price}$ for ${status}`,
+          balloonContentBody: `${description.slice(0, 65)}...`,
           balloonContentFooter: location,
         }}
       />

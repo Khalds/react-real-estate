@@ -22,7 +22,7 @@ const Booking = () => {
   const filteredBookings = bookings.filter((booking) => {
     return booking.user._id === user_id;
   });
-  console.log(filteredBookings);
+
   return (
     <div>
       <div>

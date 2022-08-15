@@ -1,25 +1,32 @@
-import Link from "next/link";
-import React, { useEffect, Component, useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { useRouter } from "next/router";
-import styles from "./Contact.module.css";
-import { BsFacebook } from "react-icons/Bs";
-import { IoLogoWhatsapp } from "react-icons/Io";
-import { AiFillInstagram } from "react-icons/Ai";
-import { FaTelegram } from "react-icons/Fa";
-import { FaRedditAlien } from "react-icons/Fa";
+import Link from "next/link"
+import React, { useEffect, Component, useRef } from "react"
+import emailjs from "@emailjs/browser"
+import { useRouter } from "next/router"
+import styles from "./Contact.module.css"
+import { BsFacebook } from "react-icons/Bs"
+import { IoLogoWhatsapp } from "react-icons/Io"
+import { AiFillInstagram } from "react-icons/Ai"
+import { FaTelegram } from "react-icons/Fa"
+import { FaRedditAlien } from "react-icons/Fa"
+import PersonalData from "../../components/Agent/PersonalData/PersonalData"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import Slider from "react-slick"
+import CountUp from "react-countup"
+import styled from "styled-components"
+
 import {
   FacebookShareButton,
   TelegramShareButton,
   RedditShareButton,
   WhatsappShareButton,
-} from "react-share";
+} from "react-share"
 
 const Contact = () => {
-  const form = useRef();
+  const form = useRef()
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     emailjs
       .sendForm(
@@ -30,21 +37,22 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          console.log(result.text)
         },
         (error) => {
-          console.log(error.text);
+          console.log(error.text)
         }
-      );
-  };
+      )
+  }
   const shareUrl =
-    "Real Estate Agency Вы можете ознакомится c нашими услугами на сайте. Подробности... https://lasvegas.wpresidence.net/";
+    "Real Estate Agency Вы можете ознакомится c нашими услугами на сайте. Подробности... https://lasvegas.wpresidence.net/"
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
+      <div data-aos="fade-up" className={styles.container}>
         <div className={styles.logoAndHeader}>
           <div className={styles.header}>Real Estate Agency</div>
           <img
+            data-aos="fade-left"
             src="https://lasvegas.wpresidence.net/wp-content/uploads/2022/03/las-vegas.png"
             alt="icon"
             className={styles.logo}
@@ -94,45 +102,7 @@ const Contact = () => {
         />
       </div>
       <div className={styles.email}>
-      ///!Изменить
-        <h1>Contact Us</h1>
-        <div className={styles.center}>
-          <form className={styles.form} ref={form} onSubmit={sendEmail}>
-            <label className={styles.textInput}>Name</label>
-            <input
-              type="text"
-              name="user_name"
-              className={styles.inputMail}
-              maxlength="20"
-              placeholder="Your Name"
-            />
-            <br />
-            <label className={styles.textInput}>Email</label>
-            <input
-              type="email"
-              name="user_email"
-              className={styles.inputMail}
-              maxlength="20"
-              placeholder="Your E-mail"
-            />
-            <br />
-            <label className={styles.inputText}>Message</label>
-
-            <input
-              name="message"
-              className={styles.inputText}
-              placeholder="Enter Text"
-              required
-            />
-
-            <br />
-
-            <button className={styles.button} type="submit" value="Send">
-              Sent Mail
-            </button>
-          </form>
-        </div>
-        ////! До этого
+        <PersonalData />
       </div>
       <div className={styles.backgraundMap}>
         <h3>
@@ -156,6 +126,6 @@ const Contact = () => {
         marginwidth="0"
       ></iframe>
     </div>
-  );
-};
-export default Contact;
+  )
+}
+export default Contact

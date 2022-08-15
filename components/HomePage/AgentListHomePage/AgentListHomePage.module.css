@@ -21,7 +21,7 @@
 .agents_container {
   display: flex;
   flex-wrap: wrap;
-  gap: 3em;
+  gap: 1em;
 }
 
 .card {
