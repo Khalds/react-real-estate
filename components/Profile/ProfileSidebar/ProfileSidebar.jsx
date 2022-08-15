@@ -12,8 +12,10 @@ import { fetchUserById, getToken, removeToken } from "../../../features/authSlic
 
 function ProfileSidebar() {
   const router = useRouter()
-  const userId = useSelector((state) => state.auth.userId)
   const dispatch = useDispatch()
+
+  const userId = useSelector((state) => state.auth.userId)
+  const user = useSelector((state) => state.auth.user)
   const token = useSelector((state) => state.auth.token)
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function ProfileSidebar() {
     dispatch(removeToken())
   }
 
-  if (token === null) {
+  if (!token) {
     router.push("/")
   }
 
@@ -38,7 +40,7 @@ function ProfileSidebar() {
               alt=""
             />
           </Link>
-          <p>Welcome back, Khald!</p>
+          <p>Welcome back, {user}!</p>
         </div>
         <div className={styles.sidebar_nav}>
           <Link href={`/profile/${userId}`}>
