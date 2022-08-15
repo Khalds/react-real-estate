@@ -49,7 +49,6 @@ const ApartmentCardsHomePage = () => {
     dispatch(getApartments());
   }, [dispatch]);
 
-
   return (
     <>
       <div className={styles.main}>

@@ -110,7 +110,7 @@ export const addFavorite = createAsyncThunk(
     const state = thunkAPI.getState()
     try {
       const res = await fetch(
-        `http://localhost:4000/users/${userId}/favorite`,
+        `http://localhost:5000/users/${userId}/favorite`,
         {
           method: "PATCH",
           headers: {
@@ -129,8 +129,32 @@ export const addFavorite = createAsyncThunk(
   }
 )
 
+export const patchFirstName = createAsyncThunk(
+  "firstName/patch",
+  async ({ firstname, userId }, thunkAPI) => {
+    const state = thunkAPI.getState()
+    try {
+      const res = await fetch(
+        `http://localhost:5000/users/${userId}/firstname`,
+        {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${state.auth.token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firtsname: firstname,
+          }),
+        }
+      )
+      return res.json(res)
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message)
+    }
+  }
+)
+
 export const getToken = createAsyncThunk("getToken", () => {
-  console.log(localStorage.getItem("user"))
   localStorage.getItem("token")
   localStorage.getItem("user")
   localStorage.getItem("userId")
@@ -192,17 +216,20 @@ export const authSlice = createSlice({
         state.user = action.payload
       })
       .addCase(addFavorite.fulfilled, (state, action) => {
-        state.users = state.users.map((item) => {
-          console.log(action.payload._id)
+        state.users.map((item) => {
           if (item._id === action.payload._id) {
             return action.payload
           }
           return item
         })
       })
-      .addCase(addFavorite.rejected, (state, action) => {
-        state.error = action.payload
-        console.log(action.payload)
+      .addCase(patchFirstName.fulfilled, (state, action) => {
+        state.users.map((user) => {
+          if (user._id === action.payload._id) {
+            return action.payload
+          }
+          return user
+        })
       })
   },
 })

@@ -28,9 +28,7 @@ export const putRate = createAsyncThunk(
   "set/rating",
   async ({ rate, user, agent_id }, thunkAPI) => {
     const token = localStorage.getItem("token");
-    console.log(token);
     try {
-      console.log(token);
       const res = await fetch(
         `http://localhost:5000/realtors/rating/${agent_id}`,
         {
