@@ -5,12 +5,12 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Showing.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postBookings } from "../../features/bookingSlice";
 
 const Showing = ({ apartment }) => {
   const [selectedDate, setSelectedDate] = useState(null);
-
+  const error = useSelector((state) => state.bookingReducer.error)
   let user_id;
 
   const dispatch = useDispatch();
@@ -42,6 +42,7 @@ const Showing = ({ apartment }) => {
           <div className={styles.agent_position}>selling agent</div>
         </div>
       </div>
+      {error && <div className={styles.error}>Авторизуйтесь,чтобы забронировать просмотр квартиры</div>}
       <div className={styles.schedule_showing}>
         <div className={styles.header} {...getToggleProps()}>
           <div className={styles.schedule_showing_btn}>Schedule a showing?</div>
