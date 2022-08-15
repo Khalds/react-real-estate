@@ -92,7 +92,7 @@ const ApartmentCardsHomePage = () => {
                         <span className={styles.icon}>
                           <BsFillShareFill />
                         </span>
-                        {/* {news.like.find((like) => like === userId) === userId} */}
+
                         <span
                           onClick={(e) => handleFavorite(apartment._id)}
                           className={styles.icon}
