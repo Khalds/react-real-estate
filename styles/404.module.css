@@ -1,0 +1,19 @@
+.error {
+  margin-top: 6%;
+  display: flex;
+  justify-content: center;
+}
+.img {
+  width: 32%;
+  border-radius: 4em;
+  box-shadow: 18px 15px 25px -5px rgba(90, 68, 25, 0.2);
+  cursor: pointer;
+}
+
+.error img {
+  transition: 0.6s;
+  display: block;
+}
+.error img:hover {
+  transform: scale(1.1);
+}
