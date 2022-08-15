@@ -32,7 +32,7 @@ const SearchMap = () => {
   const [bedroom, setBedroom] = useState(0);
   const [bathroom, setBathroom] = useState(0);
 
-  const [arrayToFilter, setArrayToFilter] = useState(null)
+  const [arrayToFilter, setArrayToFilter] = useState(null);
 
   const handleBedroom = (event) => {
     setBedroom(event.target.value);
@@ -49,14 +49,11 @@ const SearchMap = () => {
   const filteredArr = apartments.filter((apartment, array) => {
     if (
       apartment.city.toLowerCase().includes(cityName.toLowerCase()) &&
-      apartment.price > price 
-     
+      apartment.price > price
     ) {
       return true;
     }
   });
-
-  
 
   return (
     <>
@@ -66,7 +63,7 @@ const SearchMap = () => {
           <YMaps>
             <div className={styles.map}>
               <Map
-                width="40em"
+                width="45em"
                 height="43em"
                 defaultState={{
                   center: [43.318366, 45.692421],
@@ -102,6 +99,8 @@ const SearchMap = () => {
                         geolocation={apartment.geolocation}
                         price={apartment.price}
                         id={apartment._id}
+                        description={apartment.description}
+                        status={apartment.status}
                       />
                     );
                   })}
