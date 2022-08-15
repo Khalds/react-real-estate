@@ -8,7 +8,7 @@ import { MdOutlineAddBox, MdOutlineFavoriteBorder } from "react-icons/md"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useDispatch, useSelector } from "react-redux"
-import { getToken, removeToken } from "../../../features/authSlice/authSlice"
+import { fetchUserById, getToken, removeToken } from "../../../features/authSlice/authSlice"
 
 function ProfileSidebar() {
   const router = useRouter()
