@@ -125,3 +125,31 @@
   flex-direction: column;
   width: 100%;
 }
+
+.wrapper button {
+  align-self: end;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  width: 35%;
+  border: 2px solid #452820;
+
+  background: #452820;
+  color: #fff;
+
+  transition: ease-out 0.6s;
+}
+
+.wrapper button:hover {
+  box-shadow: inset 400px 0 0 0 rgba(255, 255, 255, 0.274);
+}
+
+.wrapper button:active {
+  background: transparent;
+  color: #452820;
+  border: 2px solid #452820;
+  transition: 0.2s;
+}

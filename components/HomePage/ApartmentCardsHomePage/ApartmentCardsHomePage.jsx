@@ -1,53 +1,53 @@
-import styles from "./ApartmentCardsHomePage.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { MdOutlineBedroomParent } from "react-icons/md";
-import { BiBath } from "react-icons/bi";
-import { TbLayoutBoard } from "react-icons/tb";
+import styles from "./ApartmentCardsHomePage.module.css"
+import { useSelector, useDispatch } from "react-redux"
+import { MdOutlineBedroomParent } from "react-icons/md"
+import { BiBath } from "react-icons/bi"
+import { TbLayoutBoard } from "react-icons/tb"
 import {
   BsCameraFill,
   BsCameraVideoFill,
   BsFillShareFill,
   BsGeoAltFill,
-} from "react-icons/bs";
-import { BsSuitHeart } from "react-icons/bs";
-import { FiPlus } from "react-icons/fi";
-import { useEffect, useState } from "react";
-import { getApartments } from "../../../features/apartmentSlice";
-import Link from "next/link";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import IconModal from "../../Agent/IconModal/IconModal";
-import { ImArrowDown } from "react-icons/im";
-import { FaHeart } from "react-icons/fa";
-import ModalCompanent from "./ModalCompanent";
+} from "react-icons/bs"
+import { BsSuitHeart } from "react-icons/bs"
+import { FiPlus } from "react-icons/fi"
+import { useEffect, useState } from "react"
+import { getApartments } from "../../../features/apartmentSlice"
+import Link from "next/link"
+import Aos from "aos"
+import "aos/dist/aos.css"
+import IconModal from "../../Agent/IconModal/IconModal"
+import { ImArrowDown } from "react-icons/im"
+import { FaHeart } from "react-icons/fa"
+import ModalCompanent from "./ModalCompanent"
 
 const ApartmentCardsHomePage = () => {
-  const dispatch = useDispatch();
-  const apartments = useSelector((state) => state.apartmentReducer.apartments);
+  const dispatch = useDispatch()
+  const apartments = useSelector((state) => state.apartmentReducer.apartments)
 
-  const [limit, setLimit] = useState(6);
+  const [limit, setLimit] = useState(6)
 
   const handleShow = () => {
-    setLimit((limit += 6));
-  };
+    setLimit((limit += 6))
+  }
 
   const handleHide = () => {
     if (limit > 0) {
-      setLimit(6);
+      setLimit(6)
     }
-  };
+  }
 
   const handleFavorite = (apartmentId) => {
     dispatch(addFavorite({ apartmentId, userId }))
   }
 
   useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
+    Aos.init({ duration: 2000 })
+  }, [])
 
   useEffect(() => {
-    dispatch(getApartments());
-  }, [dispatch]);
+    dispatch(getApartments())
+  }, [dispatch])
 
   return (
     <>
@@ -59,8 +59,8 @@ const ApartmentCardsHomePage = () => {
         <div className={styles.cards_container}>
           {apartments.map((apartment, index) => {
             if (index + 1 <= limit) {
-              const city = apartment.location.substring(30, 38);
-              const street = apartment.location.substring(38, 55);
+              const city = apartment.location.substring(30, 38)
+              const street = apartment.location.substring(38, 55)
               return (
                 <>
                   <div className={styles.card} data-aos="fade-left">
@@ -115,14 +115,22 @@ const ApartmentCardsHomePage = () => {
                         <span>
                           <FaHeart className={styles.passive_heart} />
                         </span>
-                        <span>
+
+                        <span
+                          onClick={(e) => handleFavorite(apartment._id)}
+                          className={styles.icon}
+                        >
+                          <BsSuitHeart />
+                        </span>
+
+                        <span className={styles.icon}>
                           <FiPlus />
                         </span>
                       </div>
                     </div>
                   </div>
                 </>
-              );
+              )
             }
           })}
         </div>
@@ -135,7 +143,7 @@ const ApartmentCardsHomePage = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ApartmentCardsHomePage;
+export default ApartmentCardsHomePage

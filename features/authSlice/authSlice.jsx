@@ -36,6 +36,7 @@ export const fetchUserById = createAsyncThunk(
   "user/fetch",
   async (userId, thunkAPI) => {
     try {
+
       const res = await fetch(`http://localhost:5000/user/${userId}`)
 
       const json = await res.json()
