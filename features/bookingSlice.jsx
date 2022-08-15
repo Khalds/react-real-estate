@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   bookings: [],
   loading: false,
+  error: null,
 };
 
 export const getBookings = createAsyncThunk(
@@ -23,9 +24,13 @@ export const postBookings = createAsyncThunk(
   "post/bookings",
   async ({ time, apartment, realtor, user }, thunkAPI) => {
     try {
+      const token = localStorage.getItem("token");
       const res = await fetch("http://localhost:5000/bookings", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({
           time: time,
           apartment: apartment,
@@ -55,6 +60,12 @@ export const bookingSlice = createSlice({
       })
       .addCase(getBookings.pending, (state, action) => {
         state.loading = true;
+      })
+      .addCase(postBookings.fulfilled, (state, action) => {
+        state.error = null;
+      })
+      .addCase(postBookings.rejected, (state, action) => {
+        state.error = action.payload;
       });
   },
 });
