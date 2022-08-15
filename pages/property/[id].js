@@ -13,9 +13,6 @@ import PhotoGallery from "../../components/Property/PhotoGallery/PhotoGallery"
 import Reviews from "../../components/Property/Reviews"
 
 
-
-
-
 export const getStaticPaths = async () => {
   const res = await fetch("http://localhost:5000/apartment");
   const data = await res.json();

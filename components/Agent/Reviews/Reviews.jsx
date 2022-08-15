@@ -41,7 +41,6 @@ const Reviews = () => {
     }
   };
 
-  console.log(realtor)
 
 
   return (
