@@ -41,6 +41,14 @@
 
 .img_container {
   position: relative;
+  filter: brightness(45%);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.img_container:hover {
+  filter: brightness(100%);
+  transition: .7s;
 }
 
 .areas img {

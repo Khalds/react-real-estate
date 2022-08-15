@@ -6,6 +6,7 @@ import { IoLogoWhatsapp } from "react-icons/Io";
 import { AiFillInstagram } from "react-icons/Ai";
 import { AiFillGooglePlusCircle } from "react-icons/Ai";
 import { FaRedditAlien } from "react-icons/Fa";
+import PersonalData from "../Agent/PersonalData/PersonalData";
 
 const Contact = () => {
   return (
@@ -56,35 +57,7 @@ const Contact = () => {
         />
       </div>
       <div className={styles.email}>
-      ///!Изменить
-        <h1>Contact Us</h1>
-        <div className={styles.center}>
-          <form className={styles.form}>
-            <input
-              className={styles.inputMail}
-              maxlength="20"
-              placeholder="Your Name"
-            />
-            <br />
-            <input
-              className={styles.inputMail}
-              maxlength="20"
-              placeholder="Your E-mail"
-            />
-            <br />
-
-            <input
-              className={styles.inputText}
-              placeholder="Enter Text"
-              required
-            />
-
-            <br />
-
-            <button className={styles.button}>Sent Mail</button>
-          </form>
-        </div>
-        ////! До этого
+        <PersonalData/>
       </div>
       <div className={styles.backgraundMap}>
         <h3>

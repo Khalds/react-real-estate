@@ -16,6 +16,9 @@ import { FaHeart } from "react-icons/fa";
 
 const CardApartment = ({ apartment }) => {
   const [open, setOpen] = useState(false);
+
+  const  city =  apartment.location.substring(30, 38)
+  const  street =  apartment.location.substring(38, 55)
   return (
     <>
       <div className={styles.card} data-aos="fade-left">
@@ -32,10 +35,10 @@ const CardApartment = ({ apartment }) => {
           <div className={styles.details_wrapper}>
             <BsGeoAltFill className={styles.goLocation} />
             <Link href={`/map`}>
-              <b>Winchester,</b>
+              <b>{city}</b>
             </Link>
             <Link href={`/map`}>
-              <b>Las Vegas</b>
+              <b>{street}</b>
             </Link>
           </div>
           <div className={styles.icon_details}>
