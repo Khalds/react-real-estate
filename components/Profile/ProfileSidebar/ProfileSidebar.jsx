@@ -1,38 +1,38 @@
-import React, { useEffect } from "react";
-import styles from "./ProfileSidebar.module.css";
-import { FaRegUser } from "react-icons/fa";
-import { CgHome } from "react-icons/cg";
-import { TbLogout } from "react-icons/tb";
-import { MdOutlineAddBox, MdOutlineFavoriteBorder } from "react-icons/md";
+import React, { useEffect } from "react"
+import styles from "./ProfileSidebar.module.css"
+import { FaRegUser } from "react-icons/fa"
+import { CgHome } from "react-icons/cg"
+import { TbLogout } from "react-icons/tb"
+import { MdOutlineAddBox, MdOutlineFavoriteBorder } from "react-icons/md"
 
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { useDispatch, useSelector } from "react-redux"
 import {
   fetchUser,
   fetchUserById,
   getToken,
   removeToken,
-} from "../../../features/authSlice/authSlice";
+} from "../../../features/authSlice/authSlice"
 
 function ProfileSidebar() {
-  const router = useRouter();
-  const dispatch = useDispatch();
+  const router = useRouter()
+  const dispatch = useDispatch()
   const correctUser = useSelector((state) => state.auth.correctUser)
-  const userId = useSelector((state) => state.auth.userId);
-  const user = useSelector((state) => state.auth.user);
-  const token = useSelector((state) => state.auth.token);
+  const userId = useSelector((state) => state.auth.userId)
+  const user = useSelector((state) => state.auth.user)
+  const token = useSelector((state) => state.auth.token)
 
   useEffect(() => {
-    dispatch(getToken());
+    dispatch(getToken())
     if (!token) {
-      router.push("/");
+      router.push("/")
     }
-  }, [dispatch]);
+  }, [dispatch])
 
   const handleLogout = () => {
-    dispatch(removeToken());
-  };
+    dispatch(removeToken())
+  }
 
   return (
     <div className={styles.ProfileSidebar}>
@@ -129,7 +129,7 @@ function ProfileSidebar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProfileSidebar;
+export default ProfileSidebar
