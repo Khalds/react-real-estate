@@ -51,7 +51,7 @@ const ApartmentCardsHomePage = () => {
 
   return (
     <>
-      <div className={styles.main}>
+      <div id="apartments" scroll-behavior = "smooth" className={styles.main}>
         <div className={styles.header}>
           <p>RECENT PROPERTIES</p>
           <h2>Explore the latest properties available</h2>

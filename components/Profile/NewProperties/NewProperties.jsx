@@ -153,6 +153,7 @@ function NewProperties() {
               <option value={""}>No Status</option>
             </select>
           </div>
+          <button >Add Properties</button>
         </div>
       </div>
     </div>

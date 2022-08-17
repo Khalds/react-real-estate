@@ -1,5 +1,8 @@
 .booking_content {
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+.element {
+    width: 15%;
 }

@@ -36,6 +36,9 @@ const Reviews = () => {
       dispatch(
         addReviewForApartment({ apartment_id, review, advantages, disadvantages, user })
       );
+      setAdvantages("")
+      setDisadvantages("")
+      setReview("")
     }
   };
 
@@ -57,7 +60,7 @@ const Reviews = () => {
           <input
             onChange={(e) => setReview(e.target.value)}
             value={review}
-            placeholder={"Write you review here"}
+            placeholder={"Write your review here"}
           ></input>
           <div className={styles.button_add_container}>
             <button onClick={handleAddReview} className={styles.button_add}>
