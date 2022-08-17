@@ -45,11 +45,11 @@ const MailForm = () => {
             <textarea className={styles.form} name="message" />
           </div>
           <div>
-            <input className={styles.button} type="submit" value="Send" />
+            <button type="submit" value="Send">
+              Send Email
+            </button>
           </div>
         </form>
-        
-        <button>Send Email</button>
       </div>
       <div className={styles.text_container}>
         <p>CONTACT</p>

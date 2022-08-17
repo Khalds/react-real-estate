@@ -1,23 +1,23 @@
-import styles from "./Header.module.css"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { BsFillTelephoneFill } from "react-icons/bs"
-import { BsPersonCircle } from "react-icons/bs"
-import { useDispatch, useSelector } from "react-redux"
-import { getToken } from "../../features/authSlice/authSlice"
-import { useEffect } from "react"
+import styles from "./Header.module.css";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { BsPersonCircle } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { getToken } from "../../features/authSlice/authSlice";
+import { useEffect } from "react";
 
 const Header = () => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const userId = useSelector((state) => state.auth.userId)
-  const token = useSelector((state) => state.auth.token)
+  const userId = useSelector((state) => state.auth.userId);
+  const token = useSelector((state) => state.auth.token);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getToken())
-  })
+    dispatch(getToken());
+  });
 
   return (
     <div className={styles.Header}>
@@ -48,7 +48,9 @@ const Header = () => {
                 : styles.disactive_link
             }
           >
-            <Link href="/apartments">Apartments</Link>
+            <Link href="#apartments">
+              Apartments
+            </Link>
           </li>
           <li
             className={
@@ -98,7 +100,7 @@ const Header = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

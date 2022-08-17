@@ -248,7 +248,8 @@ function NewProperties() {
               <option value={""}>No Status</option>
             </select>
           </div>
-          <button onClick={addProperties}>Add Properties</button>
+          <button >Add Properties</button>
+
         </div>
       </div>
     </div>

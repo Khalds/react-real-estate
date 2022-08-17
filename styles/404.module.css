@@ -1,7 +1,8 @@
 .error {
-  margin-top: 6%;
+  height: 90vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .img {
   width: 32%;

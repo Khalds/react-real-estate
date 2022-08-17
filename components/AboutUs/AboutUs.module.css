@@ -4,7 +4,7 @@
   overflow: hidden;
 }
 .photo {
-  width: 60em;
+  width: 100%;
   height: 90vh;
   background: url("https://remindermedia.com/wp-content/uploads/2021/04/building-a-team-main.jpg");
   background-size: cover;

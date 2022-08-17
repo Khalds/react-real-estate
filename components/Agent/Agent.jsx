@@ -92,7 +92,7 @@ const Realtor = () => {
                   phone={item.phoneNumber}
                 />
                 <InformativeMe description={item.description} />
-                <PersonalData />
+                <PersonalData id="personal_data" />
                  
               </>
             );
